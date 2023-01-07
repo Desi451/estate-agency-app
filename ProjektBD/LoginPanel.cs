@@ -15,9 +15,6 @@ namespace ProjektBD
 {
     public partial class LoginPanel : Form
     {
-        
-        string login, passwd;
-
         public LoginPanel()
         {
             InitializeComponent();
@@ -43,13 +40,28 @@ namespace ProjektBD
             MySqlDataReader reader = sda.ExecuteReader();
             while (reader.Read())
             {
-                login = reader["login"].ToString();
-                passwd = reader["password"].ToString();
+                User.Id = Int32.Parse(reader["id"].ToString());
+                User.FirstName = reader["first_name"].ToString();
+                User.LastName = reader["last_name"].ToString();
+                User.Login = reader["login"].ToString();
+                User.Password = reader["password"].ToString();
+                User.Email = reader["email"].ToString();
+                User.Id_rank = Int32.Parse(reader["id_rank"].ToString());
+                User.Street = reader["street"].ToString();
+                User.No_Building = reader["no_building"].ToString();
+                User.No_apartament = reader["no_apartament"].ToString();
+                User.ZipCode = reader["zip_code"].ToString();
+                User.City = reader["city"].ToString();
             }
+            con.Close();
 
-            if (login != null || passwd != null)
+            if (User.Login != null || User.Password != null)
             {
-                MessageBox.Show("Logowanie Udane!", "Logowanie", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Logowanie Udane!", "Logowanie", MessageBoxButtons.OK, MessageBoxIcon.Information); 
+                AdminPanel admin = new AdminPanel();
+                admin.Show();
+                this.Hide();
+
             }
             else
             {

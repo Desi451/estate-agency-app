@@ -84,6 +84,11 @@ namespace ProjektBD
                 MessageBox.Show("Wybierz kategorie!", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
+            if(!emailBox.Text.Contains("@"))
+            {
+                MessageBox.Show("Wpisz poprawnie adres mailowy", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
             CheckLogin();
             CheckEmail();
             return true;

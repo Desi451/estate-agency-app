@@ -7,11 +7,9 @@ using System.Globalization;
 
 namespace ProjektBD
 {
-    public static class DataBase
+    public static class DataBase // zmienny zwiazne z bazą danych
     {
-        // zmienny zwiazne z bazami danych
         private static string _connstring = "server=localhost;uid=root;pwd=Kutas123;database=projektbd";
-
         public static string Connstring => _connstring;
     }
 }
