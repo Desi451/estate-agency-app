@@ -8,15 +8,19 @@ namespace ProjektBD
 {
     public static class User // klasa przechowuje zmienne aktualnie zalogowanego użytkownika
     {
+
         // wartosci typu int
+        private static int loggedUserId; // ta zmienna przechowuje pierwotne ID użytkownika
+        public static int LoggedUserId { get => id; set => id = value; }
+
         private static int id;
         public static int Id { get => id; set => id = value; }
 
         private static int id_rank;
         public static int Id_rank { get => id_rank; set => id_rank = value; }
 
-        private static string zip_code; // musi zostac zmieniony z powrotem na wartosc typu int
-        public static string ZipCode { get => zip_code; set => zip_code = value; }
+        private static int zip_code;
+        public static int ZipCode { get => zip_code; set => zip_code = value; }
 
         // wartosci typu string
         private static string first_name;

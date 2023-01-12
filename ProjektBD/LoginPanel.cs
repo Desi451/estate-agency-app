@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using ProjektBD.sidebar_classes;
 
 namespace ProjektBD
 {
@@ -40,7 +41,8 @@ namespace ProjektBD
             MySqlDataReader reader = sda.ExecuteReader();
             while (reader.Read())
             {
-                User.Id = Int32.Parse(reader["id"].ToString());
+                User.LoggedUserId = reader.GetInt32("id");
+                User.Id = reader.GetInt32("id");
                 User.FirstName = reader["first_name"].ToString();
                 User.LastName = reader["last_name"].ToString();
                 User.Login = reader["login"].ToString();
@@ -50,7 +52,7 @@ namespace ProjektBD
                 User.Street = reader["street"].ToString();
                 User.No_Building = reader["no_building"].ToString();
                 User.No_apartament = reader["no_apartament"].ToString();
-                User.ZipCode = reader["zip_code"].ToString();
+                User.ZipCode = reader.GetInt32("zip_code");
                 User.City = reader["city"].ToString();
             }
             con.Close();

@@ -10,13 +10,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ProjektBD.sidebar_classes;
 
 namespace ProjektBD
 {
     public partial class RegisterPanel : Form{
 
-        private string temp;
-        private int id_rank;
+        public string temp;
+        private int id_rank;  
 
         public RegisterPanel(){
             InitializeComponent();
@@ -24,8 +25,9 @@ namespace ProjektBD
             rankBox.Items.Add("Agent Nieruchomości");
         }
 
-        private bool CheckLogin()
+        private bool CheckLogin()  // do wyrzucenia?
         {
+
             string query = "SELECT COUNT(*) AS liczba FROM projektbd.users WHERE login= '" + loginBox.Text + "' ";
 
             MySqlConnection con = new MySqlConnection();
@@ -37,7 +39,7 @@ namespace ProjektBD
             {
                 temp = reader["liczba"].ToString();
             }
-            if (temp == "1")
+            if (reader["liczba"].ToString() == "1")
             {
                 MessageBox.Show("login juz wykorzstywany", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 con.Close();
@@ -46,7 +48,8 @@ namespace ProjektBD
             con.Close();
             return true;
         }
-        private bool CheckEmail()
+
+        private bool CheckEmail() // do wyrzucenia?
         {
             string query = "SELECT COUNT(*) AS liczba FROM projektbd.users WHERE email= '" + emailBox.Text + "' ";
 
@@ -104,11 +107,12 @@ namespace ProjektBD
             {
                 id_rank = 2;
             }
+
             try
             {
                 string query = "INSERT INTO projektbd.users(first_name,last_name,login,password,email,id_rank,street,no_building,no_apartament,zip_code,city) " +
                 "VALUES('" + first_nameBox.Text + "','" + last_nameBox.Text + "','" + loginBox.Text + "','" + passwordBox.Text + "','" + emailBox.Text + "','" +
-                id_rank.ToString() + "','" + streetBox.Text + "','" + no_buildingBox.Text + "','" + no_apartamentBox.Text + "','" + zip_codeTxt.Text + "','" + cityBox.Text + "');";
+                id_rank + "','" + streetBox.Text + "','" + no_buildingBox.Text + "','" + no_apartamentBox.Text + "','" + int.Parse(zip_codeBox.Text) + "','" + cityBox.Text + "');";
 
                 MySqlConnection con = new MySqlConnection();
                 con.ConnectionString = DataBase.Connstring;
@@ -116,12 +120,12 @@ namespace ProjektBD
                 MySqlCommand cmd = new MySqlCommand(query, con);
                 cmd.ExecuteReader();
                 con.Close();
+                MessageBox.Show("Pomyślnie Zarejestrowano!", "Rejestracja", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch(Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-            MessageBox.Show("Pomyślnie Zarejestrowano!", "Rejestracja", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void registerBtn_Click(object sender, EventArgs e){
