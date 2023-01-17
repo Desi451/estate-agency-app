@@ -35,6 +35,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.loginBtn = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // registerBtn
@@ -101,11 +102,19 @@
             this.label3.TabIndex = 6;
             this.label3.Text = "Logowanie";
             // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(37, 257);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(252, 20);
+            this.dateTimePicker1.TabIndex = 59;
+            // 
             // LoginPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(334, 311);
+            this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.loginBtn);
             this.Controls.Add(this.label2);
@@ -129,6 +138,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button loginBtn;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }
 

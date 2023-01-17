@@ -30,6 +30,9 @@
         {
             this.editProfileBtn = new System.Windows.Forms.Button();
             this.editProfilePanel = new System.Windows.Forms.Panel();
+            this.userListBox = new System.Windows.Forms.ComboBox();
+            this.confirmDelUserBtn = new System.Windows.Forms.Button();
+            this.confirmEditUserBtn = new System.Windows.Forms.Button();
             this.rankBox = new System.Windows.Forms.ComboBox();
             this.cityBox = new System.Windows.Forms.TextBox();
             this.zip_codeBox = new System.Windows.Forms.TextBox();
@@ -63,11 +66,20 @@
             this.button8 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
-            this.confirmEditUserBtn = new System.Windows.Forms.Button();
-            this.confirmDelUserBtn = new System.Windows.Forms.Button();
-            this.userListBox = new System.Windows.Forms.ComboBox();
             this.addMeetingPanel = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.listBoxMeetingsUser = new System.Windows.Forms.ComboBox();
+            this.listBoxMeetingsAgent = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.listBoxMeetingsStatus = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.listBoxBuildings = new System.Windows.Forms.ListBox();
+            this.dateTimeAddMeeting = new System.Windows.Forms.DateTimePicker();
+            this.label5 = new System.Windows.Forms.Label();
+            this.ConfirmAddMeetingBtn = new System.Windows.Forms.Button();
             this.editProfilePanel.SuspendLayout();
+            this.addMeetingPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // editProfileBtn
@@ -78,7 +90,7 @@
             this.editProfileBtn.TabIndex = 0;
             this.editProfileBtn.Text = "Edytuj profil";
             this.editProfileBtn.UseVisualStyleBackColor = true;
-            this.editProfileBtn.Click += new System.EventHandler(this.editProfileBtn_Click);
+            this.editProfileBtn.Click += new System.EventHandler(this.EditProfileBtn_Click);
             // 
             // editProfilePanel
             // 
@@ -112,6 +124,37 @@
             this.editProfilePanel.Name = "editProfilePanel";
             this.editProfilePanel.Size = new System.Drawing.Size(1084, 665);
             this.editProfilePanel.TabIndex = 1;
+            // 
+            // userListBox
+            // 
+            this.userListBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.userListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.userListBox.FormattingEnabled = true;
+            this.userListBox.Location = new System.Drawing.Point(57, 56);
+            this.userListBox.Name = "userListBox";
+            this.userListBox.Size = new System.Drawing.Size(564, 24);
+            this.userListBox.TabIndex = 48;
+            this.userListBox.SelectedIndexChanged += new System.EventHandler(this.userListBox_SelectedIndexChanged);
+            // 
+            // confirmDelUserBtn
+            // 
+            this.confirmDelUserBtn.Location = new System.Drawing.Point(775, 559);
+            this.confirmDelUserBtn.Name = "confirmDelUserBtn";
+            this.confirmDelUserBtn.Size = new System.Drawing.Size(150, 50);
+            this.confirmDelUserBtn.TabIndex = 47;
+            this.confirmDelUserBtn.Text = "Usuń Użytkownika";
+            this.confirmDelUserBtn.UseVisualStyleBackColor = true;
+            this.confirmDelUserBtn.Click += new System.EventHandler(this.confirmDelUserBtn_Click);
+            // 
+            // confirmEditUserBtn
+            // 
+            this.confirmEditUserBtn.Location = new System.Drawing.Point(931, 559);
+            this.confirmEditUserBtn.Name = "confirmEditUserBtn";
+            this.confirmEditUserBtn.Size = new System.Drawing.Size(150, 50);
+            this.confirmEditUserBtn.TabIndex = 46;
+            this.confirmEditUserBtn.Text = "Zatwierdź zmiany";
+            this.confirmEditUserBtn.UseVisualStyleBackColor = true;
+            this.confirmEditUserBtn.Click += new System.EventHandler(this.ConfirmEditUserBtn_Click);
             // 
             // rankBox
             // 
@@ -311,6 +354,7 @@
             this.addMeetingBtn.TabIndex = 2;
             this.addMeetingBtn.Text = "Dodaj Spotkanie";
             this.addMeetingBtn.UseVisualStyleBackColor = true;
+            this.addMeetingBtn.Click += new System.EventHandler(this.addMeetingBtn_Click);
             // 
             // button1
             // 
@@ -402,44 +446,134 @@
             this.button10.Text = "button10";
             this.button10.UseVisualStyleBackColor = true;
             // 
-            // confirmEditUserBtn
-            // 
-            this.confirmEditUserBtn.Location = new System.Drawing.Point(931, 559);
-            this.confirmEditUserBtn.Name = "confirmEditUserBtn";
-            this.confirmEditUserBtn.Size = new System.Drawing.Size(150, 50);
-            this.confirmEditUserBtn.TabIndex = 46;
-            this.confirmEditUserBtn.Text = "Zatwierdź zmiany";
-            this.confirmEditUserBtn.UseVisualStyleBackColor = true;
-            this.confirmEditUserBtn.Click += new System.EventHandler(this.confirmEditUserBtn_Click);
-            // 
-            // confirmDelUserBtn
-            // 
-            this.confirmDelUserBtn.Location = new System.Drawing.Point(775, 559);
-            this.confirmDelUserBtn.Name = "confirmDelUserBtn";
-            this.confirmDelUserBtn.Size = new System.Drawing.Size(150, 50);
-            this.confirmDelUserBtn.TabIndex = 47;
-            this.confirmDelUserBtn.Text = "Usuń Użytkownika";
-            this.confirmDelUserBtn.UseVisualStyleBackColor = true;
-            this.confirmDelUserBtn.Click += new System.EventHandler(this.confirmDelUserBtn_Click);
-            // 
-            // userListBox
-            // 
-            this.userListBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.userListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.userListBox.FormattingEnabled = true;
-            this.userListBox.Location = new System.Drawing.Point(57, 56);
-            this.userListBox.Name = "userListBox";
-            this.userListBox.Size = new System.Drawing.Size(564, 24);
-            this.userListBox.TabIndex = 48;
-            this.userListBox.SelectedIndexChanged += new System.EventHandler(this.userListBox_SelectedIndexChanged);
-            // 
             // addMeetingPanel
             // 
             this.addMeetingPanel.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.addMeetingPanel.Controls.Add(this.ConfirmAddMeetingBtn);
+            this.addMeetingPanel.Controls.Add(this.label5);
+            this.addMeetingPanel.Controls.Add(this.dateTimeAddMeeting);
+            this.addMeetingPanel.Controls.Add(this.listBoxBuildings);
+            this.addMeetingPanel.Controls.Add(this.label4);
+            this.addMeetingPanel.Controls.Add(this.listBoxMeetingsStatus);
+            this.addMeetingPanel.Controls.Add(this.label3);
+            this.addMeetingPanel.Controls.Add(this.label2);
+            this.addMeetingPanel.Controls.Add(this.label1);
+            this.addMeetingPanel.Controls.Add(this.listBoxMeetingsUser);
+            this.addMeetingPanel.Controls.Add(this.listBoxMeetingsAgent);
             this.addMeetingPanel.Location = new System.Drawing.Point(168, 12);
             this.addMeetingPanel.Name = "addMeetingPanel";
             this.addMeetingPanel.Size = new System.Drawing.Size(1084, 665);
             this.addMeetingPanel.TabIndex = 49;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label2.Location = new System.Drawing.Point(244, 221);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(45, 16);
+            this.label2.TabIndex = 52;
+            this.label2.Text = "Klient";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label1.Location = new System.Drawing.Point(244, 164);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(43, 15);
+            this.label1.TabIndex = 51;
+            this.label1.Text = "Agent";
+            // 
+            // listBoxMeetingsUser
+            // 
+            this.listBoxMeetingsUser.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.listBoxMeetingsUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.listBoxMeetingsUser.FormattingEnabled = true;
+            this.listBoxMeetingsUser.Location = new System.Drawing.Point(312, 218);
+            this.listBoxMeetingsUser.Name = "listBoxMeetingsUser";
+            this.listBoxMeetingsUser.Size = new System.Drawing.Size(521, 24);
+            this.listBoxMeetingsUser.TabIndex = 50;
+            // 
+            // listBoxMeetingsAgent
+            // 
+            this.listBoxMeetingsAgent.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.listBoxMeetingsAgent.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.listBoxMeetingsAgent.FormattingEnabled = true;
+            this.listBoxMeetingsAgent.Location = new System.Drawing.Point(312, 158);
+            this.listBoxMeetingsAgent.Name = "listBoxMeetingsAgent";
+            this.listBoxMeetingsAgent.Size = new System.Drawing.Size(521, 24);
+            this.listBoxMeetingsAgent.TabIndex = 49;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label3.Location = new System.Drawing.Point(244, 105);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(130, 16);
+            this.label3.TabIndex = 53;
+            this.label3.Text = "Rodzaj Spotkania";
+            // 
+            // listBoxMeetingsStatus
+            // 
+            this.listBoxMeetingsStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.listBoxMeetingsStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.listBoxMeetingsStatus.FormattingEnabled = true;
+            this.listBoxMeetingsStatus.Location = new System.Drawing.Point(415, 102);
+            this.listBoxMeetingsStatus.Name = "listBoxMeetingsStatus";
+            this.listBoxMeetingsStatus.Size = new System.Drawing.Size(418, 24);
+            this.listBoxMeetingsStatus.TabIndex = 54;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label4.Location = new System.Drawing.Point(481, 303);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(110, 16);
+            this.label4.TabIndex = 56;
+            this.label4.Text = "Nieruchomości";
+            // 
+            // listBoxBuildings
+            // 
+            this.listBoxBuildings.FormattingEnabled = true;
+            this.listBoxBuildings.Location = new System.Drawing.Point(247, 325);
+            this.listBoxBuildings.Name = "listBoxBuildings";
+            this.listBoxBuildings.Size = new System.Drawing.Size(586, 95);
+            this.listBoxBuildings.TabIndex = 57;
+            // 
+            // dateTimeAddMeeting
+            // 
+            this.dateTimeAddMeeting.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.dateTimeAddMeeting.CustomFormat = "yyyy-MM-dd hh:mm:ss";
+            this.dateTimeAddMeeting.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.dateTimeAddMeeting.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimeAddMeeting.Location = new System.Drawing.Point(596, 259);
+            this.dateTimeAddMeeting.MinDate = new System.DateTime(2023, 1, 17, 0, 0, 0, 0);
+            this.dateTimeAddMeeting.Name = "dateTimeAddMeeting";
+            this.dateTimeAddMeeting.Size = new System.Drawing.Size(236, 26);
+            this.dateTimeAddMeeting.TabIndex = 58;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label5.Location = new System.Drawing.Point(244, 266);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(113, 16);
+            this.label5.TabIndex = 59;
+            this.label5.Text = "Data Zdarzenia";
+            // 
+            // ConfirmAddMeetingBtn
+            // 
+            this.ConfirmAddMeetingBtn.Location = new System.Drawing.Point(466, 447);
+            this.ConfirmAddMeetingBtn.Name = "ConfirmAddMeetingBtn";
+            this.ConfirmAddMeetingBtn.Size = new System.Drawing.Size(150, 50);
+            this.ConfirmAddMeetingBtn.TabIndex = 50;
+            this.ConfirmAddMeetingBtn.Text = "button11";
+            this.ConfirmAddMeetingBtn.UseVisualStyleBackColor = true;
+            this.ConfirmAddMeetingBtn.Click += new System.EventHandler(this.ConfirmAddMeetingBtn_Click);
             // 
             // AdminPanel
             // 
@@ -458,12 +592,14 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.addMeetingBtn);
             this.Controls.Add(this.editProfileBtn);
-            this.Controls.Add(this.editProfilePanel);
             this.Controls.Add(this.addMeetingPanel);
+            this.Controls.Add(this.editProfilePanel);
             this.Name = "AdminPanel";
             this.Text = "Panel Administratora";
             this.editProfilePanel.ResumeLayout(false);
             this.editProfilePanel.PerformLayout();
+            this.addMeetingPanel.ResumeLayout(false);
+            this.addMeetingPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -509,5 +645,16 @@
         private System.Windows.Forms.Button confirmDelUserBtn;
         private System.Windows.Forms.ComboBox userListBox;
         private System.Windows.Forms.Panel addMeetingPanel;
+        private System.Windows.Forms.ComboBox listBoxMeetingsUser;
+        private System.Windows.Forms.ComboBox listBoxMeetingsAgent;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox listBoxMeetingsStatus;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ListBox listBoxBuildings;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.DateTimePicker dateTimeAddMeeting;
+        private System.Windows.Forms.Button ConfirmAddMeetingBtn;
+        private System.Windows.Forms.Label label5;
     }
 }

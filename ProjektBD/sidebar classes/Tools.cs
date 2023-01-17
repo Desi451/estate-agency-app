@@ -61,6 +61,16 @@ namespace ProjektBD.sidebar_classes
             con.Close();
         }
 
+        public static void CleanTextBoxesUser(TextBox t1, TextBox t2, TextBox t3, TextBox t4,
+        TextBox t5, ComboBox c6, TextBox t7, TextBox t8, TextBox t9, TextBox t10, TextBox t11)
+        {
+            TextBox[] array = { t1, t2, t3, t4, t5, t7, t8, t8, t9, t10, t11 };
+                foreach (TextBox tb in array)
+                {
+                        tb.Text = "";
+                }
+        }
+
         public static void FillAllData(int id1, string first_name1, string last_name1, string login1, string password1, string email1,
            int id_rank1, string street1, string no_building1, string no_apartament1, int zip_code1, string city1)
         {
@@ -78,14 +88,23 @@ namespace ProjektBD.sidebar_classes
             User.City = city1;
         }
 
+        // metoda do czytania id ze stringa
         public static int ReadComboId(string text)
         {
             int start= text.IndexOf(':');
             int end= text.IndexOf(".");
-            text = text.Substring(start +1, end-3);
+            text = text.Substring(start +1, end);
             end = Int32.Parse(text);
             return end;
         }
 
+        public static int ReadMeetingId(string text)
+        {
+            int start = 0;
+            int end = text.IndexOf(".");
+            text = text.Substring(start, end);
+            end = Int32.Parse(text);
+            return end;
+        }
     }
 }
