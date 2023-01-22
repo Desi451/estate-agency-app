@@ -61,7 +61,6 @@
             this.addBuildingBtn = new System.Windows.Forms.Button();
             this.editBuildingBtn = new System.Windows.Forms.Button();
             this.LogOutBtn = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
             this.addMeetingPanel = new System.Windows.Forms.Panel();
             this.label26 = new System.Windows.Forms.Label();
             this.ConfirmAddMeetingBtn = new System.Windows.Forms.Button();
@@ -152,6 +151,7 @@
             this.ListBoxTypeTransactionEdit = new System.Windows.Forms.ComboBox();
             this.ListBoxTypeBuildingEdit = new System.Windows.Forms.ComboBox();
             this.ConfirmEditBuildingBtn = new System.Windows.Forms.Button();
+            this.panelBtn = new System.Windows.Forms.Panel();
             this.editProfilePanel.SuspendLayout();
             this.addMeetingPanel.SuspendLayout();
             this.editMeetingPanel.SuspendLayout();
@@ -161,6 +161,9 @@
             // 
             // editProfileBtn
             // 
+            this.editProfileBtn.FlatAppearance.BorderSize = 0;
+            this.editProfileBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.editProfileBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.editProfileBtn.Location = new System.Drawing.Point(12, 12);
             this.editProfileBtn.Name = "editProfileBtn";
             this.editProfileBtn.Size = new System.Drawing.Size(150, 50);
@@ -171,7 +174,7 @@
             // 
             // editProfilePanel
             // 
-            this.editProfilePanel.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.editProfilePanel.BackColor = System.Drawing.Color.SlateBlue;
             this.editProfilePanel.Controls.Add(this.label24);
             this.editProfilePanel.Controls.Add(this.userListBox);
             this.editProfilePanel.Controls.Add(this.confirmDelUserBtn);
@@ -198,7 +201,7 @@
             this.editProfilePanel.Controls.Add(this.loginTxt);
             this.editProfilePanel.Controls.Add(this.last_nameTxt);
             this.editProfilePanel.Controls.Add(this.first_nameTxt);
-            this.editProfilePanel.Location = new System.Drawing.Point(168, 12);
+            this.editProfilePanel.Location = new System.Drawing.Point(175, 3);
             this.editProfilePanel.Name = "editProfilePanel";
             this.editProfilePanel.Size = new System.Drawing.Size(1084, 665);
             this.editProfilePanel.TabIndex = 1;
@@ -443,7 +446,10 @@
             // 
             // addMeetingBtn
             // 
-            this.addMeetingBtn.Location = new System.Drawing.Point(12, 68);
+            this.addMeetingBtn.FlatAppearance.BorderSize = 0;
+            this.addMeetingBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addMeetingBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.addMeetingBtn.Location = new System.Drawing.Point(12, 92);
             this.addMeetingBtn.Name = "addMeetingBtn";
             this.addMeetingBtn.Size = new System.Drawing.Size(150, 50);
             this.addMeetingBtn.TabIndex = 2;
@@ -454,7 +460,10 @@
             // editMeetingBtn
             // 
             this.editMeetingBtn.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.editMeetingBtn.Location = new System.Drawing.Point(12, 124);
+            this.editMeetingBtn.FlatAppearance.BorderSize = 0;
+            this.editMeetingBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.editMeetingBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.editMeetingBtn.Location = new System.Drawing.Point(12, 172);
             this.editMeetingBtn.Name = "editMeetingBtn";
             this.editMeetingBtn.Size = new System.Drawing.Size(150, 50);
             this.editMeetingBtn.TabIndex = 3;
@@ -464,7 +473,10 @@
             // 
             // addBuildingBtn
             // 
-            this.addBuildingBtn.Location = new System.Drawing.Point(12, 179);
+            this.addBuildingBtn.FlatAppearance.BorderSize = 0;
+            this.addBuildingBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addBuildingBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.addBuildingBtn.Location = new System.Drawing.Point(12, 252);
             this.addBuildingBtn.Name = "addBuildingBtn";
             this.addBuildingBtn.Size = new System.Drawing.Size(150, 50);
             this.addBuildingBtn.TabIndex = 4;
@@ -474,7 +486,10 @@
             // 
             // editBuildingBtn
             // 
-            this.editBuildingBtn.Location = new System.Drawing.Point(12, 235);
+            this.editBuildingBtn.FlatAppearance.BorderSize = 0;
+            this.editBuildingBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.editBuildingBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.editBuildingBtn.Location = new System.Drawing.Point(12, 332);
             this.editBuildingBtn.Name = "editBuildingBtn";
             this.editBuildingBtn.Size = new System.Drawing.Size(150, 50);
             this.editBuildingBtn.TabIndex = 5;
@@ -484,7 +499,10 @@
             // 
             // LogOutBtn
             // 
-            this.LogOutBtn.Location = new System.Drawing.Point(12, 291);
+            this.LogOutBtn.FlatAppearance.BorderSize = 0;
+            this.LogOutBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.LogOutBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.LogOutBtn.Location = new System.Drawing.Point(12, 412);
             this.LogOutBtn.Name = "LogOutBtn";
             this.LogOutBtn.Size = new System.Drawing.Size(150, 50);
             this.LogOutBtn.TabIndex = 6;
@@ -492,18 +510,9 @@
             this.LogOutBtn.UseVisualStyleBackColor = true;
             this.LogOutBtn.Click += new System.EventHandler(this.LogOutBtn_Click);
             // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(12, 347);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(150, 50);
-            this.button5.TabIndex = 7;
-            this.button5.Text = "button5";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
             // addMeetingPanel
             // 
-            this.addMeetingPanel.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.addMeetingPanel.BackColor = System.Drawing.Color.SlateBlue;
             this.addMeetingPanel.Controls.Add(this.label26);
             this.addMeetingPanel.Controls.Add(this.ConfirmAddMeetingBtn);
             this.addMeetingPanel.Controls.Add(this.label5);
@@ -516,7 +525,7 @@
             this.addMeetingPanel.Controls.Add(this.label1);
             this.addMeetingPanel.Controls.Add(this.listBoxMeetingsUser);
             this.addMeetingPanel.Controls.Add(this.listBoxMeetingsAgent);
-            this.addMeetingPanel.Location = new System.Drawing.Point(168, 12);
+            this.addMeetingPanel.Location = new System.Drawing.Point(175, 3);
             this.addMeetingPanel.Name = "addMeetingPanel";
             this.addMeetingPanel.Size = new System.Drawing.Size(1084, 665);
             this.addMeetingPanel.TabIndex = 49;
@@ -644,7 +653,7 @@
             // 
             // editMeetingPanel
             // 
-            this.editMeetingPanel.BackColor = System.Drawing.SystemColors.Info;
+            this.editMeetingPanel.BackColor = System.Drawing.Color.SlateBlue;
             this.editMeetingPanel.Controls.Add(this.label25);
             this.editMeetingPanel.Controls.Add(this.label11);
             this.editMeetingPanel.Controls.Add(this.editMeetingsList);
@@ -660,7 +669,7 @@
             this.editMeetingPanel.Controls.Add(this.label8);
             this.editMeetingPanel.Controls.Add(this.listBoxEditMeetingsAgent);
             this.editMeetingPanel.Controls.Add(this.listBoxEditMeetingsStatus);
-            this.editMeetingPanel.Location = new System.Drawing.Point(168, 12);
+            this.editMeetingPanel.Location = new System.Drawing.Point(175, 3);
             this.editMeetingPanel.Name = "editMeetingPanel";
             this.editMeetingPanel.Size = new System.Drawing.Size(1084, 665);
             this.editMeetingPanel.TabIndex = 60;
@@ -819,7 +828,7 @@
             // 
             // TextBoxBuildingsRentTime
             // 
-            this.TextBoxBuildingsRentTime.BackColor = System.Drawing.SystemColors.Highlight;
+            this.TextBoxBuildingsRentTime.BackColor = System.Drawing.Color.SlateBlue;
             this.TextBoxBuildingsRentTime.Controls.Add(this.label23);
             this.TextBoxBuildingsRentTime.Controls.Add(this.label22);
             this.TextBoxBuildingsRentTime.Controls.Add(this.TextBoxBuildingSizeLand);
@@ -848,7 +857,7 @@
             this.TextBoxBuildingsRentTime.Controls.Add(this.ListBoxBuildingTransaction);
             this.TextBoxBuildingsRentTime.Controls.Add(this.ListBoxBuildingType);
             this.TextBoxBuildingsRentTime.Controls.Add(this.ConfirmAddBuildingBtn);
-            this.TextBoxBuildingsRentTime.Location = new System.Drawing.Point(168, 12);
+            this.TextBoxBuildingsRentTime.Location = new System.Drawing.Point(175, 3);
             this.TextBoxBuildingsRentTime.Name = "TextBoxBuildingsRentTime";
             this.TextBoxBuildingsRentTime.Size = new System.Drawing.Size(1084, 665);
             this.TextBoxBuildingsRentTime.TabIndex = 49;
@@ -1117,7 +1126,7 @@
             // 
             // editBuildingPanel
             // 
-            this.editBuildingPanel.BackColor = System.Drawing.Color.Green;
+            this.editBuildingPanel.BackColor = System.Drawing.Color.SlateBlue;
             this.editBuildingPanel.Controls.Add(this.LbSelectBuildingEdit);
             this.editBuildingPanel.Controls.Add(this.label41);
             this.editBuildingPanel.Controls.Add(this.ConfrimDelBuildingBtn);
@@ -1149,7 +1158,7 @@
             this.editBuildingPanel.Controls.Add(this.ListBoxTypeTransactionEdit);
             this.editBuildingPanel.Controls.Add(this.ListBoxTypeBuildingEdit);
             this.editBuildingPanel.Controls.Add(this.ConfirmEditBuildingBtn);
-            this.editBuildingPanel.Location = new System.Drawing.Point(168, 12);
+            this.editBuildingPanel.Location = new System.Drawing.Point(175, 3);
             this.editBuildingPanel.Name = "editBuildingPanel";
             this.editBuildingPanel.Size = new System.Drawing.Size(1084, 665);
             this.editBuildingPanel.TabIndex = 90;
@@ -1445,23 +1454,32 @@
             this.ConfirmEditBuildingBtn.UseVisualStyleBackColor = true;
             this.ConfirmEditBuildingBtn.Click += new System.EventHandler(this.ConfirmEditBuildingBtn_Click);
             // 
+            // panelBtn
+            // 
+            this.panelBtn.BackColor = System.Drawing.Color.DarkSlateBlue;
+            this.panelBtn.Location = new System.Drawing.Point(-28, -20);
+            this.panelBtn.Name = "panelBtn";
+            this.panelBtn.Size = new System.Drawing.Size(200, 794);
+            this.panelBtn.TabIndex = 121;
+            // 
             // AdminPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.SlateBlue;
             this.ClientSize = new System.Drawing.Size(1264, 681);
-            this.Controls.Add(this.button5);
+            this.Controls.Add(this.editProfileBtn);
+            this.Controls.Add(this.addMeetingBtn);
             this.Controls.Add(this.LogOutBtn);
             this.Controls.Add(this.editBuildingBtn);
             this.Controls.Add(this.addBuildingBtn);
             this.Controls.Add(this.editMeetingBtn);
-            this.Controls.Add(this.addMeetingBtn);
-            this.Controls.Add(this.editProfileBtn);
+            this.Controls.Add(this.TextBoxBuildingsRentTime);
+            this.Controls.Add(this.editProfilePanel);
             this.Controls.Add(this.editBuildingPanel);
             this.Controls.Add(this.editMeetingPanel);
             this.Controls.Add(this.addMeetingPanel);
-            this.Controls.Add(this.TextBoxBuildingsRentTime);
-            this.Controls.Add(this.editProfilePanel);
+            this.Controls.Add(this.panelBtn);
             this.Name = "AdminPanel";
             this.Text = "Panel Administratora";
             this.editProfilePanel.ResumeLayout(false);
@@ -1509,7 +1527,6 @@
         private System.Windows.Forms.Button addBuildingBtn;
         private System.Windows.Forms.Button editBuildingBtn;
         private System.Windows.Forms.Button LogOutBtn;
-        private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button confirmEditUserBtn;
         private System.Windows.Forms.Button confirmDelUserBtn;
         private System.Windows.Forms.ComboBox userListBox;
@@ -1604,5 +1621,6 @@
         private System.Windows.Forms.ComboBox ListBoxTypeBuildingEdit;
         private System.Windows.Forms.Button ConfirmEditBuildingBtn;
         private System.Windows.Forms.ListBox LbSelectBuildingEdit;
+        private System.Windows.Forms.Panel panelBtn;
     }
 }

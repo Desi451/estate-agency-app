@@ -35,6 +35,7 @@ namespace ProjektBD
             Tools.LoadBasementListBox(ListBoxBasementEdit);
             Tools.LoadBasementListBox(ListBoxBuildingBasement);
             Tools.FillRankBox(rankBoxCategory);
+            panelBtn.Visible= true;
         }
 
         // metody ogolne
@@ -44,6 +45,7 @@ namespace ProjektBD
             {
                 tb.Visible = false;
             }
+            panelBtn.Visible = true;
         }
 
         // metody zwiazane z edycja i usuwaniem profilu
@@ -157,7 +159,7 @@ namespace ProjektBD
                 int selectedId = Tools.ReadComboId(userListBox.Text);
                 string query = "SELECT * FROM projektbd.users WHERE id= '" + selectedId + "';";
 
-                Tools.FillTextBoxesUser(first_nameBox, last_nameBox, loginBox, passwordBox, emailBox,
+                Tools.FillTextBoxesAdmin(first_nameBox, last_nameBox, loginBox, passwordBox, emailBox,
                 rankBoxCategory, streetBox, no_buildingBox, no_apartamentBox, zip_codeBox, cityBox, query);
             }
             catch(Exception ex)
@@ -597,7 +599,7 @@ namespace ProjektBD
         // metoda odpowiedzialna za wylogowanie
         private void LogOutBtn_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
 
         private void ListBoxTypeTransactionEdit_SelectedIndexChanged(object sender, EventArgs e)
@@ -605,7 +607,6 @@ namespace ProjektBD
             Tools.LoadTransactionBuildings(ListBoxTypeTransactionEdit.SelectedIndex,
             TextBoxSellEdit, TextBoxRentEdit, TextBoxRentTimeEdit);
         }
-
 
         // walidacja edycji profilu
         private void First_nameBox_KeyPress(object sender, KeyPressEventArgs e)
@@ -668,6 +669,7 @@ namespace ProjektBD
         {
             Tools.allowNumbersOnly(TextBoxBuildingsSellPrice, e);
         }
+
         // walidacja edycji budynku
         private void TBeditBuildigsSize_KeyPress(object sender, KeyPressEventArgs e)
         {
