@@ -90,6 +90,12 @@
     <Compile Include="AdminPanel.Designer.cs">
       <DependentUpon>AdminPanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="AgentPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AgentPanel.Designer.cs">
+      <DependentUpon>AgentPanel.cs</DependentUpon>
+    </Compile>
     <Compile Include="sidebar classes\DataBase.cs" />
     <Compile Include="LoginPanel.cs">
       <SubType>Form</SubType>
@@ -107,8 +113,17 @@
     </Compile>
     <Compile Include="sidebar classes\Tools.cs" />
     <Compile Include="sidebar classes\User.cs" />
+    <Compile Include="UserPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserPanel.Designer.cs">
+      <DependentUpon>UserPanel.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AdminPanel.resx">
       <DependentUpon>AdminPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AgentPanel.resx">
+      <DependentUpon>AgentPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginPanel.resx">
       <DependentUpon>LoginPanel.cs</DependentUpon>
@@ -124,6 +139,9 @@
     </Compile>
     <EmbeddedResource Include="RegisterPanel.resx">
       <DependentUpon>RegisterPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserPanel.resx">
+      <DependentUpon>UserPanel.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

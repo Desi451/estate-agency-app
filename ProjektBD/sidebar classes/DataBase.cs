@@ -10,7 +10,7 @@ namespace ProjektBD
 {
     public static class DataBase // zmienny zwiazne z bazą danych
     {
-        private static string _connstring = "server=localhost;uid=root;pwd=Kutas123;database=projektbd";
+        private static string _connstring = "server=localhost;uid=root;pwd=Kutas123;database=projektbd;Convert Zero Datetime=True";
         public static string Connstring => _connstring;
 
 

@@ -59,11 +59,25 @@ namespace ProjektBD
 
             if (User.Login != null || User.Password != null)
             {
-                MessageBox.Show("Logowanie Udane!", "Logowanie", MessageBoxButtons.OK, MessageBoxIcon.Information); 
-                AdminPanel admin = new AdminPanel();
-                admin.Show();
-                this.Hide();
-
+                MessageBox.Show("Logowanie Udane!", "Logowanie", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if(User.Id_rank == 1)
+                {
+                    UserPanel user = new UserPanel();
+                    user.Show();
+                    //this.Hide();
+                }
+                else if(User.Id_rank ==2)
+                {
+                    AgentPanel agent = new AgentPanel();
+                    agent.Show();
+                    //this.Hide();
+                }
+                else if(User.Id_rank ==3)
+                {
+                    AdminPanel admin = new AdminPanel();
+                    admin.Show();
+                    //this.Hide();
+                }
             }
             else
             {

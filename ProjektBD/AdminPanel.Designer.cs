@@ -30,6 +30,7 @@
         {
             this.editProfileBtn = new System.Windows.Forms.Button();
             this.editProfilePanel = new System.Windows.Forms.Panel();
+            this.label24 = new System.Windows.Forms.Label();
             this.userListBox = new System.Windows.Forms.ComboBox();
             this.confirmDelUserBtn = new System.Windows.Forms.Button();
             this.confirmEditUserBtn = new System.Windows.Forms.Button();
@@ -56,30 +57,106 @@
             this.last_nameTxt = new System.Windows.Forms.Label();
             this.first_nameTxt = new System.Windows.Forms.Label();
             this.addMeetingBtn = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.editMeetingBtn = new System.Windows.Forms.Button();
+            this.addBuildingBtn = new System.Windows.Forms.Button();
+            this.editBuildingBtn = new System.Windows.Forms.Button();
+            this.LogOutBtn = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
             this.addMeetingPanel = new System.Windows.Forms.Panel();
+            this.label26 = new System.Windows.Forms.Label();
+            this.ConfirmAddMeetingBtn = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.dateTimeAddMeeting = new System.Windows.Forms.DateTimePicker();
+            this.listBoxBuildings = new System.Windows.Forms.ListBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.listBoxMeetingsStatus = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.listBoxMeetingsUser = new System.Windows.Forms.ComboBox();
             this.listBoxMeetingsAgent = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.listBoxMeetingsStatus = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.listBoxBuildings = new System.Windows.Forms.ListBox();
-            this.dateTimeAddMeeting = new System.Windows.Forms.DateTimePicker();
-            this.label5 = new System.Windows.Forms.Label();
-            this.ConfirmAddMeetingBtn = new System.Windows.Forms.Button();
+            this.editMeetingPanel = new System.Windows.Forms.Panel();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.editMeetingsList = new System.Windows.Forms.ComboBox();
+            this.ConfirmDelMeetingsBtn = new System.Windows.Forms.Button();
+            this.listBoxEditMeetingsUser = new System.Windows.Forms.ComboBox();
+            this.ConfirmEditMeetingsBtn = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.dateTimeEditMeeting = new System.Windows.Forms.DateTimePicker();
+            this.listBoxBuildingsEditMeetings = new System.Windows.Forms.ListBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.listBoxEditMeetingsAgent = new System.Windows.Forms.ComboBox();
+            this.listBoxEditMeetingsStatus = new System.Windows.Forms.ComboBox();
+            this.TextBoxBuildingsRentTime = new System.Windows.Forms.Panel();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.TextBoxBuildingSizeLand = new System.Windows.Forms.TextBox();
+            this.label21 = new System.Windows.Forms.Label();
+            this.Najem = new System.Windows.Forms.Label();
+            this.Cena = new System.Windows.Forms.Label();
+            this.TextBoxBuildingsTimeRent = new System.Windows.Forms.TextBox();
+            this.TextBoxBuildingsRentPrice = new System.Windows.Forms.TextBox();
+            this.TextBoxBuildingsSellPrice = new System.Windows.Forms.TextBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.TextBoxBuildingCity = new System.Windows.Forms.TextBox();
+            this.TextBoxBuildingZipCode = new System.Windows.Forms.TextBox();
+            this.TextBoxBuildingNo_apartament = new System.Windows.Forms.TextBox();
+            this.TextBoxBuildingNo_building = new System.Windows.Forms.TextBox();
+            this.TextBoxBuildingStreet = new System.Windows.Forms.TextBox();
+            this.TextBoxBuildingSize = new System.Windows.Forms.TextBox();
+            this.ListBoxBuildingBasement = new System.Windows.Forms.ComboBox();
+            this.ListBoxBuildingTransaction = new System.Windows.Forms.ComboBox();
+            this.ListBoxBuildingType = new System.Windows.Forms.ComboBox();
+            this.ConfirmAddBuildingBtn = new System.Windows.Forms.Button();
+            this.editBuildingPanel = new System.Windows.Forms.Panel();
+            this.LbSelectBuildingEdit = new System.Windows.Forms.ListBox();
+            this.label41 = new System.Windows.Forms.Label();
+            this.ConfrimDelBuildingBtn = new System.Windows.Forms.Button();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.TBeditBuildigsLandSize = new System.Windows.Forms.TextBox();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
+            this.TextBoxRentTimeEdit = new System.Windows.Forms.TextBox();
+            this.TextBoxRentEdit = new System.Windows.Forms.TextBox();
+            this.TextBoxSellEdit = new System.Windows.Forms.TextBox();
+            this.label32 = new System.Windows.Forms.Label();
+            this.label33 = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
+            this.label35 = new System.Windows.Forms.Label();
+            this.label36 = new System.Windows.Forms.Label();
+            this.label37 = new System.Windows.Forms.Label();
+            this.label38 = new System.Windows.Forms.Label();
+            this.label39 = new System.Windows.Forms.Label();
+            this.label40 = new System.Windows.Forms.Label();
+            this.TextBoxEditBuildingCity = new System.Windows.Forms.TextBox();
+            this.TextBoxEditBuildingZipCode = new System.Windows.Forms.TextBox();
+            this.TextBoxEditBuildingNoA = new System.Windows.Forms.TextBox();
+            this.TextBoxEditBuildingNoB = new System.Windows.Forms.TextBox();
+            this.TextBoxEditBuildingStreet = new System.Windows.Forms.TextBox();
+            this.TBeditBuildigsSize = new System.Windows.Forms.TextBox();
+            this.ListBoxBasementEdit = new System.Windows.Forms.ComboBox();
+            this.ListBoxTypeTransactionEdit = new System.Windows.Forms.ComboBox();
+            this.ListBoxTypeBuildingEdit = new System.Windows.Forms.ComboBox();
+            this.ConfirmEditBuildingBtn = new System.Windows.Forms.Button();
             this.editProfilePanel.SuspendLayout();
             this.addMeetingPanel.SuspendLayout();
+            this.editMeetingPanel.SuspendLayout();
+            this.TextBoxBuildingsRentTime.SuspendLayout();
+            this.editBuildingPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // editProfileBtn
@@ -95,6 +172,7 @@
             // editProfilePanel
             // 
             this.editProfilePanel.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.editProfilePanel.Controls.Add(this.label24);
             this.editProfilePanel.Controls.Add(this.userListBox);
             this.editProfilePanel.Controls.Add(this.confirmDelUserBtn);
             this.editProfilePanel.Controls.Add(this.confirmEditUserBtn);
@@ -125,30 +203,40 @@
             this.editProfilePanel.Size = new System.Drawing.Size(1084, 665);
             this.editProfilePanel.TabIndex = 1;
             // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label24.Location = new System.Drawing.Point(41, 60);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(194, 31);
+            this.label24.TabIndex = 89;
+            this.label24.Text = "Edycja Profilu";
+            // 
             // userListBox
             // 
             this.userListBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.userListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.userListBox.FormattingEnabled = true;
-            this.userListBox.Location = new System.Drawing.Point(57, 56);
+            this.userListBox.Location = new System.Drawing.Point(218, 142);
             this.userListBox.Name = "userListBox";
             this.userListBox.Size = new System.Drawing.Size(564, 24);
             this.userListBox.TabIndex = 48;
-            this.userListBox.SelectedIndexChanged += new System.EventHandler(this.userListBox_SelectedIndexChanged);
+            this.userListBox.SelectedIndexChanged += new System.EventHandler(this.UserListBox_SelectedIndexChanged);
             // 
             // confirmDelUserBtn
             // 
-            this.confirmDelUserBtn.Location = new System.Drawing.Point(775, 559);
+            this.confirmDelUserBtn.Location = new System.Drawing.Point(593, 415);
             this.confirmDelUserBtn.Name = "confirmDelUserBtn";
             this.confirmDelUserBtn.Size = new System.Drawing.Size(150, 50);
             this.confirmDelUserBtn.TabIndex = 47;
             this.confirmDelUserBtn.Text = "Usuń Użytkownika";
             this.confirmDelUserBtn.UseVisualStyleBackColor = true;
-            this.confirmDelUserBtn.Click += new System.EventHandler(this.confirmDelUserBtn_Click);
+            this.confirmDelUserBtn.Click += new System.EventHandler(this.ConfirmDelUserBtn_Click);
             // 
             // confirmEditUserBtn
             // 
-            this.confirmEditUserBtn.Location = new System.Drawing.Point(931, 559);
+            this.confirmEditUserBtn.Location = new System.Drawing.Point(749, 415);
             this.confirmEditUserBtn.Name = "confirmEditUserBtn";
             this.confirmEditUserBtn.Size = new System.Drawing.Size(150, 50);
             this.confirmEditUserBtn.TabIndex = 46;
@@ -160,56 +248,56 @@
             // 
             this.rankBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.rankBox.FormattingEnabled = true;
-            this.rankBox.Location = new System.Drawing.Point(448, 223);
+            this.rankBox.Location = new System.Drawing.Point(446, 260);
             this.rankBox.Name = "rankBox";
             this.rankBox.Size = new System.Drawing.Size(168, 21);
             this.rankBox.TabIndex = 45;
             // 
             // cityBox
             // 
-            this.cityBox.Location = new System.Drawing.Point(733, 263);
+            this.cityBox.Location = new System.Drawing.Point(731, 300);
             this.cityBox.Name = "cityBox";
             this.cityBox.Size = new System.Drawing.Size(168, 20);
             this.cityBox.TabIndex = 44;
             // 
             // zip_codeBox
             // 
-            this.zip_codeBox.Location = new System.Drawing.Point(733, 223);
+            this.zip_codeBox.Location = new System.Drawing.Point(731, 260);
             this.zip_codeBox.Name = "zip_codeBox";
             this.zip_codeBox.Size = new System.Drawing.Size(168, 20);
             this.zip_codeBox.TabIndex = 43;
             // 
             // no_apartamentBox
             // 
-            this.no_apartamentBox.Location = new System.Drawing.Point(733, 183);
+            this.no_apartamentBox.Location = new System.Drawing.Point(731, 220);
             this.no_apartamentBox.Name = "no_apartamentBox";
             this.no_apartamentBox.Size = new System.Drawing.Size(168, 20);
             this.no_apartamentBox.TabIndex = 42;
             // 
             // no_buildingBox
             // 
-            this.no_buildingBox.Location = new System.Drawing.Point(448, 303);
+            this.no_buildingBox.Location = new System.Drawing.Point(446, 340);
             this.no_buildingBox.Name = "no_buildingBox";
             this.no_buildingBox.Size = new System.Drawing.Size(168, 20);
             this.no_buildingBox.TabIndex = 41;
             // 
             // streetBox
             // 
-            this.streetBox.Location = new System.Drawing.Point(448, 263);
+            this.streetBox.Location = new System.Drawing.Point(446, 300);
             this.streetBox.Name = "streetBox";
             this.streetBox.Size = new System.Drawing.Size(168, 20);
             this.streetBox.TabIndex = 40;
             // 
             // emailBox
             // 
-            this.emailBox.Location = new System.Drawing.Point(448, 186);
+            this.emailBox.Location = new System.Drawing.Point(446, 223);
             this.emailBox.Name = "emailBox";
             this.emailBox.Size = new System.Drawing.Size(168, 20);
             this.emailBox.TabIndex = 39;
             // 
             // passwordBox
             // 
-            this.passwordBox.Location = new System.Drawing.Point(153, 303);
+            this.passwordBox.Location = new System.Drawing.Point(151, 340);
             this.passwordBox.Name = "passwordBox";
             this.passwordBox.PasswordChar = '*';
             this.passwordBox.Size = new System.Drawing.Size(168, 20);
@@ -217,21 +305,21 @@
             // 
             // loginBox
             // 
-            this.loginBox.Location = new System.Drawing.Point(153, 263);
+            this.loginBox.Location = new System.Drawing.Point(151, 300);
             this.loginBox.Name = "loginBox";
             this.loginBox.Size = new System.Drawing.Size(168, 20);
             this.loginBox.TabIndex = 37;
             // 
             // last_nameBox
             // 
-            this.last_nameBox.Location = new System.Drawing.Point(153, 223);
+            this.last_nameBox.Location = new System.Drawing.Point(151, 260);
             this.last_nameBox.Name = "last_nameBox";
             this.last_nameBox.Size = new System.Drawing.Size(168, 20);
             this.last_nameBox.TabIndex = 36;
             // 
             // first_nameBox
             // 
-            this.first_nameBox.Location = new System.Drawing.Point(153, 186);
+            this.first_nameBox.Location = new System.Drawing.Point(151, 223);
             this.first_nameBox.Name = "first_nameBox";
             this.first_nameBox.Size = new System.Drawing.Size(168, 20);
             this.first_nameBox.TabIndex = 35;
@@ -240,7 +328,7 @@
             // 
             this.cityTxt.AutoSize = true;
             this.cityTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.cityTxt.Location = new System.Drawing.Point(637, 266);
+            this.cityTxt.Location = new System.Drawing.Point(635, 303);
             this.cityTxt.Name = "cityTxt";
             this.cityTxt.Size = new System.Drawing.Size(85, 16);
             this.cityTxt.TabIndex = 34;
@@ -250,7 +338,7 @@
             // 
             this.zip_codeTxt.AutoSize = true;
             this.zip_codeTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.zip_codeTxt.Location = new System.Drawing.Point(637, 226);
+            this.zip_codeTxt.Location = new System.Drawing.Point(635, 263);
             this.zip_codeTxt.Name = "zip_codeTxt";
             this.zip_codeTxt.Size = new System.Drawing.Size(91, 16);
             this.zip_codeTxt.TabIndex = 33;
@@ -260,7 +348,7 @@
             // 
             this.no_apartamentTxt.AutoSize = true;
             this.no_apartamentTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.no_apartamentTxt.Location = new System.Drawing.Point(634, 186);
+            this.no_apartamentTxt.Location = new System.Drawing.Point(632, 223);
             this.no_apartamentTxt.Name = "no_apartamentTxt";
             this.no_apartamentTxt.Size = new System.Drawing.Size(67, 16);
             this.no_apartamentTxt.TabIndex = 32;
@@ -270,7 +358,7 @@
             // 
             this.no_buildingTxt.AutoSize = true;
             this.no_buildingTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.no_buildingTxt.Location = new System.Drawing.Point(349, 306);
+            this.no_buildingTxt.Location = new System.Drawing.Point(347, 343);
             this.no_buildingTxt.Name = "no_buildingTxt";
             this.no_buildingTxt.Size = new System.Drawing.Size(79, 16);
             this.no_buildingTxt.TabIndex = 31;
@@ -280,7 +368,7 @@
             // 
             this.streetTxt.AutoSize = true;
             this.streetTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.streetTxt.Location = new System.Drawing.Point(349, 266);
+            this.streetTxt.Location = new System.Drawing.Point(347, 303);
             this.streetTxt.Name = "streetTxt";
             this.streetTxt.Size = new System.Drawing.Size(38, 16);
             this.streetTxt.TabIndex = 30;
@@ -290,7 +378,7 @@
             // 
             this.id_rankTxt.AutoSize = true;
             this.id_rankTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.id_rankTxt.Location = new System.Drawing.Point(349, 226);
+            this.id_rankTxt.Location = new System.Drawing.Point(347, 263);
             this.id_rankTxt.Name = "id_rankTxt";
             this.id_rankTxt.Size = new System.Drawing.Size(101, 16);
             this.id_rankTxt.TabIndex = 29;
@@ -300,7 +388,7 @@
             // 
             this.emailTxt.AutoSize = true;
             this.emailTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.emailTxt.Location = new System.Drawing.Point(349, 186);
+            this.emailTxt.Location = new System.Drawing.Point(347, 223);
             this.emailTxt.Name = "emailTxt";
             this.emailTxt.Size = new System.Drawing.Size(45, 16);
             this.emailTxt.TabIndex = 28;
@@ -310,7 +398,7 @@
             // 
             this.passwordTxt.AutoSize = true;
             this.passwordTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.passwordTxt.Location = new System.Drawing.Point(54, 306);
+            this.passwordTxt.Location = new System.Drawing.Point(52, 343);
             this.passwordTxt.Name = "passwordTxt";
             this.passwordTxt.Size = new System.Drawing.Size(46, 16);
             this.passwordTxt.TabIndex = 27;
@@ -320,7 +408,7 @@
             // 
             this.loginTxt.AutoSize = true;
             this.loginTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.loginTxt.Location = new System.Drawing.Point(54, 266);
+            this.loginTxt.Location = new System.Drawing.Point(52, 303);
             this.loginTxt.Name = "loginTxt";
             this.loginTxt.Size = new System.Drawing.Size(40, 16);
             this.loginTxt.TabIndex = 26;
@@ -330,7 +418,7 @@
             // 
             this.last_nameTxt.AutoSize = true;
             this.last_nameTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.last_nameTxt.Location = new System.Drawing.Point(54, 226);
+            this.last_nameTxt.Location = new System.Drawing.Point(52, 263);
             this.last_nameTxt.Name = "last_nameTxt";
             this.last_nameTxt.Size = new System.Drawing.Size(65, 16);
             this.last_nameTxt.TabIndex = 25;
@@ -340,7 +428,7 @@
             // 
             this.first_nameTxt.AutoSize = true;
             this.first_nameTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.first_nameTxt.Location = new System.Drawing.Point(54, 186);
+            this.first_nameTxt.Location = new System.Drawing.Point(52, 223);
             this.first_nameTxt.Name = "first_nameTxt";
             this.first_nameTxt.Size = new System.Drawing.Size(32, 16);
             this.first_nameTxt.TabIndex = 24;
@@ -354,43 +442,48 @@
             this.addMeetingBtn.TabIndex = 2;
             this.addMeetingBtn.Text = "Dodaj Spotkanie";
             this.addMeetingBtn.UseVisualStyleBackColor = true;
-            this.addMeetingBtn.Click += new System.EventHandler(this.addMeetingBtn_Click);
+            this.addMeetingBtn.Click += new System.EventHandler(this.AddMeetingBtn_Click);
             // 
-            // button1
+            // editMeetingBtn
             // 
-            this.button1.Location = new System.Drawing.Point(12, 124);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(150, 50);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.editMeetingBtn.Cursor = System.Windows.Forms.Cursors.SizeNWSE;
+            this.editMeetingBtn.Location = new System.Drawing.Point(12, 124);
+            this.editMeetingBtn.Name = "editMeetingBtn";
+            this.editMeetingBtn.Size = new System.Drawing.Size(150, 50);
+            this.editMeetingBtn.TabIndex = 3;
+            this.editMeetingBtn.Text = "Edytuj Spotkanie";
+            this.editMeetingBtn.UseVisualStyleBackColor = true;
+            this.editMeetingBtn.Click += new System.EventHandler(this.EditMeetingBtn_Click);
             // 
-            // button2
+            // addBuildingBtn
             // 
-            this.button2.Location = new System.Drawing.Point(12, 179);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(150, 50);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.addBuildingBtn.Location = new System.Drawing.Point(12, 179);
+            this.addBuildingBtn.Name = "addBuildingBtn";
+            this.addBuildingBtn.Size = new System.Drawing.Size(150, 50);
+            this.addBuildingBtn.TabIndex = 4;
+            this.addBuildingBtn.Text = "Dodaj budynek";
+            this.addBuildingBtn.UseVisualStyleBackColor = true;
+            this.addBuildingBtn.Click += new System.EventHandler(this.AddBuildingBtn_Click);
             // 
-            // button3
+            // editBuildingBtn
             // 
-            this.button3.Location = new System.Drawing.Point(12, 235);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(150, 50);
-            this.button3.TabIndex = 5;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
+            this.editBuildingBtn.Location = new System.Drawing.Point(12, 235);
+            this.editBuildingBtn.Name = "editBuildingBtn";
+            this.editBuildingBtn.Size = new System.Drawing.Size(150, 50);
+            this.editBuildingBtn.TabIndex = 5;
+            this.editBuildingBtn.Text = "Edytuj budynek";
+            this.editBuildingBtn.UseVisualStyleBackColor = true;
+            this.editBuildingBtn.Click += new System.EventHandler(this.EditBuildingBtn_Click);
             // 
-            // button4
+            // LogOutBtn
             // 
-            this.button4.Location = new System.Drawing.Point(12, 291);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(150, 50);
-            this.button4.TabIndex = 6;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
+            this.LogOutBtn.Location = new System.Drawing.Point(12, 291);
+            this.LogOutBtn.Name = "LogOutBtn";
+            this.LogOutBtn.Size = new System.Drawing.Size(150, 50);
+            this.LogOutBtn.TabIndex = 6;
+            this.LogOutBtn.Text = "Wyloguj";
+            this.LogOutBtn.UseVisualStyleBackColor = true;
+            this.LogOutBtn.Click += new System.EventHandler(this.LogOutBtn_Click);
             // 
             // button5
             // 
@@ -401,54 +494,10 @@
             this.button5.Text = "button5";
             this.button5.UseVisualStyleBackColor = true;
             // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(12, 403);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(150, 50);
-            this.button6.TabIndex = 8;
-            this.button6.Text = "button6";
-            this.button6.UseVisualStyleBackColor = true;
-            // 
-            // button7
-            // 
-            this.button7.Location = new System.Drawing.Point(12, 459);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(150, 50);
-            this.button7.TabIndex = 9;
-            this.button7.Text = "button7";
-            this.button7.UseVisualStyleBackColor = true;
-            // 
-            // button8
-            // 
-            this.button8.Location = new System.Drawing.Point(12, 515);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(150, 50);
-            this.button8.TabIndex = 10;
-            this.button8.Text = "button8";
-            this.button8.UseVisualStyleBackColor = true;
-            // 
-            // button9
-            // 
-            this.button9.Location = new System.Drawing.Point(12, 571);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(150, 50);
-            this.button9.TabIndex = 11;
-            this.button9.Text = "button9";
-            this.button9.UseVisualStyleBackColor = true;
-            // 
-            // button10
-            // 
-            this.button10.Location = new System.Drawing.Point(12, 627);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(150, 50);
-            this.button10.TabIndex = 12;
-            this.button10.Text = "button10";
-            this.button10.UseVisualStyleBackColor = true;
-            // 
             // addMeetingPanel
             // 
             this.addMeetingPanel.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.addMeetingPanel.Controls.Add(this.label26);
             this.addMeetingPanel.Controls.Add(this.ConfirmAddMeetingBtn);
             this.addMeetingPanel.Controls.Add(this.label5);
             this.addMeetingPanel.Controls.Add(this.dateTimeAddMeeting);
@@ -465,11 +514,92 @@
             this.addMeetingPanel.Size = new System.Drawing.Size(1084, 665);
             this.addMeetingPanel.TabIndex = 49;
             // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label26.Location = new System.Drawing.Point(49, 56);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(297, 31);
+            this.label26.TabIndex = 89;
+            this.label26.Text = "Dodawanie Spotkania";
+            // 
+            // ConfirmAddMeetingBtn
+            // 
+            this.ConfirmAddMeetingBtn.Location = new System.Drawing.Point(413, 569);
+            this.ConfirmAddMeetingBtn.Name = "ConfirmAddMeetingBtn";
+            this.ConfirmAddMeetingBtn.Size = new System.Drawing.Size(150, 50);
+            this.ConfirmAddMeetingBtn.TabIndex = 50;
+            this.ConfirmAddMeetingBtn.Text = "Dodaj spotkanie";
+            this.ConfirmAddMeetingBtn.UseVisualStyleBackColor = true;
+            this.ConfirmAddMeetingBtn.Click += new System.EventHandler(this.ConfirmAddMeetingBtn_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label5.Location = new System.Drawing.Point(193, 302);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(113, 16);
+            this.label5.TabIndex = 59;
+            this.label5.Text = "Data Zdarzenia";
+            // 
+            // dateTimeAddMeeting
+            // 
+            this.dateTimeAddMeeting.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.dateTimeAddMeeting.CustomFormat = "yyyy-MM-dd HH:mm:ss";
+            this.dateTimeAddMeeting.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.dateTimeAddMeeting.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimeAddMeeting.Location = new System.Drawing.Point(545, 295);
+            this.dateTimeAddMeeting.MinDate = new System.DateTime(2023, 1, 17, 0, 0, 0, 0);
+            this.dateTimeAddMeeting.Name = "dateTimeAddMeeting";
+            this.dateTimeAddMeeting.Size = new System.Drawing.Size(236, 26);
+            this.dateTimeAddMeeting.TabIndex = 58;
+            this.dateTimeAddMeeting.Value = new System.DateTime(2023, 1, 28, 0, 0, 0, 0);
+            // 
+            // listBoxBuildings
+            // 
+            this.listBoxBuildings.FormattingEnabled = true;
+            this.listBoxBuildings.Location = new System.Drawing.Point(47, 358);
+            this.listBoxBuildings.Name = "listBoxBuildings";
+            this.listBoxBuildings.Size = new System.Drawing.Size(932, 199);
+            this.listBoxBuildings.TabIndex = 57;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label4.Location = new System.Drawing.Point(430, 339);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(110, 16);
+            this.label4.TabIndex = 56;
+            this.label4.Text = "Nieruchomości";
+            // 
+            // listBoxMeetingsStatus
+            // 
+            this.listBoxMeetingsStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.listBoxMeetingsStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.listBoxMeetingsStatus.FormattingEnabled = true;
+            this.listBoxMeetingsStatus.Location = new System.Drawing.Point(364, 138);
+            this.listBoxMeetingsStatus.Name = "listBoxMeetingsStatus";
+            this.listBoxMeetingsStatus.Size = new System.Drawing.Size(418, 24);
+            this.listBoxMeetingsStatus.TabIndex = 54;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label3.Location = new System.Drawing.Point(193, 141);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(130, 16);
+            this.label3.TabIndex = 53;
+            this.label3.Text = "Rodzaj Spotkania";
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label2.Location = new System.Drawing.Point(244, 221);
+            this.label2.Location = new System.Drawing.Point(193, 257);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(45, 16);
             this.label2.TabIndex = 52;
@@ -479,7 +609,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.Location = new System.Drawing.Point(244, 164);
+            this.label1.Location = new System.Drawing.Point(193, 200);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(43, 15);
             this.label1.TabIndex = 51;
@@ -490,7 +620,7 @@
             this.listBoxMeetingsUser.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.listBoxMeetingsUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.listBoxMeetingsUser.FormattingEnabled = true;
-            this.listBoxMeetingsUser.Location = new System.Drawing.Point(312, 218);
+            this.listBoxMeetingsUser.Location = new System.Drawing.Point(261, 254);
             this.listBoxMeetingsUser.Name = "listBoxMeetingsUser";
             this.listBoxMeetingsUser.Size = new System.Drawing.Size(521, 24);
             this.listBoxMeetingsUser.TabIndex = 50;
@@ -500,99 +630,814 @@
             this.listBoxMeetingsAgent.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.listBoxMeetingsAgent.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.listBoxMeetingsAgent.FormattingEnabled = true;
-            this.listBoxMeetingsAgent.Location = new System.Drawing.Point(312, 158);
+            this.listBoxMeetingsAgent.Location = new System.Drawing.Point(261, 194);
             this.listBoxMeetingsAgent.Name = "listBoxMeetingsAgent";
             this.listBoxMeetingsAgent.Size = new System.Drawing.Size(521, 24);
             this.listBoxMeetingsAgent.TabIndex = 49;
             // 
-            // label3
+            // editMeetingPanel
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label3.Location = new System.Drawing.Point(244, 105);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(130, 16);
-            this.label3.TabIndex = 53;
-            this.label3.Text = "Rodzaj Spotkania";
+            this.editMeetingPanel.BackColor = System.Drawing.SystemColors.Info;
+            this.editMeetingPanel.Controls.Add(this.label25);
+            this.editMeetingPanel.Controls.Add(this.label11);
+            this.editMeetingPanel.Controls.Add(this.editMeetingsList);
+            this.editMeetingPanel.Controls.Add(this.ConfirmDelMeetingsBtn);
+            this.editMeetingPanel.Controls.Add(this.listBoxEditMeetingsUser);
+            this.editMeetingPanel.Controls.Add(this.ConfirmEditMeetingsBtn);
+            this.editMeetingPanel.Controls.Add(this.label9);
+            this.editMeetingPanel.Controls.Add(this.dateTimeEditMeeting);
+            this.editMeetingPanel.Controls.Add(this.listBoxBuildingsEditMeetings);
+            this.editMeetingPanel.Controls.Add(this.label10);
+            this.editMeetingPanel.Controls.Add(this.label6);
+            this.editMeetingPanel.Controls.Add(this.label7);
+            this.editMeetingPanel.Controls.Add(this.label8);
+            this.editMeetingPanel.Controls.Add(this.listBoxEditMeetingsAgent);
+            this.editMeetingPanel.Controls.Add(this.listBoxEditMeetingsStatus);
+            this.editMeetingPanel.Location = new System.Drawing.Point(168, 12);
+            this.editMeetingPanel.Name = "editMeetingPanel";
+            this.editMeetingPanel.Size = new System.Drawing.Size(1084, 665);
+            this.editMeetingPanel.TabIndex = 60;
             // 
-            // listBoxMeetingsStatus
+            // label25
             // 
-            this.listBoxMeetingsStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.listBoxMeetingsStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.listBoxMeetingsStatus.FormattingEnabled = true;
-            this.listBoxMeetingsStatus.Location = new System.Drawing.Point(415, 102);
-            this.listBoxMeetingsStatus.Name = "listBoxMeetingsStatus";
-            this.listBoxMeetingsStatus.Size = new System.Drawing.Size(418, 24);
-            this.listBoxMeetingsStatus.TabIndex = 54;
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label25.Location = new System.Drawing.Point(41, 56);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(303, 31);
+            this.label25.TabIndex = 89;
+            this.label25.Text = "Edytowanie Spotkania";
             // 
-            // label4
+            // label11
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label4.Location = new System.Drawing.Point(481, 303);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(110, 16);
-            this.label4.TabIndex = 56;
-            this.label4.Text = "Nieruchomości";
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label11.Location = new System.Drawing.Point(202, 124);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(71, 15);
+            this.label11.TabIndex = 68;
+            this.label11.Text = "Spotkanie";
             // 
-            // listBoxBuildings
+            // editMeetingsList
             // 
-            this.listBoxBuildings.FormattingEnabled = true;
-            this.listBoxBuildings.Location = new System.Drawing.Point(247, 325);
-            this.listBoxBuildings.Name = "listBoxBuildings";
-            this.listBoxBuildings.Size = new System.Drawing.Size(586, 95);
-            this.listBoxBuildings.TabIndex = 57;
+            this.editMeetingsList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.editMeetingsList.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.editMeetingsList.FormattingEnabled = true;
+            this.editMeetingsList.Location = new System.Drawing.Point(279, 121);
+            this.editMeetingsList.Name = "editMeetingsList";
+            this.editMeetingsList.Size = new System.Drawing.Size(552, 24);
+            this.editMeetingsList.TabIndex = 67;
+            this.editMeetingsList.SelectedIndexChanged += new System.EventHandler(this.EditMeetingsList_SelectedIndexChanged);
             // 
-            // dateTimeAddMeeting
+            // ConfirmDelMeetingsBtn
             // 
-            this.dateTimeAddMeeting.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.dateTimeAddMeeting.CustomFormat = "yyyy-MM-dd hh:mm:ss";
-            this.dateTimeAddMeeting.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.dateTimeAddMeeting.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimeAddMeeting.Location = new System.Drawing.Point(596, 259);
-            this.dateTimeAddMeeting.MinDate = new System.DateTime(2023, 1, 17, 0, 0, 0, 0);
-            this.dateTimeAddMeeting.Name = "dateTimeAddMeeting";
-            this.dateTimeAddMeeting.Size = new System.Drawing.Size(236, 26);
-            this.dateTimeAddMeeting.TabIndex = 58;
+            this.ConfirmDelMeetingsBtn.Location = new System.Drawing.Point(530, 593);
+            this.ConfirmDelMeetingsBtn.Name = "ConfirmDelMeetingsBtn";
+            this.ConfirmDelMeetingsBtn.Size = new System.Drawing.Size(150, 50);
+            this.ConfirmDelMeetingsBtn.TabIndex = 66;
+            this.ConfirmDelMeetingsBtn.Text = "Usuń spotkanie";
+            this.ConfirmDelMeetingsBtn.UseVisualStyleBackColor = true;
+            this.ConfirmDelMeetingsBtn.Click += new System.EventHandler(this.ConfirmDelMeetingsBtn_Click);
             // 
-            // label5
+            // listBoxEditMeetingsUser
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label5.Location = new System.Drawing.Point(244, 266);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(113, 16);
-            this.label5.TabIndex = 59;
-            this.label5.Text = "Data Zdarzenia";
+            this.listBoxEditMeetingsUser.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.listBoxEditMeetingsUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.listBoxEditMeetingsUser.FormattingEnabled = true;
+            this.listBoxEditMeetingsUser.Location = new System.Drawing.Point(310, 304);
+            this.listBoxEditMeetingsUser.Name = "listBoxEditMeetingsUser";
+            this.listBoxEditMeetingsUser.Size = new System.Drawing.Size(522, 24);
+            this.listBoxEditMeetingsUser.TabIndex = 65;
             // 
-            // ConfirmAddMeetingBtn
+            // ConfirmEditMeetingsBtn
             // 
-            this.ConfirmAddMeetingBtn.Location = new System.Drawing.Point(466, 447);
-            this.ConfirmAddMeetingBtn.Name = "ConfirmAddMeetingBtn";
-            this.ConfirmAddMeetingBtn.Size = new System.Drawing.Size(150, 50);
-            this.ConfirmAddMeetingBtn.TabIndex = 50;
-            this.ConfirmAddMeetingBtn.Text = "button11";
-            this.ConfirmAddMeetingBtn.UseVisualStyleBackColor = true;
-            this.ConfirmAddMeetingBtn.Click += new System.EventHandler(this.ConfirmAddMeetingBtn_Click);
+            this.ConfirmEditMeetingsBtn.Location = new System.Drawing.Point(686, 593);
+            this.ConfirmEditMeetingsBtn.Name = "ConfirmEditMeetingsBtn";
+            this.ConfirmEditMeetingsBtn.Size = new System.Drawing.Size(150, 50);
+            this.ConfirmEditMeetingsBtn.TabIndex = 60;
+            this.ConfirmEditMeetingsBtn.Text = "Edytuj spotkanie";
+            this.ConfirmEditMeetingsBtn.UseVisualStyleBackColor = true;
+            this.ConfirmEditMeetingsBtn.Click += new System.EventHandler(this.ConfirmEditMeetingsBtn_Click);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label9.Location = new System.Drawing.Point(202, 368);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(113, 16);
+            this.label9.TabIndex = 64;
+            this.label9.Text = "Data Zdarzenia";
+            // 
+            // dateTimeEditMeeting
+            // 
+            this.dateTimeEditMeeting.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.dateTimeEditMeeting.CustomFormat = "yyyy-MM-dd HH:mm:ss";
+            this.dateTimeEditMeeting.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.dateTimeEditMeeting.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimeEditMeeting.Location = new System.Drawing.Point(596, 358);
+            this.dateTimeEditMeeting.MinDate = new System.DateTime(2023, 1, 17, 0, 0, 0, 0);
+            this.dateTimeEditMeeting.Name = "dateTimeEditMeeting";
+            this.dateTimeEditMeeting.Size = new System.Drawing.Size(236, 26);
+            this.dateTimeEditMeeting.TabIndex = 63;
+            this.dateTimeEditMeeting.Value = new System.DateTime(2023, 1, 28, 0, 0, 0, 0);
+            // 
+            // listBoxBuildingsEditMeetings
+            // 
+            this.listBoxBuildingsEditMeetings.FormattingEnabled = true;
+            this.listBoxBuildingsEditMeetings.Location = new System.Drawing.Point(47, 415);
+            this.listBoxBuildingsEditMeetings.Name = "listBoxBuildingsEditMeetings";
+            this.listBoxBuildingsEditMeetings.Size = new System.Drawing.Size(1012, 134);
+            this.listBoxBuildingsEditMeetings.TabIndex = 62;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label10.Location = new System.Drawing.Point(452, 396);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(110, 16);
+            this.label10.TabIndex = 61;
+            this.label10.Text = "Nieruchomości";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label6.Location = new System.Drawing.Point(202, 194);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(130, 16);
+            this.label6.TabIndex = 59;
+            this.label6.Text = "Rodzaj Spotkania";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label7.Location = new System.Drawing.Point(202, 310);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(45, 16);
+            this.label7.TabIndex = 58;
+            this.label7.Text = "Klient";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label8.Location = new System.Drawing.Point(202, 253);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(43, 15);
+            this.label8.TabIndex = 57;
+            this.label8.Text = "Agent";
+            // 
+            // listBoxEditMeetingsAgent
+            // 
+            this.listBoxEditMeetingsAgent.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.listBoxEditMeetingsAgent.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.listBoxEditMeetingsAgent.FormattingEnabled = true;
+            this.listBoxEditMeetingsAgent.Location = new System.Drawing.Point(310, 253);
+            this.listBoxEditMeetingsAgent.Name = "listBoxEditMeetingsAgent";
+            this.listBoxEditMeetingsAgent.Size = new System.Drawing.Size(521, 24);
+            this.listBoxEditMeetingsAgent.TabIndex = 56;
+            // 
+            // listBoxEditMeetingsStatus
+            // 
+            this.listBoxEditMeetingsStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.listBoxEditMeetingsStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.listBoxEditMeetingsStatus.FormattingEnabled = true;
+            this.listBoxEditMeetingsStatus.Location = new System.Drawing.Point(413, 191);
+            this.listBoxEditMeetingsStatus.Name = "listBoxEditMeetingsStatus";
+            this.listBoxEditMeetingsStatus.Size = new System.Drawing.Size(418, 24);
+            this.listBoxEditMeetingsStatus.TabIndex = 55;
+            // 
+            // TextBoxBuildingsRentTime
+            // 
+            this.TextBoxBuildingsRentTime.BackColor = System.Drawing.SystemColors.Highlight;
+            this.TextBoxBuildingsRentTime.Controls.Add(this.label23);
+            this.TextBoxBuildingsRentTime.Controls.Add(this.label22);
+            this.TextBoxBuildingsRentTime.Controls.Add(this.TextBoxBuildingSizeLand);
+            this.TextBoxBuildingsRentTime.Controls.Add(this.label21);
+            this.TextBoxBuildingsRentTime.Controls.Add(this.Najem);
+            this.TextBoxBuildingsRentTime.Controls.Add(this.Cena);
+            this.TextBoxBuildingsRentTime.Controls.Add(this.TextBoxBuildingsTimeRent);
+            this.TextBoxBuildingsRentTime.Controls.Add(this.TextBoxBuildingsRentPrice);
+            this.TextBoxBuildingsRentTime.Controls.Add(this.TextBoxBuildingsSellPrice);
+            this.TextBoxBuildingsRentTime.Controls.Add(this.label20);
+            this.TextBoxBuildingsRentTime.Controls.Add(this.label19);
+            this.TextBoxBuildingsRentTime.Controls.Add(this.label18);
+            this.TextBoxBuildingsRentTime.Controls.Add(this.label17);
+            this.TextBoxBuildingsRentTime.Controls.Add(this.label16);
+            this.TextBoxBuildingsRentTime.Controls.Add(this.label15);
+            this.TextBoxBuildingsRentTime.Controls.Add(this.label14);
+            this.TextBoxBuildingsRentTime.Controls.Add(this.label13);
+            this.TextBoxBuildingsRentTime.Controls.Add(this.label12);
+            this.TextBoxBuildingsRentTime.Controls.Add(this.TextBoxBuildingCity);
+            this.TextBoxBuildingsRentTime.Controls.Add(this.TextBoxBuildingZipCode);
+            this.TextBoxBuildingsRentTime.Controls.Add(this.TextBoxBuildingNo_apartament);
+            this.TextBoxBuildingsRentTime.Controls.Add(this.TextBoxBuildingNo_building);
+            this.TextBoxBuildingsRentTime.Controls.Add(this.TextBoxBuildingStreet);
+            this.TextBoxBuildingsRentTime.Controls.Add(this.TextBoxBuildingSize);
+            this.TextBoxBuildingsRentTime.Controls.Add(this.ListBoxBuildingBasement);
+            this.TextBoxBuildingsRentTime.Controls.Add(this.ListBoxBuildingTransaction);
+            this.TextBoxBuildingsRentTime.Controls.Add(this.ListBoxBuildingType);
+            this.TextBoxBuildingsRentTime.Controls.Add(this.ConfirmAddBuildingBtn);
+            this.TextBoxBuildingsRentTime.Location = new System.Drawing.Point(168, 12);
+            this.TextBoxBuildingsRentTime.Name = "TextBoxBuildingsRentTime";
+            this.TextBoxBuildingsRentTime.Size = new System.Drawing.Size(1084, 665);
+            this.TextBoxBuildingsRentTime.TabIndex = 49;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label23.Location = new System.Drawing.Point(41, 56);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(280, 31);
+            this.label23.TabIndex = 88;
+            this.label23.Text = "Dodawanie Budynku";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label22.Location = new System.Drawing.Point(87, 317);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(97, 15);
+            this.label22.TabIndex = 87;
+            this.label22.Text = "Metraż działki";
+            // 
+            // TextBoxBuildingSizeLand
+            // 
+            this.TextBoxBuildingSizeLand.Location = new System.Drawing.Point(218, 317);
+            this.TextBoxBuildingSizeLand.Name = "TextBoxBuildingSizeLand";
+            this.TextBoxBuildingSizeLand.Size = new System.Drawing.Size(278, 20);
+            this.TextBoxBuildingSizeLand.TabIndex = 86;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label21.Location = new System.Drawing.Point(597, 374);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(118, 15);
+            this.label21.TabIndex = 85;
+            this.label21.Text = "Min. okres najmu";
+            // 
+            // Najem
+            // 
+            this.Najem.AutoSize = true;
+            this.Najem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Najem.Location = new System.Drawing.Point(629, 333);
+            this.Najem.Name = "Najem";
+            this.Najem.Size = new System.Drawing.Size(90, 15);
+            this.Najem.TabIndex = 84;
+            this.Najem.Text = "Kwota najmu";
+            // 
+            // Cena
+            // 
+            this.Cena.AutoSize = true;
+            this.Cena.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Cena.Location = new System.Drawing.Point(620, 415);
+            this.Cena.Name = "Cena";
+            this.Cena.Size = new System.Drawing.Size(96, 15);
+            this.Cena.TabIndex = 83;
+            this.Cena.Text = "Kwota zakupu";
+            // 
+            // TextBoxBuildingsTimeRent
+            // 
+            this.TextBoxBuildingsTimeRent.Enabled = false;
+            this.TextBoxBuildingsTimeRent.Location = new System.Drawing.Point(722, 373);
+            this.TextBoxBuildingsTimeRent.Name = "TextBoxBuildingsTimeRent";
+            this.TextBoxBuildingsTimeRent.Size = new System.Drawing.Size(136, 20);
+            this.TextBoxBuildingsTimeRent.TabIndex = 82;
+            // 
+            // TextBoxBuildingsRentPrice
+            // 
+            this.TextBoxBuildingsRentPrice.Enabled = false;
+            this.TextBoxBuildingsRentPrice.Location = new System.Drawing.Point(722, 332);
+            this.TextBoxBuildingsRentPrice.Name = "TextBoxBuildingsRentPrice";
+            this.TextBoxBuildingsRentPrice.Size = new System.Drawing.Size(136, 20);
+            this.TextBoxBuildingsRentPrice.TabIndex = 81;
+            // 
+            // TextBoxBuildingsSellPrice
+            // 
+            this.TextBoxBuildingsSellPrice.Enabled = false;
+            this.TextBoxBuildingsSellPrice.Location = new System.Drawing.Point(722, 414);
+            this.TextBoxBuildingsSellPrice.Name = "TextBoxBuildingsSellPrice";
+            this.TextBoxBuildingsSellPrice.Size = new System.Drawing.Size(136, 20);
+            this.TextBoxBuildingsSellPrice.TabIndex = 80;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label20.Location = new System.Drawing.Point(541, 295);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(122, 15);
+            this.label20.TabIndex = 79;
+            this.label20.Text = "Rodzaj Transakcji";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label19.Location = new System.Drawing.Point(630, 253);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(50, 15);
+            this.label19.TabIndex = 78;
+            this.label19.Text = "Miasto";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label18.Location = new System.Drawing.Point(630, 211);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(94, 15);
+            this.label18.TabIndex = 77;
+            this.label18.Text = "Kod pocztowy";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label17.Location = new System.Drawing.Point(733, 164);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(73, 15);
+            this.label17.TabIndex = 76;
+            this.label17.Text = "Nr. Lokalu";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label16.Location = new System.Drawing.Point(577, 164);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(84, 15);
+            this.label16.TabIndex = 75;
+            this.label16.Text = "Nr. Budynku";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label15.Location = new System.Drawing.Point(149, 359);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(40, 15);
+            this.label15.TabIndex = 74;
+            this.label15.Text = "Ulica";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label14.Location = new System.Drawing.Point(132, 277);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(57, 15);
+            this.label14.TabIndex = 73;
+            this.label14.Text = "Piwnica";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label13.Location = new System.Drawing.Point(87, 221);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(108, 15);
+            this.label13.TabIndex = 72;
+            this.label13.Text = "Metraż budynku";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label12.Location = new System.Drawing.Point(86, 164);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(109, 15);
+            this.label12.TabIndex = 71;
+            this.label12.Text = "Rodzaj budynku";
+            // 
+            // TextBoxBuildingCity
+            // 
+            this.TextBoxBuildingCity.Location = new System.Drawing.Point(705, 252);
+            this.TextBoxBuildingCity.Name = "TextBoxBuildingCity";
+            this.TextBoxBuildingCity.Size = new System.Drawing.Size(153, 20);
+            this.TextBoxBuildingCity.TabIndex = 70;
+            // 
+            // TextBoxBuildingZipCode
+            // 
+            this.TextBoxBuildingZipCode.Location = new System.Drawing.Point(736, 210);
+            this.TextBoxBuildingZipCode.Name = "TextBoxBuildingZipCode";
+            this.TextBoxBuildingZipCode.Size = new System.Drawing.Size(122, 20);
+            this.TextBoxBuildingZipCode.TabIndex = 69;
+            // 
+            // TextBoxBuildingNo_apartament
+            // 
+            this.TextBoxBuildingNo_apartament.Location = new System.Drawing.Point(814, 163);
+            this.TextBoxBuildingNo_apartament.Name = "TextBoxBuildingNo_apartament";
+            this.TextBoxBuildingNo_apartament.Size = new System.Drawing.Size(44, 20);
+            this.TextBoxBuildingNo_apartament.TabIndex = 68;
+            // 
+            // TextBoxBuildingNo_building
+            // 
+            this.TextBoxBuildingNo_building.Location = new System.Drawing.Point(669, 163);
+            this.TextBoxBuildingNo_building.Name = "TextBoxBuildingNo_building";
+            this.TextBoxBuildingNo_building.Size = new System.Drawing.Size(58, 20);
+            this.TextBoxBuildingNo_building.TabIndex = 67;
+            // 
+            // TextBoxBuildingStreet
+            // 
+            this.TextBoxBuildingStreet.Location = new System.Drawing.Point(218, 356);
+            this.TextBoxBuildingStreet.Name = "TextBoxBuildingStreet";
+            this.TextBoxBuildingStreet.Size = new System.Drawing.Size(278, 20);
+            this.TextBoxBuildingStreet.TabIndex = 66;
+            // 
+            // TextBoxBuildingSize
+            // 
+            this.TextBoxBuildingSize.Location = new System.Drawing.Point(218, 221);
+            this.TextBoxBuildingSize.Name = "TextBoxBuildingSize";
+            this.TextBoxBuildingSize.Size = new System.Drawing.Size(278, 20);
+            this.TextBoxBuildingSize.TabIndex = 65;
+            // 
+            // ListBoxBuildingBasement
+            // 
+            this.ListBoxBuildingBasement.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ListBoxBuildingBasement.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.ListBoxBuildingBasement.FormattingEnabled = true;
+            this.ListBoxBuildingBasement.Location = new System.Drawing.Point(218, 273);
+            this.ListBoxBuildingBasement.Name = "ListBoxBuildingBasement";
+            this.ListBoxBuildingBasement.Size = new System.Drawing.Size(278, 24);
+            this.ListBoxBuildingBasement.TabIndex = 64;
+            // 
+            // ListBoxBuildingTransaction
+            // 
+            this.ListBoxBuildingTransaction.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ListBoxBuildingTransaction.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.ListBoxBuildingTransaction.FormattingEnabled = true;
+            this.ListBoxBuildingTransaction.Location = new System.Drawing.Point(669, 291);
+            this.ListBoxBuildingTransaction.Name = "ListBoxBuildingTransaction";
+            this.ListBoxBuildingTransaction.Size = new System.Drawing.Size(189, 24);
+            this.ListBoxBuildingTransaction.TabIndex = 63;
+            this.ListBoxBuildingTransaction.SelectedIndexChanged += new System.EventHandler(this.ListBoxBuildingTransaction_SelectedIndexChanged);
+            // 
+            // ListBoxBuildingType
+            // 
+            this.ListBoxBuildingType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ListBoxBuildingType.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.ListBoxBuildingType.FormattingEnabled = true;
+            this.ListBoxBuildingType.Location = new System.Drawing.Point(218, 161);
+            this.ListBoxBuildingType.Name = "ListBoxBuildingType";
+            this.ListBoxBuildingType.Size = new System.Drawing.Size(278, 24);
+            this.ListBoxBuildingType.TabIndex = 62;
+            // 
+            // ConfirmAddBuildingBtn
+            // 
+            this.ConfirmAddBuildingBtn.Location = new System.Drawing.Point(290, 401);
+            this.ConfirmAddBuildingBtn.Name = "ConfirmAddBuildingBtn";
+            this.ConfirmAddBuildingBtn.Size = new System.Drawing.Size(150, 50);
+            this.ConfirmAddBuildingBtn.TabIndex = 61;
+            this.ConfirmAddBuildingBtn.Text = "Dodaj Budynek";
+            this.ConfirmAddBuildingBtn.UseVisualStyleBackColor = true;
+            this.ConfirmAddBuildingBtn.Click += new System.EventHandler(this.ConfirmAddBuildingBtn_Click);
+            // 
+            // editBuildingPanel
+            // 
+            this.editBuildingPanel.BackColor = System.Drawing.Color.Green;
+            this.editBuildingPanel.Controls.Add(this.LbSelectBuildingEdit);
+            this.editBuildingPanel.Controls.Add(this.label41);
+            this.editBuildingPanel.Controls.Add(this.ConfrimDelBuildingBtn);
+            this.editBuildingPanel.Controls.Add(this.label27);
+            this.editBuildingPanel.Controls.Add(this.label28);
+            this.editBuildingPanel.Controls.Add(this.TBeditBuildigsLandSize);
+            this.editBuildingPanel.Controls.Add(this.label29);
+            this.editBuildingPanel.Controls.Add(this.label30);
+            this.editBuildingPanel.Controls.Add(this.label31);
+            this.editBuildingPanel.Controls.Add(this.TextBoxRentTimeEdit);
+            this.editBuildingPanel.Controls.Add(this.TextBoxRentEdit);
+            this.editBuildingPanel.Controls.Add(this.TextBoxSellEdit);
+            this.editBuildingPanel.Controls.Add(this.label32);
+            this.editBuildingPanel.Controls.Add(this.label33);
+            this.editBuildingPanel.Controls.Add(this.label34);
+            this.editBuildingPanel.Controls.Add(this.label35);
+            this.editBuildingPanel.Controls.Add(this.label36);
+            this.editBuildingPanel.Controls.Add(this.label37);
+            this.editBuildingPanel.Controls.Add(this.label38);
+            this.editBuildingPanel.Controls.Add(this.label39);
+            this.editBuildingPanel.Controls.Add(this.label40);
+            this.editBuildingPanel.Controls.Add(this.TextBoxEditBuildingCity);
+            this.editBuildingPanel.Controls.Add(this.TextBoxEditBuildingZipCode);
+            this.editBuildingPanel.Controls.Add(this.TextBoxEditBuildingNoA);
+            this.editBuildingPanel.Controls.Add(this.TextBoxEditBuildingNoB);
+            this.editBuildingPanel.Controls.Add(this.TextBoxEditBuildingStreet);
+            this.editBuildingPanel.Controls.Add(this.TBeditBuildigsSize);
+            this.editBuildingPanel.Controls.Add(this.ListBoxBasementEdit);
+            this.editBuildingPanel.Controls.Add(this.ListBoxTypeTransactionEdit);
+            this.editBuildingPanel.Controls.Add(this.ListBoxTypeBuildingEdit);
+            this.editBuildingPanel.Controls.Add(this.ConfirmEditBuildingBtn);
+            this.editBuildingPanel.Location = new System.Drawing.Point(168, 12);
+            this.editBuildingPanel.Name = "editBuildingPanel";
+            this.editBuildingPanel.Size = new System.Drawing.Size(1084, 665);
+            this.editBuildingPanel.TabIndex = 90;
+            // 
+            // LbSelectBuildingEdit
+            // 
+            this.LbSelectBuildingEdit.FormattingEnabled = true;
+            this.LbSelectBuildingEdit.Location = new System.Drawing.Point(89, 113);
+            this.LbSelectBuildingEdit.Name = "LbSelectBuildingEdit";
+            this.LbSelectBuildingEdit.Size = new System.Drawing.Size(970, 160);
+            this.LbSelectBuildingEdit.TabIndex = 120;
+            this.LbSelectBuildingEdit.SelectedIndexChanged += new System.EventHandler(this.LbSelectBuildingEdit_SelectedIndexChanged);
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label41.Location = new System.Drawing.Point(22, 112);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(61, 15);
+            this.label41.TabIndex = 119;
+            this.label41.Text = "Budynek";
+            // 
+            // ConfrimDelBuildingBtn
+            // 
+            this.ConfrimDelBuildingBtn.Location = new System.Drawing.Point(262, 569);
+            this.ConfrimDelBuildingBtn.Name = "ConfrimDelBuildingBtn";
+            this.ConfrimDelBuildingBtn.Size = new System.Drawing.Size(150, 50);
+            this.ConfrimDelBuildingBtn.TabIndex = 117;
+            this.ConfrimDelBuildingBtn.Text = "Usuń";
+            this.ConfrimDelBuildingBtn.UseVisualStyleBackColor = true;
+            this.ConfrimDelBuildingBtn.Click += new System.EventHandler(this.ConfrimDelBuildingBtn_Click);
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label27.Location = new System.Drawing.Point(3, 56);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(286, 31);
+            this.label27.TabIndex = 116;
+            this.label27.Text = "Edytowanie Budynku";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label28.Location = new System.Drawing.Point(131, 456);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(97, 15);
+            this.label28.TabIndex = 115;
+            this.label28.Text = "Metraż działki";
+            // 
+            // TBeditBuildigsLandSize
+            // 
+            this.TBeditBuildigsLandSize.Location = new System.Drawing.Point(262, 456);
+            this.TBeditBuildigsLandSize.Name = "TBeditBuildigsLandSize";
+            this.TBeditBuildigsLandSize.Size = new System.Drawing.Size(278, 20);
+            this.TBeditBuildigsLandSize.TabIndex = 114;
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label29.Location = new System.Drawing.Point(641, 513);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(118, 15);
+            this.label29.TabIndex = 113;
+            this.label29.Text = "Min. okres najmu";
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label30.Location = new System.Drawing.Point(673, 472);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(90, 15);
+            this.label30.TabIndex = 112;
+            this.label30.Text = "Kwota najmu";
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label31.Location = new System.Drawing.Point(664, 554);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(96, 15);
+            this.label31.TabIndex = 111;
+            this.label31.Text = "Kwota zakupu";
+            // 
+            // TextBoxRentTimeEdit
+            // 
+            this.TextBoxRentTimeEdit.Enabled = false;
+            this.TextBoxRentTimeEdit.Location = new System.Drawing.Point(766, 512);
+            this.TextBoxRentTimeEdit.Name = "TextBoxRentTimeEdit";
+            this.TextBoxRentTimeEdit.Size = new System.Drawing.Size(136, 20);
+            this.TextBoxRentTimeEdit.TabIndex = 110;
+            // 
+            // TextBoxRentEdit
+            // 
+            this.TextBoxRentEdit.Enabled = false;
+            this.TextBoxRentEdit.Location = new System.Drawing.Point(766, 471);
+            this.TextBoxRentEdit.Name = "TextBoxRentEdit";
+            this.TextBoxRentEdit.Size = new System.Drawing.Size(136, 20);
+            this.TextBoxRentEdit.TabIndex = 109;
+            // 
+            // TextBoxSellEdit
+            // 
+            this.TextBoxSellEdit.Enabled = false;
+            this.TextBoxSellEdit.Location = new System.Drawing.Point(766, 553);
+            this.TextBoxSellEdit.Name = "TextBoxSellEdit";
+            this.TextBoxSellEdit.Size = new System.Drawing.Size(136, 20);
+            this.TextBoxSellEdit.TabIndex = 108;
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label32.Location = new System.Drawing.Point(585, 434);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(122, 15);
+            this.label32.TabIndex = 107;
+            this.label32.Text = "Rodzaj Transakcji";
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label33.Location = new System.Drawing.Point(674, 392);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(50, 15);
+            this.label33.TabIndex = 106;
+            this.label33.Text = "Miasto";
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label34.Location = new System.Drawing.Point(674, 350);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(94, 15);
+            this.label34.TabIndex = 105;
+            this.label34.Text = "Kod pocztowy";
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label35.Location = new System.Drawing.Point(777, 303);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(73, 15);
+            this.label35.TabIndex = 104;
+            this.label35.Text = "Nr. Lokalu";
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label36.Location = new System.Drawing.Point(621, 303);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(84, 15);
+            this.label36.TabIndex = 103;
+            this.label36.Text = "Nr. Budynku";
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label37.Location = new System.Drawing.Point(193, 498);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(40, 15);
+            this.label37.TabIndex = 102;
+            this.label37.Text = "Ulica";
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label38.Location = new System.Drawing.Point(176, 416);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(57, 15);
+            this.label38.TabIndex = 101;
+            this.label38.Text = "Piwnica";
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label39.Location = new System.Drawing.Point(131, 360);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(108, 15);
+            this.label39.TabIndex = 100;
+            this.label39.Text = "Metraż budynku";
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label40.Location = new System.Drawing.Point(130, 303);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(109, 15);
+            this.label40.TabIndex = 99;
+            this.label40.Text = "Rodzaj budynku";
+            // 
+            // TextBoxEditBuildingCity
+            // 
+            this.TextBoxEditBuildingCity.Location = new System.Drawing.Point(749, 391);
+            this.TextBoxEditBuildingCity.Name = "TextBoxEditBuildingCity";
+            this.TextBoxEditBuildingCity.Size = new System.Drawing.Size(153, 20);
+            this.TextBoxEditBuildingCity.TabIndex = 98;
+            // 
+            // TextBoxEditBuildingZipCode
+            // 
+            this.TextBoxEditBuildingZipCode.Location = new System.Drawing.Point(780, 349);
+            this.TextBoxEditBuildingZipCode.Name = "TextBoxEditBuildingZipCode";
+            this.TextBoxEditBuildingZipCode.Size = new System.Drawing.Size(122, 20);
+            this.TextBoxEditBuildingZipCode.TabIndex = 97;
+            // 
+            // TextBoxEditBuildingNoA
+            // 
+            this.TextBoxEditBuildingNoA.Location = new System.Drawing.Point(858, 302);
+            this.TextBoxEditBuildingNoA.Name = "TextBoxEditBuildingNoA";
+            this.TextBoxEditBuildingNoA.Size = new System.Drawing.Size(44, 20);
+            this.TextBoxEditBuildingNoA.TabIndex = 96;
+            // 
+            // TextBoxEditBuildingNoB
+            // 
+            this.TextBoxEditBuildingNoB.Location = new System.Drawing.Point(713, 302);
+            this.TextBoxEditBuildingNoB.Name = "TextBoxEditBuildingNoB";
+            this.TextBoxEditBuildingNoB.Size = new System.Drawing.Size(58, 20);
+            this.TextBoxEditBuildingNoB.TabIndex = 95;
+            // 
+            // TextBoxEditBuildingStreet
+            // 
+            this.TextBoxEditBuildingStreet.Location = new System.Drawing.Point(262, 495);
+            this.TextBoxEditBuildingStreet.Name = "TextBoxEditBuildingStreet";
+            this.TextBoxEditBuildingStreet.Size = new System.Drawing.Size(278, 20);
+            this.TextBoxEditBuildingStreet.TabIndex = 94;
+            // 
+            // TBeditBuildigsSize
+            // 
+            this.TBeditBuildigsSize.Location = new System.Drawing.Point(262, 360);
+            this.TBeditBuildigsSize.Name = "TBeditBuildigsSize";
+            this.TBeditBuildigsSize.Size = new System.Drawing.Size(278, 20);
+            this.TBeditBuildigsSize.TabIndex = 93;
+            // 
+            // ListBoxBasementEdit
+            // 
+            this.ListBoxBasementEdit.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ListBoxBasementEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.ListBoxBasementEdit.FormattingEnabled = true;
+            this.ListBoxBasementEdit.Location = new System.Drawing.Point(262, 412);
+            this.ListBoxBasementEdit.Name = "ListBoxBasementEdit";
+            this.ListBoxBasementEdit.Size = new System.Drawing.Size(278, 24);
+            this.ListBoxBasementEdit.TabIndex = 92;
+            // 
+            // ListBoxTypeTransactionEdit
+            // 
+            this.ListBoxTypeTransactionEdit.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ListBoxTypeTransactionEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.ListBoxTypeTransactionEdit.FormattingEnabled = true;
+            this.ListBoxTypeTransactionEdit.Location = new System.Drawing.Point(713, 430);
+            this.ListBoxTypeTransactionEdit.Name = "ListBoxTypeTransactionEdit";
+            this.ListBoxTypeTransactionEdit.Size = new System.Drawing.Size(189, 24);
+            this.ListBoxTypeTransactionEdit.TabIndex = 91;
+            this.ListBoxTypeTransactionEdit.SelectedIndexChanged += new System.EventHandler(this.ListBoxTypeTransactionEdit_SelectedIndexChanged);
+            // 
+            // ListBoxTypeBuildingEdit
+            // 
+            this.ListBoxTypeBuildingEdit.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ListBoxTypeBuildingEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.ListBoxTypeBuildingEdit.FormattingEnabled = true;
+            this.ListBoxTypeBuildingEdit.Location = new System.Drawing.Point(262, 300);
+            this.ListBoxTypeBuildingEdit.Name = "ListBoxTypeBuildingEdit";
+            this.ListBoxTypeBuildingEdit.Size = new System.Drawing.Size(278, 24);
+            this.ListBoxTypeBuildingEdit.TabIndex = 90;
+            // 
+            // ConfirmEditBuildingBtn
+            // 
+            this.ConfirmEditBuildingBtn.Location = new System.Drawing.Point(456, 569);
+            this.ConfirmEditBuildingBtn.Name = "ConfirmEditBuildingBtn";
+            this.ConfirmEditBuildingBtn.Size = new System.Drawing.Size(150, 50);
+            this.ConfirmEditBuildingBtn.TabIndex = 89;
+            this.ConfirmEditBuildingBtn.Text = "Edytuj";
+            this.ConfirmEditBuildingBtn.UseVisualStyleBackColor = true;
+            this.ConfirmEditBuildingBtn.Click += new System.EventHandler(this.ConfirmEditBuildingBtn_Click);
             // 
             // AdminPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1264, 681);
-            this.Controls.Add(this.button10);
-            this.Controls.Add(this.button9);
-            this.Controls.Add(this.button8);
-            this.Controls.Add(this.button7);
-            this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.LogOutBtn);
+            this.Controls.Add(this.editBuildingBtn);
+            this.Controls.Add(this.addBuildingBtn);
+            this.Controls.Add(this.editMeetingBtn);
             this.Controls.Add(this.addMeetingBtn);
             this.Controls.Add(this.editProfileBtn);
+            this.Controls.Add(this.editBuildingPanel);
+            this.Controls.Add(this.editMeetingPanel);
             this.Controls.Add(this.addMeetingPanel);
+            this.Controls.Add(this.TextBoxBuildingsRentTime);
             this.Controls.Add(this.editProfilePanel);
             this.Name = "AdminPanel";
             this.Text = "Panel Administratora";
@@ -600,6 +1445,12 @@
             this.editProfilePanel.PerformLayout();
             this.addMeetingPanel.ResumeLayout(false);
             this.addMeetingPanel.PerformLayout();
+            this.editMeetingPanel.ResumeLayout(false);
+            this.editMeetingPanel.PerformLayout();
+            this.TextBoxBuildingsRentTime.ResumeLayout(false);
+            this.TextBoxBuildingsRentTime.PerformLayout();
+            this.editBuildingPanel.ResumeLayout(false);
+            this.editBuildingPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -631,16 +1482,11 @@
         private System.Windows.Forms.Label last_nameTxt;
         private System.Windows.Forms.Label first_nameTxt;
         private System.Windows.Forms.Button addMeetingBtn;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button editMeetingBtn;
+        private System.Windows.Forms.Button addBuildingBtn;
+        private System.Windows.Forms.Button editBuildingBtn;
+        private System.Windows.Forms.Button LogOutBtn;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button confirmEditUserBtn;
         private System.Windows.Forms.Button confirmDelUserBtn;
         private System.Windows.Forms.ComboBox userListBox;
@@ -656,5 +1502,84 @@
         private System.Windows.Forms.DateTimePicker dateTimeAddMeeting;
         private System.Windows.Forms.Button ConfirmAddMeetingBtn;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Panel editMeetingPanel;
+        private System.Windows.Forms.ComboBox listBoxEditMeetingsStatus;
+        private System.Windows.Forms.ComboBox listBoxEditMeetingsUser;
+        private System.Windows.Forms.Button ConfirmEditMeetingsBtn;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.DateTimePicker dateTimeEditMeeting;
+        private System.Windows.Forms.ListBox listBoxBuildingsEditMeetings;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ComboBox listBoxEditMeetingsAgent;
+        private System.Windows.Forms.Button ConfirmDelMeetingsBtn;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.ComboBox editMeetingsList;
+        private System.Windows.Forms.Panel TextBoxBuildingsRentTime;
+        private System.Windows.Forms.Button ConfirmAddBuildingBtn;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox TextBoxBuildingCity;
+        private System.Windows.Forms.TextBox TextBoxBuildingZipCode;
+        private System.Windows.Forms.TextBox TextBoxBuildingNo_apartament;
+        private System.Windows.Forms.TextBox TextBoxBuildingNo_building;
+        private System.Windows.Forms.TextBox TextBoxBuildingStreet;
+        private System.Windows.Forms.TextBox TextBoxBuildingSize;
+        private System.Windows.Forms.ComboBox ListBoxBuildingBasement;
+        private System.Windows.Forms.ComboBox ListBoxBuildingTransaction;
+        private System.Windows.Forms.ComboBox ListBoxBuildingType;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.TextBox TextBoxBuildingsTimeRent;
+        private System.Windows.Forms.TextBox TextBoxBuildingsRentPrice;
+        private System.Windows.Forms.TextBox TextBoxBuildingsSellPrice;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label Najem;
+        private System.Windows.Forms.Label Cena;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.TextBox TextBoxBuildingSizeLand;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Panel editBuildingPanel;
+        private System.Windows.Forms.Label label41;
+        private System.Windows.Forms.Button ConfrimDelBuildingBtn;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.TextBox TBeditBuildigsLandSize;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.TextBox TextBoxRentTimeEdit;
+        private System.Windows.Forms.TextBox TextBoxRentEdit;
+        private System.Windows.Forms.TextBox TextBoxSellEdit;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.Label label39;
+        private System.Windows.Forms.Label label40;
+        private System.Windows.Forms.TextBox TextBoxEditBuildingCity;
+        private System.Windows.Forms.TextBox TextBoxEditBuildingZipCode;
+        private System.Windows.Forms.TextBox TextBoxEditBuildingNoA;
+        private System.Windows.Forms.TextBox TextBoxEditBuildingNoB;
+        private System.Windows.Forms.TextBox TextBoxEditBuildingStreet;
+        private System.Windows.Forms.TextBox TBeditBuildigsSize;
+        private System.Windows.Forms.ComboBox ListBoxBasementEdit;
+        private System.Windows.Forms.ComboBox ListBoxTypeTransactionEdit;
+        private System.Windows.Forms.ComboBox ListBoxTypeBuildingEdit;
+        private System.Windows.Forms.Button ConfirmEditBuildingBtn;
+        private System.Windows.Forms.ListBox LbSelectBuildingEdit;
     }
 }
