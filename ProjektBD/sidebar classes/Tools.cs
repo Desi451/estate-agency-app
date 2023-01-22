@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Management.Instrumentation;
+using System.Net.Mail;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -42,7 +43,7 @@ namespace ProjektBD.sidebar_classes
         public static void FillTextBoxesUser(TextBox t1, TextBox t2, TextBox t3, TextBox t4,
             TextBox t5, ComboBox c6, TextBox t7, TextBox t8, TextBox t9, TextBox t10, TextBox t11, string query)
         {
-            TextBox[] array = { t1, t2, t3, t4, t5, t7, t8, t8, t9, t10, t11 };
+            TextBox[] array = { t1, t2, t3, t4, t5, t7, t8, t9, t10, t11 };
             int i = 1;
 
             MySqlConnection con = new MySqlConnection();
@@ -54,15 +55,23 @@ namespace ProjektBD.sidebar_classes
             {
                 foreach (TextBox tb in array)
                 {
-                    if (i != 0 && i != 10)
+                    if (i != 0)
                     {
                         tb.Text = reader.GetString(i++);
+                        if (i == 6) i++;
                     }
-                    else tb.Text = reader.GetInt32(i++).ToString();
-                }
-                c6.Text = reader.GetInt32(6).ToString();
+                } 
+                t10.Text = ZipCodeToString(reader.GetString(10));
+                c6.SelectedIndex = reader.GetInt32(6) - 1;
             }
             con.Close();
+        }
+
+        public static void FillRankBox(ComboBox cb)
+        {
+            cb.Items.Add("1");
+            cb.Items.Add("2");
+            cb.Items.Add("3");
         }
 
         public static void CleanTextBoxesUser(TextBox t1, TextBox t2, TextBox t3, TextBox t4,
@@ -73,6 +82,7 @@ namespace ProjektBD.sidebar_classes
             {
                 tb.Text = "";
             }
+            c6.SelectedIndex = -1;
         }
 
         public static void FillAllData(int id1, string first_name1, string last_name1, string login1, string password1, string email1,
@@ -195,7 +205,7 @@ namespace ProjektBD.sidebar_classes
         }
 
         // metoda wczytajaca do Listboxa budynki oraz zapisujace id w liscie
-        public static void LoadBuildings(ListBox cb, List<int> list)
+        public static void LoadBuildings(ListBox cb, List<int> list, List<int> transaction)
         {
             cb.Items.Clear();
             list.Clear();
@@ -203,8 +213,8 @@ namespace ProjektBD.sidebar_classes
             con.ConnectionString = DataBase.Connstring;
             con.Open();
             string query = "SELECT b.id, b.size, b.basement, b.plot_of_land_size," +
-                "\r\nCONCAT('ul. ', b.street, ' ', b.no_building, IF(b.no_apartament, CONCAT('/', b.no_apartament), ''),' ', b.city, ' ', b.zip_code ),\r\n" +
-                "t.type_of, s.sell_price, r.rent_price, r.rent_min_time FROM projektbd.buildings b \r\n" +
+                "\r\nCONCAT('ul. ', b.street, ' ', b.no_building, IF(b.no_apartament, CONCAT('/', b.no_apartament), ' '),' ', b.city),\r\n" +
+                "b.zip_code, t.type_of, t.id, s.sell_price, r.rent_price, r.rent_min_time FROM projektbd.buildings b \r\n" +
                 "INNER JOIN projektbd.transaction_type t ON b.transaction_id = t.id\r\n" +
                 "LEFT JOIN projektbd.sell_details s ON b.id = s.id_buildings\r\n" +
                 "LEFT JOIN projektbd.rent_details r ON b.id = r.id_buildings;";
@@ -218,21 +228,22 @@ namespace ProjektBD.sidebar_classes
                 if (reader.GetInt32(2) == 1) piwnica = "Tak";
                 else piwnica = "Nie";
                 list.Add(reader.GetInt32(0));
-                if(reader.IsDBNull(6) == true)
+                transaction.Add(reader.GetInt32(7));
+                if(reader.IsDBNull(8) == true)
                 {
                     cb.Items.Add("Metraż: " + reader.GetInt32(1) + "m^2. piwnica: " + piwnica + " Działka: " + "\n" +
-                    reader.GetDouble(3) + " Adres: " + reader.GetString(4) + " cena najmu: " + reader.GetInt32(7) 
-                    + " PLN min. okres najmu: " + reader.GetInt32(8) + " msc");
+                    reader.GetDouble(3) + " Adres: " + reader.GetString(4) + " " +  ZipCodeToString(reader.GetString(5)) + " cena najmu: " + reader.GetInt32(9) 
+                    + " PLN min. okres najmu: " + reader.GetInt32(10) + " msc");
                 }
-                else if(reader.IsDBNull(7) == true || reader.IsDBNull(8) == true)
+                else if(reader.IsDBNull(9) == true || reader.IsDBNull(10) == true)
                 {
                     cb.Items.Add("Metraż: " + reader.GetInt32(1) + "m^2. piwnica: " + piwnica + " Działka: " + "\n" +
-                    reader.GetDouble(3) + " Adres: " + reader.GetString(4) + " cena: " + reader.GetInt32(6) + " PLN");
+                    reader.GetDouble(3) + " Adres: " + reader.GetString(4) + " " + ZipCodeToString(reader.GetString(5))  + " cena: " + reader.GetInt32(8) + " PLN");
                 }
                 else
                 cb.Items.Add("Metraż: " + reader.GetInt32(1) + "m^2. piwnica: " + piwnica + " Działka: " + "\n" +
-                reader.GetDouble(3) + " Adres: " + reader.GetString(4) + " cena najmu: " + reader.GetInt32(7)
-                + " PLN min. okres najmu: " + reader.GetInt32(8) + " msc. Kwota Zakupu: " + reader.GetInt32(6) + " PLN");
+                reader.GetDouble(3) + " Adres: " + reader.GetString(4) + " " + ZipCodeToString(reader.GetString(5)) + " cena najmu: " + reader.GetInt32(9)
+                + " PLN min. okres najmu: " + reader.GetInt32(10) + " msc. Kwota Zakupu: " + reader.GetString(8) + " PLN");
 
             }
             con.Close();
@@ -365,27 +376,139 @@ namespace ProjektBD.sidebar_classes
         }
 
         // metoda do walidacji i i edytowania stringa z zipcode
-        public static int ZipCodeValidate(string zipcode)
+        public static string ZipCodeValidate(string zipcode)
         {
-            if (Regex.IsMatch(zipcode, @"^\d{2}-\d{3}$"))
+            try
             {
-                zipcode = zipcode.Replace("-", "");
-                return int.Parse(zipcode);
+                if (Regex.IsMatch(zipcode, @"^\d{2}-\d{3}$"))
+                {
+                    zipcode = zipcode.Replace("-", "");
+                }
             }
-            else
+            catch(Exception ex)
             {
-                Console.WriteLine("Invalid Polish zip code");
-                return 0;
+                MessageBox.Show(ex.Message);
             }
-            
+            return  zipcode;
         }
 
         //metoda do pobierania wartosci(kodu pocztowego) int z bazy danych i przerobienie na polski kod pocztowy
-        public static string ZipCodeToString(int zipcode)
+        public static string ZipCodeToString(string zipcode)
         {
-            string zipCodeString = zipcode.ToString();
-            zipCodeString = zipCodeString.Insert(2, "-");
-            return zipCodeString;
+            try
+            {
+                zipcode = zipcode.Insert(2, "-");
+                
+            }
+            catch (Exception ex) 
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return zipcode;
+        }
+
+        // metoda zwracajace tablice z query aktualizujace dane dot sprzedazy/najmu do edycji budynkow
+        public static string[] SelectQueryTransaction(int input, int output)
+        {
+            string[] qry = new string[2];
+            if (input == 1 && output == 1)
+            {
+                qry[0] = "UPDATE projektbd.rent_details SET rent_price = @rent, rent_min_time = @time WHERE id_buildings = @bid ";
+                return qry;
+            }
+            else if(input ==1 && output == 2) 
+            {
+                qry[0] = "DELETE FROM projektbd.rent_details WHERE id_buildings = @bid";
+                qry[1] = "INSERT INTO projektbd.sell_details (id_buildings, sell_price) VALUES (@bid, @price)";
+                return qry;
+            }
+            else if(input==1 && output == 3)
+            {
+                qry[0] = "UPDATE projektbd.rent_details SET id_buildings  = @bid, rent_price = @rent, rent_min_time = @time WHERE id_buildings = @bid ";
+                qry[1] = "INSERT INTO projektbd.sell_details (id_buildings, sell_price) VALUES (@bid, @price)";
+                return qry;
+            }
+            else if(input == 2 && output == 1)
+            {
+                qry[0] = "INSERT INTO projektbd.rent_details (id_buildings, rent_price, rent_min_time) VALUES (@bid, @rent, @time)";
+                qry[1] = "DELETE FROM projektbd.sell_details WHERE id_buildings = @bid";
+                return qry;
+            }
+            else if (input == 2 && output == 2)
+            {
+                qry[0] = "UPDATE projektbd.sell_details SET id_buildings = @bid, sell_price = @price WHERE id_buildings = @bid ";
+                return qry;
+            }
+            else if (input == 2 && output == 3)
+            {
+                qry[0] = "UPDATE projektbd.sell_details SET sell_price = @price WHERE id_buildings = @bid ";
+                qry[1] = "INSERT INTO projektbd.rent_details (id_buildings, rent_price, rent_min_time) VALUES (@bid, @rent, @time)";
+                return qry;
+            }
+            else if (input == 3 && output == 1)
+            {
+                qry[0] = "UPDATE projektbd.rent_details SET rent_price = @rent, rent_min_time = @time WHERE id_buildings = @bid";
+                qry[1] = "DELETE FROM projektbd.sell_details WHERE id_buildings = @bid";
+                return qry;
+            }
+            else if (input == 3 && output == 2)
+            {
+                qry[0] = "DELETE FROM projektbd.rent_details WHERE id_buildings = @bid";
+                qry[1] = "UPDATE projektbd.sell_details SET sell_price = @price WHERE id_buildings = @bid";
+                return qry;
+            }
+            else if (input == 3 && output == 3)
+            {
+                qry[0] = "UPDATE projektbd.rent_details SET id_buildings  = @bid, rent_price = @rent, rent_min_time = @time";
+                qry[1] = "UPDATE projektbd.sell_details SET sell_price = @price WHERE id_buildings = @bid ";
+                return qry;
+            }
+            return qry;
+        }
+
+        // metoda walidujaca adres mailowy
+        public static bool IsValidMail(string email)
+        {
+            var valid = true;
+
+            try
+            {
+                var emailAddress = new MailAddress(email);
+            }
+            catch
+            {
+                valid = false;
+            }
+
+            return valid;
+        }
+
+        // metoda walidujaca text bez cyfr
+        public static void allowLettersOnly(TextBox tb, KeyPressEventArgs e)
+        {
+            if(!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
+                e.Handled = true;
+        }
+
+        // metoda walidujaca kod pczotowy
+        public static void allowPostalOnly(TextBox tb, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar) && e.KeyChar !='-')
+                e.Handled = true;
+        }
+
+        // metoda walidujaca liczby dziesietne
+        public static void allowDecimalOnly(TextBox tb, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar) && e.KeyChar != '.')
+                e.Handled = true;
+        }
+
+        // metoda walidujaca liczby  całkowite
+        public static void allowNumbersOnly(TextBox tb, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+                e.Handled = true;
         }
 
     }

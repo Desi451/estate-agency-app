@@ -26,6 +26,7 @@ namespace ProjektBD
         // zmienne
         List<int> idBuildings= new List<int>(); // tablica przechowujaca id budynkow dla dodawania i edytowania spotkan
         List<int> idMeetings = new List<int>(); // tablica przechowujaca id spotkan dla edytowania
+        List<int> buildingTransactions = new List<int>();// tablica przechowujaca id transakcji dla edycji budynków
 
         public AdminPanel()
         {
@@ -33,6 +34,7 @@ namespace ProjektBD
             HidePannels();
             Tools.LoadBasementListBox(ListBoxBasementEdit);
             Tools.LoadBasementListBox(ListBoxBuildingBasement);
+            Tools.FillRankBox(rankBoxCategory);
         }
 
         // metody ogolne
@@ -47,26 +49,35 @@ namespace ProjektBD
         // metody zwiazane z edycja i usuwaniem profilu
         private void UpdateRow()
         {
-            try
+            if (Tools.IsValidMail(emailBox.Text))
             {
-                int selectedId = Tools.ReadComboId(userListBox.Text);
-                int x = 1;
-                string query = "UPDATE projektbd.users SET first_name= '" + first_nameBox.Text + "', last_name= '" + last_nameBox.Text +
-                "', login= '" + loginBox.Text + "', password= '" + passwordBox.Text + "', email= '" + emailBox.Text + "', id_rank= '" + x + "'" +
-                ", street= '" + streetBox.Text + "', no_building= '" + no_buildingBox.Text + "', no_apartament= '" + no_apartamentBox.Text + 
-                "', zip_code=" + "'" + int.Parse(zip_codeBox.Text) + "', city= '" + cityBox.Text + "' WHERE id= '" + selectedId + "';";
+                try
+                {
 
-                MySqlConnection con = new MySqlConnection();
-                con.ConnectionString = DataBase.Connstring;
-                con.Open();
-                MySqlCommand cmd = new MySqlCommand(query, con);
-                cmd.ExecuteReader();
-                con.Close();
-                MessageBox.Show("Zaaktualizowano dane!", "Rejestracja", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    int selectedId = Tools.ReadComboId(userListBox.Text);
+                    string zipCode = Tools.ZipCodeValidate(zip_codeBox.Text);
+                    int x = 1;
+                    string query = "UPDATE projektbd.users SET first_name= '" + first_nameBox.Text + "', last_name= '" + last_nameBox.Text +
+                    "', login= '" + loginBox.Text + "', password= '" + passwordBox.Text + "', email= '" + emailBox.Text + "', id_rank= '" + x + "'" +
+                    ", street= '" + streetBox.Text + "', no_building= '" + no_buildingBox.Text + "', no_apartament= '" + no_apartamentBox.Text +
+                    "', zip_code=" + "'" + zipCode + "', city= '" + cityBox.Text + "' WHERE id= '" + selectedId + "';";
+
+                    MySqlConnection con = new MySqlConnection();
+                    con.ConnectionString = DataBase.Connstring;
+                    con.Open();
+                    MySqlCommand cmd = new MySqlCommand(query, con);
+                    cmd.ExecuteReader();
+                    con.Close();
+                    MessageBox.Show("Zaaktualizowano dane!", "Edycja Profilu", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Wprowadz poprawnie dane", "Edycja Profilu", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -124,23 +135,35 @@ namespace ProjektBD
         private void ConfirmEditUserBtn_Click(object sender, EventArgs e)
         {
             UpdateRow();
+            Tools.CleanTextBoxesUser(first_nameBox, last_nameBox, loginBox, passwordBox, emailBox,
+            rankBoxCategory, streetBox, no_buildingBox, no_apartamentBox, zip_codeBox, cityBox);
+            LoadEditPanel();
         }
 
         private void ConfirmDelUserBtn_Click(object sender, EventArgs e)
         {
             DeleteRow();
             Tools.CleanTextBoxesUser(first_nameBox, last_nameBox, loginBox, passwordBox, emailBox,
-            rankBox, streetBox, no_buildingBox, no_apartamentBox, zip_codeBox, cityBox);
+            rankBoxCategory, streetBox, no_buildingBox, no_apartamentBox, zip_codeBox, cityBox);
             LoadEditPanel();
         }
 
         private void UserListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int selectedId = Tools.ReadComboId(userListBox.Text);
-            string query = "SELECT * FROM projektbd.users WHERE id= '" + selectedId + "';";
+            Tools.CleanTextBoxesUser(first_nameBox, last_nameBox, loginBox, passwordBox, emailBox,
+            rankBoxCategory, streetBox, no_buildingBox, no_apartamentBox, zip_codeBox, cityBox);
+            try
+            {
+                int selectedId = Tools.ReadComboId(userListBox.Text);
+                string query = "SELECT * FROM projektbd.users WHERE id= '" + selectedId + "';";
 
-            Tools.FillTextBoxesUser(first_nameBox, last_nameBox, loginBox, passwordBox, emailBox,
-            rankBox, streetBox, no_buildingBox, no_apartamentBox, zip_codeBox, cityBox, query);
+                Tools.FillTextBoxesUser(first_nameBox, last_nameBox, loginBox, passwordBox, emailBox,
+                rankBoxCategory, streetBox, no_buildingBox, no_apartamentBox, zip_codeBox, cityBox, query);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         // metody zwiazane z dodawaniem spotkania jako administratorem
@@ -150,7 +173,7 @@ namespace ProjektBD
             Tools.SwitchVisibile(addMeetingPanel);
             Tools.LoadStatusofMeeting(listBoxMeetingsStatus);
             Tools.LoadAddMeetingsPanelAgentsAndUsers(listBoxMeetingsAgent, listBoxMeetingsUser);
-            Tools.LoadBuildings(listBoxBuildings,idBuildings);
+            Tools.LoadBuildings(listBoxBuildings,idBuildings, buildingTransactions);
             dateTimeAddMeeting.Value = DateTime.Now;
             dateTimeAddMeeting.MinDate = DateTime.Now;
         }
@@ -232,7 +255,7 @@ namespace ProjektBD
             LoadAddMeetingsPanelListBox();
             Tools.LoadStatusofMeeting(listBoxEditMeetingsStatus);
             Tools.LoadAddMeetingsPanelAgentsAndUsers(listBoxEditMeetingsAgent, listBoxEditMeetingsUser);
-            Tools.LoadBuildings(listBoxBuildingsEditMeetings,idBuildings);
+            Tools.LoadBuildings(listBoxBuildingsEditMeetings,idBuildings, buildingTransactions);
             dateTimeEditMeeting.Value = DateTime.Now;
             dateTimeEditMeeting.MinDate= DateTime.Now;
         }
@@ -300,9 +323,10 @@ namespace ProjektBD
             {
                 MySqlConnection con = new MySqlConnection();
                 con.ConnectionString = DataBase.Connstring;
-                con.Open();
+                
                 string query = "SELECT * FROM projektbd.meetings WHERE id = '" + Tools.ReadComboId(editMeetingsList.Text) + "'";
                 MySqlCommand sda = new MySqlCommand(query, con);
+                con.Open();
                 MySqlDataReader reader = sda.ExecuteReader();
                 while (reader.Read())
                 {
@@ -358,7 +382,7 @@ namespace ProjektBD
             string street = TextBoxBuildingStreet.Text;
             string noBuilding = TextBoxBuildingNo_building.Text;
             string noApartament = TextBoxBuildingNo_apartament.Text;
-            int zip = int.Parse(TextBoxBuildingZipCode.Text);
+            string zip = Tools.ZipCodeValidate(TextBoxBuildingZipCode.Text);
             string city = TextBoxBuildingCity.Text;
             int tran = (ListBoxBuildingTransaction.SelectedIndex + 1);
             DialogResult wynik = MessageBox.Show("Czy na pewno chcesz dodac to spotkanie" +
@@ -417,7 +441,7 @@ namespace ProjektBD
         {
             HidePannels();
             Tools.SwitchVisibile(editBuildingPanel);
-            Tools.LoadBuildings(LbSelectBuildingEdit, idBuildings);
+            Tools.LoadBuildings(LbSelectBuildingEdit, idBuildings, buildingTransactions);
             Tools.LoadBuildingElements(ListBoxTypeBuildingEdit, ListBoxTypeTransactionEdit);
             Tools.LockBackTextBox(TextBoxSellEdit, TextBoxRentTimeEdit, TextBoxRentEdit);
         }
@@ -435,7 +459,7 @@ namespace ProjektBD
             
                 string query = "SELECT size, basement, plot_of_land_size,\r\n" +
                     "street, no_building, IF(no_apartament, no_apartament, ''), city, zip_code,\r\n" +
-                    "t.id, s.sell_price, r.rent_price, r.rent_min_time FROM projektbd.buildings b\r\n" +
+                    "t.id, s.sell_price, r.rent_price, r.rent_min_time, type_id FROM projektbd.buildings b\r\n" +
                     "INNER JOIN projektbd.transaction_type AS t ON b.transaction_id = t.id\r\n" +
                     "LEFT JOIN projektbd.sell_details s ON b.id = s.id_buildings\r\n" +
                     "LEFT JOIN projektbd.rent_details r ON b.id = r.id_buildings\r\n" +
@@ -453,11 +477,12 @@ namespace ProjektBD
                     TextBoxEditBuildingNoB.Text = reader.GetString(4);
                     if(reader.IsDBNull(5)== false) TextBoxEditBuildingNoA.Text = reader.GetString(5);
                     TextBoxEditBuildingCity.Text = reader.GetString(6);
-                    TextBoxEditBuildingZipCode.Text = reader.GetString(7);
+                    TextBoxEditBuildingZipCode.Text = Tools.ZipCodeToString(reader.GetString(7));
                     ListBoxTypeTransactionEdit.SelectedIndex = reader.GetInt32(8)-1;
                     if (reader.IsDBNull(9) == false) TextBoxSellEdit.Text = reader.GetInt32(9).ToString();
                     if (reader.IsDBNull(10) == false) TextBoxRentEdit.Text = reader.GetInt32(10).ToString();
                     if (reader.IsDBNull(11) == false) TextBoxRentTimeEdit.Text = reader.GetInt32(11).ToString();
+                    ListBoxTypeBuildingEdit.SelectedIndex = reader.GetInt32(12)-1;
                 }
                 con.Close();
                 Tools.LoadTransactionBuildings(ListBoxTypeTransactionEdit.SelectedIndex, TextBoxSellEdit, TextBoxRentEdit, TextBoxRentTimeEdit);
@@ -490,14 +515,14 @@ namespace ProjektBD
                         string street = TextBoxEditBuildingStreet.Text;
                         string noBuilding = TextBoxEditBuildingNoB.Text;
                         string noApartament = TextBoxEditBuildingNoA.Text;
-                        int zip = int.Parse(TextBoxEditBuildingZipCode.Text);
+                        string zip = Tools.ZipCodeValidate(TextBoxEditBuildingZipCode.Text);
                         string city = TextBoxEditBuildingCity.Text;
                         int tran = (ListBoxTypeTransactionEdit.SelectedIndex + 1);
 
-                        cmd.CommandText = "INSERT INTO projektbd.buildings (type_id, size, basement, plot_of_land_size," +
-                            "street, no_building, no_apartament, zip_code, city, transaction_id) " +
-                            "VALUES (@type, @size, @basement,@plot_of_land_size, @street, @no_building, " +
-                            "@no_apartament, @zip_code, @city, @transaction_id)";
+                        cmd.CommandText = "UPDATE projektbd.buildings SET type_id = @type, size = @size, basement = @basement, " +
+                            "plot_of_land_size = @plot_of_land_size, street = @street, no_building = @no_building, " +
+                            "no_apartament = @no_apartament, zip_code = @zip_code, city = @city, " +
+                            "transaction_id = @transaction_id WHERE id = @b_id";
                         cmd.Parameters.AddWithValue("@type", type);
                         cmd.Parameters.AddWithValue("@size", size);
                         cmd.Parameters.AddWithValue("@basement", basement);
@@ -508,29 +533,31 @@ namespace ProjektBD
                         cmd.Parameters.AddWithValue("@zip_code", zip);
                         cmd.Parameters.AddWithValue("@city", city);
                         cmd.Parameters.AddWithValue("@transaction_id", tran);
+                        cmd.Parameters.AddWithValue("@b_id", idBuildings[LbSelectBuildingEdit.SelectedIndex]);
                         cmd.ExecuteNonQuery();
 
                         string price = Tools.CheckIfNull(TextBoxSellEdit.Text);
-                        string rentPrice = Tools.CheckIfNull(TextBoxBuildingsRentPrice.Text);
-                        string rentTime = Tools.CheckIfNull(TextBoxRentEdit.Text);
+                        string rentPrice = Tools.CheckIfNull(TextBoxRentEdit.Text);
+                        string rentTime = Tools.CheckIfNull(TextBoxRentTimeEdit.Text);
 
-                        if (ListBoxTypeTransactionEdit.SelectedIndex == 0 || ListBoxTypeTransactionEdit.SelectedIndex == 2)
-                        {
-                            cmd.CommandText = "UPDATE rent_details SET id_buildings, rent_price, rent_min_time VALUES (@bid, @rent, @time)";
-                            cmd.Parameters.AddWithValue("@bid", buildingId);
-                            cmd.Parameters.AddWithValue("@rent", rentPrice);
-                            cmd.Parameters.AddWithValue("@time", rentTime);
-                            cmd.ExecuteNonQuery();
-                        }
+                        cmd.Parameters.AddWithValue("@bid", buildingId);
+                        cmd.Parameters.AddWithValue("@rent", rentPrice);
+                        cmd.Parameters.AddWithValue("@time", rentTime);
+                        cmd.Parameters.AddWithValue("@price", price);
+                        string[] qry = new string[2];
 
-                        if (ListBoxTypeTransactionEdit.SelectedIndex == 1 || ListBoxTypeTransactionEdit.SelectedIndex == 2)
+                        qry =Tools.SelectQueryTransaction(buildingTransactions[LbSelectBuildingEdit.SelectedIndex], ListBoxTypeTransactionEdit.SelectedIndex + 1);
+                        cmd.CommandText = qry[0];
+                        cmd.ExecuteNonQuery();
+
+                        if (qry[1] != string.Empty)
                         {
-                            cmd.CommandText = "UPDATE sell_details SET (id_buildings, sell_price) VALUES (@col1, @col2)";
-                            cmd.Parameters.AddWithValue("@col1", buildingId);
-                            cmd.Parameters.AddWithValue("@col2", price);
+                            cmd.CommandText = qry[1];
                             cmd.ExecuteNonQuery();
                         }
                         trans.Commit();
+                        MessageBox.Show("Zaaktualizowano dane!", "Budynki", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                     }
                 }
                 catch (MySqlException)
@@ -577,6 +604,104 @@ namespace ProjektBD
         {
             Tools.LoadTransactionBuildings(ListBoxTypeTransactionEdit.SelectedIndex,
             TextBoxSellEdit, TextBoxRentEdit, TextBoxRentTimeEdit);
+        }
+
+
+        // walidacja edycji profilu
+        private void First_nameBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Tools.allowLettersOnly(first_nameBox, e);
+        }
+
+        private void Last_nameBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Tools.allowLettersOnly(last_nameBox, e);
+        }
+
+        private void CityBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Tools.allowLettersOnly(cityBox, e);
+        }
+
+        private void Zip_codeBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Tools.allowPostalOnly(zip_codeBox, e);
+        }
+
+        private void No_apartamentBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Tools.allowNumbersOnly(no_apartamentBox, e);
+        }
+
+        // walidacja dodawania budynku
+        private void TextBoxBuildingSize_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Tools.allowDecimalOnly(TextBoxBuildingSize, e);
+        }
+
+        private void TextBoxBuildingSizeLand_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Tools.allowDecimalOnly(TextBoxBuildingSizeLand, e);
+        }
+
+        private void TextBoxBuildingNo_apartament_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Tools.allowNumbersOnly(TextBoxBuildingNo_apartament, e);
+        }
+
+        private void TextBoxBuildingZipCode_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Tools.allowPostalOnly(TextBoxBuildingZipCode, e);
+        }
+
+        private void TextBoxBuildingsRentPrice_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Tools.allowNumbersOnly(no_apartamentBox, e);
+        }
+
+        private void TextBoxBuildingsTimeRent_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Tools.allowNumbersOnly(TextBoxBuildingsTimeRent, e);
+        }
+
+        private void TextBoxBuildingsSellPrice_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Tools.allowNumbersOnly(TextBoxBuildingsSellPrice, e);
+        }
+        // walidacja edycji budynku
+        private void TBeditBuildigsSize_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Tools.allowDecimalOnly(TBeditBuildigsSize, e);
+        }
+
+        private void TBeditBuildigsLandSize_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Tools.allowDecimalOnly(TBeditBuildigsLandSize, e);
+        }
+
+        private void TextBoxEditBuildingNoA_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Tools.allowNumbersOnly(TextBoxEditBuildingNoA, e);
+        }
+
+        private void TextBoxEditBuildingZipCode_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Tools.allowPostalOnly(TextBoxEditBuildingZipCode, e);
+        }
+
+        private void TextBoxRentEdit_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Tools.allowNumbersOnly(TextBoxRentEdit, e);
+        }
+
+        private void TextBoxRentTimeEdit_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Tools.allowNumbersOnly(TextBoxRentTimeEdit, e);
+        }
+
+        private void TextBoxSellEdit_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Tools.allowNumbersOnly(TextBoxSellEdit, e);
         }
     }
 }

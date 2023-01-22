@@ -34,7 +34,7 @@
             this.userListBox = new System.Windows.Forms.ComboBox();
             this.confirmDelUserBtn = new System.Windows.Forms.Button();
             this.confirmEditUserBtn = new System.Windows.Forms.Button();
-            this.rankBox = new System.Windows.Forms.ComboBox();
+            this.rankBoxCategory = new System.Windows.Forms.ComboBox();
             this.cityBox = new System.Windows.Forms.TextBox();
             this.zip_codeBox = new System.Windows.Forms.TextBox();
             this.no_apartamentBox = new System.Windows.Forms.TextBox();
@@ -176,7 +176,7 @@
             this.editProfilePanel.Controls.Add(this.userListBox);
             this.editProfilePanel.Controls.Add(this.confirmDelUserBtn);
             this.editProfilePanel.Controls.Add(this.confirmEditUserBtn);
-            this.editProfilePanel.Controls.Add(this.rankBox);
+            this.editProfilePanel.Controls.Add(this.rankBoxCategory);
             this.editProfilePanel.Controls.Add(this.cityBox);
             this.editProfilePanel.Controls.Add(this.zip_codeBox);
             this.editProfilePanel.Controls.Add(this.no_apartamentBox);
@@ -226,7 +226,7 @@
             // 
             // confirmDelUserBtn
             // 
-            this.confirmDelUserBtn.Location = new System.Drawing.Point(593, 415);
+            this.confirmDelUserBtn.Location = new System.Drawing.Point(596, 415);
             this.confirmDelUserBtn.Name = "confirmDelUserBtn";
             this.confirmDelUserBtn.Size = new System.Drawing.Size(150, 50);
             this.confirmDelUserBtn.TabIndex = 47;
@@ -236,7 +236,7 @@
             // 
             // confirmEditUserBtn
             // 
-            this.confirmEditUserBtn.Location = new System.Drawing.Point(749, 415);
+            this.confirmEditUserBtn.Location = new System.Drawing.Point(752, 414);
             this.confirmEditUserBtn.Name = "confirmEditUserBtn";
             this.confirmEditUserBtn.Size = new System.Drawing.Size(150, 50);
             this.confirmEditUserBtn.TabIndex = 46;
@@ -244,14 +244,14 @@
             this.confirmEditUserBtn.UseVisualStyleBackColor = true;
             this.confirmEditUserBtn.Click += new System.EventHandler(this.ConfirmEditUserBtn_Click);
             // 
-            // rankBox
+            // rankBoxCategory
             // 
-            this.rankBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.rankBox.FormattingEnabled = true;
-            this.rankBox.Location = new System.Drawing.Point(446, 260);
-            this.rankBox.Name = "rankBox";
-            this.rankBox.Size = new System.Drawing.Size(168, 21);
-            this.rankBox.TabIndex = 45;
+            this.rankBoxCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.rankBoxCategory.FormattingEnabled = true;
+            this.rankBoxCategory.Location = new System.Drawing.Point(446, 260);
+            this.rankBoxCategory.Name = "rankBoxCategory";
+            this.rankBoxCategory.Size = new System.Drawing.Size(168, 21);
+            this.rankBoxCategory.TabIndex = 45;
             // 
             // cityBox
             // 
@@ -259,20 +259,25 @@
             this.cityBox.Name = "cityBox";
             this.cityBox.Size = new System.Drawing.Size(168, 20);
             this.cityBox.TabIndex = 44;
+            this.cityBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CityBox_KeyPress);
             // 
             // zip_codeBox
             // 
             this.zip_codeBox.Location = new System.Drawing.Point(731, 260);
+            this.zip_codeBox.MaxLength = 6;
             this.zip_codeBox.Name = "zip_codeBox";
             this.zip_codeBox.Size = new System.Drawing.Size(168, 20);
             this.zip_codeBox.TabIndex = 43;
+            this.zip_codeBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Zip_codeBox_KeyPress);
             // 
             // no_apartamentBox
             // 
             this.no_apartamentBox.Location = new System.Drawing.Point(731, 220);
+            this.no_apartamentBox.MaxLength = 4;
             this.no_apartamentBox.Name = "no_apartamentBox";
             this.no_apartamentBox.Size = new System.Drawing.Size(168, 20);
             this.no_apartamentBox.TabIndex = 42;
+            this.no_apartamentBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.No_apartamentBox_KeyPress);
             // 
             // no_buildingBox
             // 
@@ -316,6 +321,7 @@
             this.last_nameBox.Name = "last_nameBox";
             this.last_nameBox.Size = new System.Drawing.Size(168, 20);
             this.last_nameBox.TabIndex = 36;
+            this.last_nameBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Last_nameBox_KeyPress);
             // 
             // first_nameBox
             // 
@@ -323,6 +329,7 @@
             this.first_nameBox.Name = "first_nameBox";
             this.first_nameBox.Size = new System.Drawing.Size(168, 20);
             this.first_nameBox.TabIndex = 35;
+            this.first_nameBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.First_nameBox_KeyPress);
             // 
             // cityTxt
             // 
@@ -446,7 +453,7 @@
             // 
             // editMeetingBtn
             // 
-            this.editMeetingBtn.Cursor = System.Windows.Forms.Cursors.SizeNWSE;
+            this.editMeetingBtn.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.editMeetingBtn.Location = new System.Drawing.Point(12, 124);
             this.editMeetingBtn.Name = "editMeetingBtn";
             this.editMeetingBtn.Size = new System.Drawing.Size(150, 50);
@@ -872,6 +879,7 @@
             this.TextBoxBuildingSizeLand.Name = "TextBoxBuildingSizeLand";
             this.TextBoxBuildingSizeLand.Size = new System.Drawing.Size(278, 20);
             this.TextBoxBuildingSizeLand.TabIndex = 86;
+            this.TextBoxBuildingSizeLand.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxBuildingSizeLand_KeyPress);
             // 
             // label21
             // 
@@ -910,6 +918,7 @@
             this.TextBoxBuildingsTimeRent.Name = "TextBoxBuildingsTimeRent";
             this.TextBoxBuildingsTimeRent.Size = new System.Drawing.Size(136, 20);
             this.TextBoxBuildingsTimeRent.TabIndex = 82;
+            this.TextBoxBuildingsTimeRent.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxBuildingsTimeRent_KeyPress);
             // 
             // TextBoxBuildingsRentPrice
             // 
@@ -918,6 +927,7 @@
             this.TextBoxBuildingsRentPrice.Name = "TextBoxBuildingsRentPrice";
             this.TextBoxBuildingsRentPrice.Size = new System.Drawing.Size(136, 20);
             this.TextBoxBuildingsRentPrice.TabIndex = 81;
+            this.TextBoxBuildingsRentPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxBuildingsRentPrice_KeyPress);
             // 
             // TextBoxBuildingsSellPrice
             // 
@@ -926,6 +936,7 @@
             this.TextBoxBuildingsSellPrice.Name = "TextBoxBuildingsSellPrice";
             this.TextBoxBuildingsSellPrice.Size = new System.Drawing.Size(136, 20);
             this.TextBoxBuildingsSellPrice.TabIndex = 80;
+            this.TextBoxBuildingsSellPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxBuildingsSellPrice_KeyPress);
             // 
             // label20
             // 
@@ -1027,9 +1038,11 @@
             // TextBoxBuildingZipCode
             // 
             this.TextBoxBuildingZipCode.Location = new System.Drawing.Point(736, 210);
+            this.TextBoxBuildingZipCode.MaxLength = 6;
             this.TextBoxBuildingZipCode.Name = "TextBoxBuildingZipCode";
             this.TextBoxBuildingZipCode.Size = new System.Drawing.Size(122, 20);
             this.TextBoxBuildingZipCode.TabIndex = 69;
+            this.TextBoxBuildingZipCode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxBuildingZipCode_KeyPress);
             // 
             // TextBoxBuildingNo_apartament
             // 
@@ -1037,6 +1050,7 @@
             this.TextBoxBuildingNo_apartament.Name = "TextBoxBuildingNo_apartament";
             this.TextBoxBuildingNo_apartament.Size = new System.Drawing.Size(44, 20);
             this.TextBoxBuildingNo_apartament.TabIndex = 68;
+            this.TextBoxBuildingNo_apartament.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxBuildingNo_apartament_KeyPress);
             // 
             // TextBoxBuildingNo_building
             // 
@@ -1058,6 +1072,7 @@
             this.TextBoxBuildingSize.Name = "TextBoxBuildingSize";
             this.TextBoxBuildingSize.Size = new System.Drawing.Size(278, 20);
             this.TextBoxBuildingSize.TabIndex = 65;
+            this.TextBoxBuildingSize.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxBuildingSize_KeyPress);
             // 
             // ListBoxBuildingBasement
             // 
@@ -1194,6 +1209,7 @@
             this.TBeditBuildigsLandSize.Name = "TBeditBuildigsLandSize";
             this.TBeditBuildigsLandSize.Size = new System.Drawing.Size(278, 20);
             this.TBeditBuildigsLandSize.TabIndex = 114;
+            this.TBeditBuildigsLandSize.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TBeditBuildigsLandSize_KeyPress);
             // 
             // label29
             // 
@@ -1232,6 +1248,7 @@
             this.TextBoxRentTimeEdit.Name = "TextBoxRentTimeEdit";
             this.TextBoxRentTimeEdit.Size = new System.Drawing.Size(136, 20);
             this.TextBoxRentTimeEdit.TabIndex = 110;
+            this.TextBoxRentTimeEdit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxRentTimeEdit_KeyPress);
             // 
             // TextBoxRentEdit
             // 
@@ -1240,6 +1257,7 @@
             this.TextBoxRentEdit.Name = "TextBoxRentEdit";
             this.TextBoxRentEdit.Size = new System.Drawing.Size(136, 20);
             this.TextBoxRentEdit.TabIndex = 109;
+            this.TextBoxRentEdit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxRentEdit_KeyPress);
             // 
             // TextBoxSellEdit
             // 
@@ -1248,6 +1266,7 @@
             this.TextBoxSellEdit.Name = "TextBoxSellEdit";
             this.TextBoxSellEdit.Size = new System.Drawing.Size(136, 20);
             this.TextBoxSellEdit.TabIndex = 108;
+            this.TextBoxSellEdit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxSellEdit_KeyPress);
             // 
             // label32
             // 
@@ -1349,9 +1368,11 @@
             // TextBoxEditBuildingZipCode
             // 
             this.TextBoxEditBuildingZipCode.Location = new System.Drawing.Point(780, 349);
+            this.TextBoxEditBuildingZipCode.MaxLength = 6;
             this.TextBoxEditBuildingZipCode.Name = "TextBoxEditBuildingZipCode";
             this.TextBoxEditBuildingZipCode.Size = new System.Drawing.Size(122, 20);
             this.TextBoxEditBuildingZipCode.TabIndex = 97;
+            this.TextBoxEditBuildingZipCode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxEditBuildingZipCode_KeyPress);
             // 
             // TextBoxEditBuildingNoA
             // 
@@ -1359,6 +1380,7 @@
             this.TextBoxEditBuildingNoA.Name = "TextBoxEditBuildingNoA";
             this.TextBoxEditBuildingNoA.Size = new System.Drawing.Size(44, 20);
             this.TextBoxEditBuildingNoA.TabIndex = 96;
+            this.TextBoxEditBuildingNoA.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxEditBuildingNoA_KeyPress);
             // 
             // TextBoxEditBuildingNoB
             // 
@@ -1380,6 +1402,7 @@
             this.TBeditBuildigsSize.Name = "TBeditBuildigsSize";
             this.TBeditBuildigsSize.Size = new System.Drawing.Size(278, 20);
             this.TBeditBuildigsSize.TabIndex = 93;
+            this.TBeditBuildigsSize.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TBeditBuildigsSize_KeyPress);
             // 
             // ListBoxBasementEdit
             // 
@@ -1459,7 +1482,7 @@
 
         private System.Windows.Forms.Button editProfileBtn;
         private System.Windows.Forms.Panel editProfilePanel;
-        private System.Windows.Forms.ComboBox rankBox;
+        private System.Windows.Forms.ComboBox rankBoxCategory;
         private System.Windows.Forms.TextBox cityBox;
         private System.Windows.Forms.TextBox zip_codeBox;
         private System.Windows.Forms.TextBox no_apartamentBox;
