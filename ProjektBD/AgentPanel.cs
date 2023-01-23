@@ -287,6 +287,7 @@ namespace ProjektBD
             Tools.LockBackTextBox(TextBoxBuildingsSellPrice, TextBoxBuildingsTimeRent, TextBoxBuildingsRentPrice);
             Tools.UnlockTextBox(ListBoxBuildingTransaction.SelectedIndex,
             TextBoxBuildingsSellPrice, TextBoxBuildingsTimeRent, TextBoxBuildingsRentPrice);
+            
         }
 
         private void ConfirmAddBuildingBtn_Click(object sender, EventArgs e)
@@ -542,6 +543,12 @@ namespace ProjektBD
             }
         }
 
+        private void ListBoxTypeTransactionEdit_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Tools.LoadTransactionBuildings(ListBoxTypeTransactionEdit.SelectedIndex,
+            TextBoxSellEdit, TextBoxRentEdit, TextBoxRentTimeEdit);
+        }
+
         //logout
         private void LogOutBtn_Click(object sender, EventArgs e)
         {
@@ -649,5 +656,7 @@ namespace ProjektBD
         {
             Tools.allowNumbersOnly(TextBoxSellEdit, e);
         }
+
+        
     }
 }

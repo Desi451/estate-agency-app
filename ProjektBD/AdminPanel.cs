@@ -649,17 +649,18 @@ namespace ProjektBD
             }
         }
 
+        private void ListBoxTypeTransactionEdit_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Tools.LoadTransactionBuildings(ListBoxTypeTransactionEdit.SelectedIndex,
+            TextBoxSellEdit, TextBoxRentEdit, TextBoxRentTimeEdit);
+        }
+
+
         // metoda odpowiedzialna za wylogowanie
         private void LogOutBtn_Click(object sender, EventArgs e)
         {
             this.Close();
             Tools.ResetParameters();
-        }
-
-        private void ListBoxTypeTransactionEdit_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Tools.LoadTransactionBuildings(ListBoxTypeTransactionEdit.SelectedIndex,
-            TextBoxSellEdit, TextBoxRentEdit, TextBoxRentTimeEdit);
         }
 
         // walidacja edycji profilu
