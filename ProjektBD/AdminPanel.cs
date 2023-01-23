@@ -267,6 +267,10 @@ namespace ProjektBD
             int status = (listBoxEditMeetingsStatus.SelectedIndex + 1);
             int agent = Tools.ReadComboId(listBoxEditMeetingsAgent.Text);
             int user = Tools.ReadComboId(listBoxEditMeetingsUser.Text);
+            if (listBoxBuildingsEditMeetings.SelectedIndex == -1)
+            {
+                return;
+            }
             int building = idBuildings[listBoxBuildingsEditMeetings.SelectedIndex];
             string date= dateTimeEditMeeting.Text;
             int id = Tools.ReadComboId(editMeetingsList.Text);
@@ -297,9 +301,13 @@ namespace ProjektBD
 
         private void ConfirmDelMeetingsBtn_Click(object sender, EventArgs e)
         {
-           int temp = idMeetings[editMeetingsList.SelectedIndex];
+            if (editMeetingsList.SelectedIndex == -1)
+            {
+                return;
+            }
+            int temp = idMeetings[editMeetingsList.SelectedIndex];
             DialogResult wynik = MessageBox.Show("Czy na pewno chcesz usunac wiersz o indeksie: " + temp + "?", "Usuwanie", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            if (wynik == DialogResult.Yes)
+            if (wynik == DialogResult.Yes && editMeetingsList.SelectedIndex >=0)
             {
                 try
                 {
@@ -377,7 +385,9 @@ namespace ProjektBD
 
         private void ConfirmAddBuildingBtn_Click(object sender, EventArgs e)
         {
-            int addedId=0;
+            MySqlConnection con = new MySqlConnection();
+            con.ConnectionString = DataBase.Connstring;
+            int addedId = 0;
             int type = (ListBoxBuildingType.SelectedIndex + 1);
             string size = TextBoxBuildingSize.Text;
             int basement = ListBoxBuildingBasement.SelectedIndex;
@@ -388,47 +398,77 @@ namespace ProjektBD
             string zip = Tools.ZipCodeValidate(TextBoxBuildingZipCode.Text);
             string city = TextBoxBuildingCity.Text;
             int tran = (ListBoxBuildingTransaction.SelectedIndex + 1);
+            string rentPrice = "0";
+            string rentTime = "0";
+            string price = "0";
+
             DialogResult wynik = MessageBox.Show("Czy na pewno chcesz dodac to spotkanie" +
             "?", "Dodawanie Spotkań", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
-            if (wynik == DialogResult.Yes)
+            if (wynik == DialogResult.Yes && ListBoxBuildingType.SelectedIndex >= 0 && ListBoxBuildingTransaction.SelectedIndex >= 0
+             && ListBoxBuildingBasement.SelectedIndex >= 0)
             {
-                try
+                con.Open();
+                using (MySqlTransaction trans = con.BeginTransaction())
                 {
-                    string query = "INSERT INTO projektbd.buildings (type_id,size,basement,plot_of_land_size,street,no_building, " +
-                   "no_apartament,zip_code,city,transaction_id) VALUES('" + type + "', '" + size + "', '"
-                   + basement + "', '" + landSize + "', '" + street + "','" + noBuilding + "','"
-                   + noApartament + "','" + zip + "','" + city + "','" + tran + "' );" +
-                   "SELECT LAST_INSERT_ID();";
-
-                    MySqlConnection con = new MySqlConnection();
-                    con.ConnectionString = DataBase.Connstring;
-                    con.Open();
-                    MySqlCommand cmd = new MySqlCommand(query, con);
-                    MySqlDataReader reader = cmd.ExecuteReader();
-                    while (reader.Read())
+                    try
                     {
-                        addedId = reader.GetInt32(0);
+                        using (MySqlCommand cmd = new MySqlCommand())
+                        {
+                            string query = "INSERT INTO projektbd.buildings (type_id,size,basement,plot_of_land_size,street,no_building, " +
+                            "no_apartament,zip_code,city,transaction_id) VALUES('" + type + "', '" + size + "', '"
+                            + basement + "', '" + landSize + "', '" + street + "','" + noBuilding + "','"
+                            + noApartament + "','" + zip + "','" + city + "','" + tran + "' );" +
+                            "SELECT LAST_INSERT_ID();";
+
+                            cmd.Connection = con;
+                            cmd.CommandText = query;
+                            cmd.Transaction = trans;
+                            MySqlDataReader reader = cmd.ExecuteReader();
+                            while (reader.Read())
+                            {
+                                addedId = reader.GetInt32(0);
+                            }
+
+
+                            if ((tran == 1 || tran == 3) &&
+                            TextBoxBuildingsSellPrice.Text != string.Empty)
+                            {
+                                rentPrice = Tools.CheckIfNull(TextBoxBuildingsRentPrice.Text);
+                                rentTime = Tools.CheckIfNull(TextBoxBuildingsTimeRent.Text);
+                            }
+                            else if ((tran == 2 || tran == 3) &&
+                            TextBoxBuildingsSellPrice.Text != string.Empty)
+                            {
+                                price = Tools.CheckIfNull(TextBoxBuildingsSellPrice.Text);
+                            }
+                            else
+                            {
+                                throw new Exception();
+                            }
+                            reader.Close();
+                            string[] qry = new string[2];
+                            qry[0] = Tools.SelectTransaction(ListBoxBuildingTransaction.SelectedIndex, Int32.Parse(price),
+                            Int32.Parse(rentPrice), Int32.Parse(rentTime), addedId);
+                            cmd.CommandText = qry[0];
+                            cmd.ExecuteNonQuery();
+
+                            trans.Commit();
+                            MessageBox.Show("Pomyślnie dodano budynek!", "Dodawanie budynkow", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
+                    catch (MySqlException)
+                    {
+                        trans.Rollback();
+                        throw;
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
                     }
                     con.Close();
-
-                    string price = Tools.CheckIfNull(TextBoxBuildingsSellPrice.Text);
-                    string rentPrice = Tools.CheckIfNull(TextBoxBuildingsRentPrice.Text);
-                    string rentTime = Tools.CheckIfNull(TextBoxBuildingsTimeRent.Text);
-
-                    string query1 = Tools.SelectTransaction(ListBoxBuildingTransaction.SelectedIndex, Int32.Parse(price),
-                    Int32.Parse(rentPrice), Int32.Parse(rentTime), addedId);
-                    con.Open();
-                    MySqlCommand cmda = new MySqlCommand(query1, con);
-                    cmda.ExecuteReader();
-
-                    MessageBox.Show("Pomyślnie dodano budynek!", "Dodawanie budynkow", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    con.Close();
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
+
             }
         }
 
@@ -509,10 +549,17 @@ namespace ProjektBD
                     {
                         cmd.Connection = con;
                         cmd.Transaction = trans;
-
+                        if(LbSelectBuildingEdit.SelectedIndex < 0)
+                        {
+                            return;
+                        }
                         int buildingId = idBuildings[LbSelectBuildingEdit.SelectedIndex];
                         int type = (ListBoxTypeBuildingEdit.SelectedIndex + 1);
                         string size = TBeditBuildigsSize.Text;
+                        if (ListBoxBasementEdit.SelectedIndex < 0)
+                        {
+                            return;
+                        }
                         int basement = ListBoxBasementEdit.SelectedIndex;
                         string landSize = TBeditBuildigsLandSize.Text;
                         string street = TextBoxEditBuildingStreet.Text;
@@ -520,6 +567,10 @@ namespace ProjektBD
                         string noApartament = TextBoxEditBuildingNoA.Text;
                         string zip = Tools.ZipCodeValidate(TextBoxEditBuildingZipCode.Text);
                         string city = TextBoxEditBuildingCity.Text;
+                        if (ListBoxTypeTransactionEdit.SelectedIndex < 0)
+                        {
+                            return;
+                        }
                         int tran = (ListBoxTypeTransactionEdit.SelectedIndex + 1);
 
                         cmd.CommandText = "UPDATE projektbd.buildings SET type_id = @type, size = @size, basement = @basement, " +
