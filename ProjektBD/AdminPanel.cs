@@ -270,7 +270,8 @@ namespace ProjektBD
             int building = idBuildings[listBoxBuildingsEditMeetings.SelectedIndex];
             string date= dateTimeEditMeeting.Text;
             int id = Tools.ReadComboId(editMeetingsList.Text);
-            if(Tools.ValidateMeeting(building, status) == true)
+            if (Tools.ValidateMeeting(building, status) == true &&
+            listBoxBuildingsEditMeetings.SelectedIndex >= 0 && listBoxEditMeetingsStatus.SelectedIndex >= 0)
             {
                 try
                 {

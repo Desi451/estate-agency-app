@@ -218,7 +218,8 @@ namespace ProjektBD
             int building = idBuildings[listBoxBuildingsEditMeetings.SelectedIndex];
             string date = dateTimeEditMeeting.Text;
             int id = Tools.ReadComboId(editMeetingsList.Text);
-            if (Tools.ValidateMeeting(building, status) == true)
+            if (Tools.ValidateMeeting(building, status) == true && 
+            listBoxBuildingsEditMeetings.SelectedIndex >=0 && listBoxEditMeetingsStatus.SelectedIndex >=0)
             {
                 try
                 {
@@ -417,7 +418,7 @@ namespace ProjektBD
                     {
                         cmd.Connection = con;
                         cmd.Transaction = trans;
-                        if (LbSelectBuildingEdit.SelectedIndex == -1)
+                        if (ListBoxTypeBuildingEdit.SelectedIndex == -1)
                         {
                             return;
                         }
@@ -513,6 +514,107 @@ namespace ProjektBD
         {
             this.Close();
             Tools.ResetParameters();
+        }
+
+        // walidacja
+        private void first_nameBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Tools.allowLettersOnly(first_nameBox, e);
+        }
+
+        private void last_nameBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Tools.allowLettersOnly(last_nameBox, e);
+        }
+
+        private void no_apartamentBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Tools.allowNumbersOnly(no_apartamentBox, e);
+        }
+
+        private void zip_codeBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Tools.allowPostalOnly(zip_codeBox, e);
+        }
+
+        private void cityBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Tools.allowLettersOnly(zip_codeBox, e);
+        }
+
+        private void TextBoxBuildingSize_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Tools.allowDecimalOnly(TextBoxBuildingSize, e);
+        }
+
+        private void TextBoxBuildingSizeLand_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Tools.allowDecimalOnly(TextBoxBuildingSizeLand, e);
+        }
+
+        private void TextBoxBuildingNo_apartament_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Tools.allowNumbersOnly(TextBoxBuildingNo_apartament, e);
+        }
+
+        private void TextBoxBuildingZipCode_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Tools.allowPostalOnly(TextBoxBuildingZipCode, e);
+        }
+
+        private void TextBoxBuildingCity_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Tools.allowLettersOnly(TextBoxBuildingCity, e);
+        }
+
+        private void TextBoxBuildingsRentPrice_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Tools.allowNumbersOnly(TextBoxBuildingsRentPrice, e);
+        }
+
+        private void TextBoxBuildingsTimeRent_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Tools.allowNumbersOnly(TextBoxBuildingsTimeRent, e);
+        }
+
+        private void TextBoxBuildingsSellPrice_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Tools.allowNumbersOnly(TextBoxBuildingsSellPrice, e);
+        }
+
+        private void TBeditBuildigsSize_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Tools.allowDecimalOnly(TBeditBuildigsSize, e);
+        }
+
+        private void TBeditBuildigsLandSize_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Tools.allowDecimalOnly(TBeditBuildigsLandSize, e);
+        }
+
+        private void TextBoxEditBuildingNoA_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Tools.allowNumbersOnly(TextBoxEditBuildingNoA, e);
+        }
+
+        private void TextBoxRentEdit_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Tools.allowNumbersOnly(TextBoxRentEdit, e);
+        }
+
+        private void TextBoxEditBuildingZipCode_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Tools.allowPostalOnly(TextBoxEditBuildingZipCode, e);
+        }
+
+        private void TextBoxRentTimeEdit_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Tools.allowNumbersOnly(TextBoxRentTimeEdit, e);
+        }
+
+        private void TextBoxSellEdit_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Tools.allowNumbersOnly(TextBoxSellEdit, e);
         }
     }
 }
