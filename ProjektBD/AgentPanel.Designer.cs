@@ -60,10 +60,14 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.listBoxEditMeetingsAgent = new System.Windows.Forms.ComboBox();
             this.ListBoxBuildingType = new System.Windows.Forms.ComboBox();
             this.panelBtn = new System.Windows.Forms.Panel();
+            this.editProfileBtn = new System.Windows.Forms.Button();
+            this.addMeetingBtn = new System.Windows.Forms.Button();
+            this.editMeetingBtn = new System.Windows.Forms.Button();
+            this.addBuildingBtn = new System.Windows.Forms.Button();
+            this.LogOutBtn = new System.Windows.Forms.Button();
+            this.editBuildingBtn = new System.Windows.Forms.Button();
             this.LbSelectBuildingEdit = new System.Windows.Forms.ListBox();
             this.label41 = new System.Windows.Forms.Label();
             this.ConfrimDelBuildingBtn = new System.Windows.Forms.Button();
@@ -120,7 +124,6 @@
             this.emailTxt = new System.Windows.Forms.Label();
             this.passwordTxt = new System.Windows.Forms.Label();
             this.loginTxt = new System.Windows.Forms.Label();
-            this.editProfileBtn = new System.Windows.Forms.Button();
             this.editProfilePanel = new System.Windows.Forms.Panel();
             this.last_nameTxt = new System.Windows.Forms.Label();
             this.first_nameTxt = new System.Windows.Forms.Label();
@@ -129,7 +132,7 @@
             this.TextBoxBuildingSizeLand = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
             this.Najem = new System.Windows.Forms.Label();
-            this.TextBoxBuildingsRentTime = new System.Windows.Forms.Panel();
+            this.addBuildingPanel = new System.Windows.Forms.Panel();
             this.label26 = new System.Windows.Forms.Label();
             this.ConfirmAddMeetingBtn = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
@@ -141,16 +144,11 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.listBoxMeetingsUser = new System.Windows.Forms.ComboBox();
-            this.LogOutBtn = new System.Windows.Forms.Button();
-            this.editBuildingBtn = new System.Windows.Forms.Button();
-            this.addBuildingBtn = new System.Windows.Forms.Button();
-            this.editMeetingBtn = new System.Windows.Forms.Button();
             this.addMeetingPanel = new System.Windows.Forms.Panel();
-            this.addMeetingBtn = new System.Windows.Forms.Button();
             this.panelBtn.SuspendLayout();
             this.editBuildingPanel.SuspendLayout();
             this.editProfilePanel.SuspendLayout();
-            this.TextBoxBuildingsRentTime.SuspendLayout();
+            this.addBuildingPanel.SuspendLayout();
             this.editMeetingPanel.SuspendLayout();
             this.addMeetingPanel.SuspendLayout();
             this.SuspendLayout();
@@ -295,6 +293,7 @@
             this.editMeetingsList.Name = "editMeetingsList";
             this.editMeetingsList.Size = new System.Drawing.Size(552, 24);
             this.editMeetingsList.TabIndex = 67;
+            this.editMeetingsList.SelectedIndexChanged += new System.EventHandler(this.editMeetingsList_SelectedIndexChanged);
             // 
             // ConfirmDelMeetingsBtn
             // 
@@ -304,6 +303,7 @@
             this.ConfirmDelMeetingsBtn.TabIndex = 66;
             this.ConfirmDelMeetingsBtn.Text = "Usuń spotkanie";
             this.ConfirmDelMeetingsBtn.UseVisualStyleBackColor = true;
+            this.ConfirmDelMeetingsBtn.Click += new System.EventHandler(this.ConfirmDelMeetingsBtn_Click);
             // 
             // TextBoxBuildingsTimeRent
             // 
@@ -370,13 +370,14 @@
             this.ListBoxBuildingTransaction.Name = "ListBoxBuildingTransaction";
             this.ListBoxBuildingTransaction.Size = new System.Drawing.Size(189, 24);
             this.ListBoxBuildingTransaction.TabIndex = 63;
+            this.ListBoxBuildingTransaction.SelectedIndexChanged += new System.EventHandler(this.ListBoxBuildingTransaction_SelectedIndexChanged);
             // 
             // listBoxEditMeetingsUser
             // 
             this.listBoxEditMeetingsUser.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.listBoxEditMeetingsUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.listBoxEditMeetingsUser.FormattingEnabled = true;
-            this.listBoxEditMeetingsUser.Location = new System.Drawing.Point(310, 304);
+            this.listBoxEditMeetingsUser.Location = new System.Drawing.Point(309, 268);
             this.listBoxEditMeetingsUser.Name = "listBoxEditMeetingsUser";
             this.listBoxEditMeetingsUser.Size = new System.Drawing.Size(522, 24);
             this.listBoxEditMeetingsUser.TabIndex = 65;
@@ -389,12 +390,13 @@
             this.ConfirmEditMeetingsBtn.TabIndex = 60;
             this.ConfirmEditMeetingsBtn.Text = "Edytuj spotkanie";
             this.ConfirmEditMeetingsBtn.UseVisualStyleBackColor = true;
+            this.ConfirmEditMeetingsBtn.Click += new System.EventHandler(this.ConfirmEditMeetingsBtn_Click);
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label9.Location = new System.Drawing.Point(202, 368);
+            this.label9.Location = new System.Drawing.Point(201, 332);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(113, 16);
             this.label9.TabIndex = 64;
@@ -406,7 +408,7 @@
             this.dateTimeEditMeeting.CustomFormat = "yyyy-MM-dd HH:mm:ss";
             this.dateTimeEditMeeting.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.dateTimeEditMeeting.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimeEditMeeting.Location = new System.Drawing.Point(596, 358);
+            this.dateTimeEditMeeting.Location = new System.Drawing.Point(595, 322);
             this.dateTimeEditMeeting.MinDate = new System.DateTime(2023, 1, 17, 0, 0, 0, 0);
             this.dateTimeEditMeeting.Name = "dateTimeEditMeeting";
             this.dateTimeEditMeeting.Size = new System.Drawing.Size(236, 26);
@@ -416,16 +418,16 @@
             // listBoxBuildingsEditMeetings
             // 
             this.listBoxBuildingsEditMeetings.FormattingEnabled = true;
-            this.listBoxBuildingsEditMeetings.Location = new System.Drawing.Point(47, 415);
+            this.listBoxBuildingsEditMeetings.Location = new System.Drawing.Point(25, 402);
             this.listBoxBuildingsEditMeetings.Name = "listBoxBuildingsEditMeetings";
-            this.listBoxBuildingsEditMeetings.Size = new System.Drawing.Size(1012, 134);
+            this.listBoxBuildingsEditMeetings.Size = new System.Drawing.Size(1034, 147);
             this.listBoxBuildingsEditMeetings.TabIndex = 62;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label10.Location = new System.Drawing.Point(452, 396);
+            this.label10.Location = new System.Drawing.Point(453, 377);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(110, 16);
             this.label10.TabIndex = 61;
@@ -445,31 +447,11 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label7.Location = new System.Drawing.Point(202, 310);
+            this.label7.Location = new System.Drawing.Point(201, 274);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(45, 16);
             this.label7.TabIndex = 58;
             this.label7.Text = "Klient";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label8.Location = new System.Drawing.Point(202, 253);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(43, 15);
-            this.label8.TabIndex = 57;
-            this.label8.Text = "Agent";
-            // 
-            // listBoxEditMeetingsAgent
-            // 
-            this.listBoxEditMeetingsAgent.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.listBoxEditMeetingsAgent.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.listBoxEditMeetingsAgent.FormattingEnabled = true;
-            this.listBoxEditMeetingsAgent.Location = new System.Drawing.Point(310, 253);
-            this.listBoxEditMeetingsAgent.Name = "listBoxEditMeetingsAgent";
-            this.listBoxEditMeetingsAgent.Size = new System.Drawing.Size(521, 24);
-            this.listBoxEditMeetingsAgent.TabIndex = 56;
             // 
             // ListBoxBuildingType
             // 
@@ -495,6 +477,87 @@
             this.panelBtn.Size = new System.Drawing.Size(200, 805);
             this.panelBtn.TabIndex = 133;
             // 
+            // editProfileBtn
+            // 
+            this.editProfileBtn.BackColor = System.Drawing.Color.DarkSlateBlue;
+            this.editProfileBtn.FlatAppearance.BorderSize = 0;
+            this.editProfileBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.editProfileBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.editProfileBtn.Location = new System.Drawing.Point(40, 40);
+            this.editProfileBtn.Name = "editProfileBtn";
+            this.editProfileBtn.Size = new System.Drawing.Size(150, 50);
+            this.editProfileBtn.TabIndex = 122;
+            this.editProfileBtn.Text = "Edytuj profil";
+            this.editProfileBtn.UseVisualStyleBackColor = false;
+            this.editProfileBtn.Click += new System.EventHandler(this.editProfileBtn_Click);
+            // 
+            // addMeetingBtn
+            // 
+            this.addMeetingBtn.BackColor = System.Drawing.Color.DarkSlateBlue;
+            this.addMeetingBtn.FlatAppearance.BorderSize = 0;
+            this.addMeetingBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addMeetingBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.addMeetingBtn.Location = new System.Drawing.Point(40, 120);
+            this.addMeetingBtn.Name = "addMeetingBtn";
+            this.addMeetingBtn.Size = new System.Drawing.Size(150, 50);
+            this.addMeetingBtn.TabIndex = 124;
+            this.addMeetingBtn.Text = "Dodaj Spotkanie";
+            this.addMeetingBtn.UseVisualStyleBackColor = false;
+            this.addMeetingBtn.Click += new System.EventHandler(this.addMeetingBtn_Click);
+            // 
+            // editMeetingBtn
+            // 
+            this.editMeetingBtn.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.editMeetingBtn.FlatAppearance.BorderSize = 0;
+            this.editMeetingBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.editMeetingBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.editMeetingBtn.Location = new System.Drawing.Point(40, 200);
+            this.editMeetingBtn.Name = "editMeetingBtn";
+            this.editMeetingBtn.Size = new System.Drawing.Size(150, 50);
+            this.editMeetingBtn.TabIndex = 125;
+            this.editMeetingBtn.Text = "Edytuj Spotkanie";
+            this.editMeetingBtn.UseVisualStyleBackColor = true;
+            this.editMeetingBtn.Click += new System.EventHandler(this.editMeetingBtn_Click);
+            // 
+            // addBuildingBtn
+            // 
+            this.addBuildingBtn.FlatAppearance.BorderSize = 0;
+            this.addBuildingBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addBuildingBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.addBuildingBtn.Location = new System.Drawing.Point(40, 280);
+            this.addBuildingBtn.Name = "addBuildingBtn";
+            this.addBuildingBtn.Size = new System.Drawing.Size(150, 50);
+            this.addBuildingBtn.TabIndex = 126;
+            this.addBuildingBtn.Text = "Dodaj budynek";
+            this.addBuildingBtn.UseVisualStyleBackColor = true;
+            this.addBuildingBtn.Click += new System.EventHandler(this.addBuildingBtn_Click);
+            // 
+            // LogOutBtn
+            // 
+            this.LogOutBtn.FlatAppearance.BorderSize = 0;
+            this.LogOutBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.LogOutBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.LogOutBtn.Location = new System.Drawing.Point(40, 440);
+            this.LogOutBtn.Name = "LogOutBtn";
+            this.LogOutBtn.Size = new System.Drawing.Size(150, 50);
+            this.LogOutBtn.TabIndex = 128;
+            this.LogOutBtn.Text = "Wyloguj";
+            this.LogOutBtn.UseVisualStyleBackColor = true;
+            this.LogOutBtn.Click += new System.EventHandler(this.LogOutBtn_Click);
+            // 
+            // editBuildingBtn
+            // 
+            this.editBuildingBtn.FlatAppearance.BorderSize = 0;
+            this.editBuildingBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.editBuildingBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.editBuildingBtn.Location = new System.Drawing.Point(40, 360);
+            this.editBuildingBtn.Name = "editBuildingBtn";
+            this.editBuildingBtn.Size = new System.Drawing.Size(150, 50);
+            this.editBuildingBtn.TabIndex = 127;
+            this.editBuildingBtn.Text = "Edytuj budynek";
+            this.editBuildingBtn.UseVisualStyleBackColor = true;
+            this.editBuildingBtn.Click += new System.EventHandler(this.editBuildingBtn_Click);
+            // 
             // LbSelectBuildingEdit
             // 
             this.LbSelectBuildingEdit.FormattingEnabled = true;
@@ -502,6 +565,7 @@
             this.LbSelectBuildingEdit.Name = "LbSelectBuildingEdit";
             this.LbSelectBuildingEdit.Size = new System.Drawing.Size(970, 160);
             this.LbSelectBuildingEdit.TabIndex = 120;
+            this.LbSelectBuildingEdit.SelectedIndexChanged += new System.EventHandler(this.LbSelectBuildingEdit_SelectedIndexChanged);
             // 
             // label41
             // 
@@ -774,6 +838,7 @@
             this.ConfirmAddBuildingBtn.TabIndex = 61;
             this.ConfirmAddBuildingBtn.Text = "Dodaj Budynek";
             this.ConfirmAddBuildingBtn.UseVisualStyleBackColor = true;
+            this.ConfirmAddBuildingBtn.Click += new System.EventHandler(this.ConfirmAddBuildingBtn_Click);
             // 
             // editBuildingPanel
             // 
@@ -861,6 +926,7 @@
             this.confirmDelUserBtn.TabIndex = 47;
             this.confirmDelUserBtn.Text = "Usuń Konto";
             this.confirmDelUserBtn.UseVisualStyleBackColor = true;
+            this.confirmDelUserBtn.Click += new System.EventHandler(this.confirmDelUserBtn_Click);
             // 
             // confirmEditUserBtn
             // 
@@ -870,6 +936,7 @@
             this.confirmEditUserBtn.TabIndex = 46;
             this.confirmEditUserBtn.Text = "Zatwierdź zmiany";
             this.confirmEditUserBtn.UseVisualStyleBackColor = true;
+            this.confirmEditUserBtn.Click += new System.EventHandler(this.confirmEditUserBtn_Click);
             // 
             // cityBox
             // 
@@ -1024,20 +1091,6 @@
             this.loginTxt.TabIndex = 26;
             this.loginTxt.Text = "Login";
             // 
-            // editProfileBtn
-            // 
-            this.editProfileBtn.BackColor = System.Drawing.Color.DarkSlateBlue;
-            this.editProfileBtn.FlatAppearance.BorderSize = 0;
-            this.editProfileBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.editProfileBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.editProfileBtn.Location = new System.Drawing.Point(40, 40);
-            this.editProfileBtn.Name = "editProfileBtn";
-            this.editProfileBtn.Size = new System.Drawing.Size(150, 50);
-            this.editProfileBtn.TabIndex = 122;
-            this.editProfileBtn.Text = "Edytuj profil";
-            this.editProfileBtn.UseVisualStyleBackColor = false;
-            this.editProfileBtn.Click += new System.EventHandler(this.editProfileBtn_Click);
-            // 
             // editProfilePanel
             // 
             this.editProfilePanel.BackColor = System.Drawing.Color.SlateBlue;
@@ -1136,41 +1189,41 @@
             this.Najem.TabIndex = 84;
             this.Najem.Text = "Kwota najmu";
             // 
-            // TextBoxBuildingsRentTime
+            // addBuildingPanel
             // 
-            this.TextBoxBuildingsRentTime.BackColor = System.Drawing.Color.SlateBlue;
-            this.TextBoxBuildingsRentTime.Controls.Add(this.label23);
-            this.TextBoxBuildingsRentTime.Controls.Add(this.label22);
-            this.TextBoxBuildingsRentTime.Controls.Add(this.TextBoxBuildingSizeLand);
-            this.TextBoxBuildingsRentTime.Controls.Add(this.label21);
-            this.TextBoxBuildingsRentTime.Controls.Add(this.Najem);
-            this.TextBoxBuildingsRentTime.Controls.Add(this.Cena);
-            this.TextBoxBuildingsRentTime.Controls.Add(this.TextBoxBuildingsTimeRent);
-            this.TextBoxBuildingsRentTime.Controls.Add(this.TextBoxBuildingsRentPrice);
-            this.TextBoxBuildingsRentTime.Controls.Add(this.TextBoxBuildingsSellPrice);
-            this.TextBoxBuildingsRentTime.Controls.Add(this.label20);
-            this.TextBoxBuildingsRentTime.Controls.Add(this.label19);
-            this.TextBoxBuildingsRentTime.Controls.Add(this.label18);
-            this.TextBoxBuildingsRentTime.Controls.Add(this.label17);
-            this.TextBoxBuildingsRentTime.Controls.Add(this.label16);
-            this.TextBoxBuildingsRentTime.Controls.Add(this.label15);
-            this.TextBoxBuildingsRentTime.Controls.Add(this.label14);
-            this.TextBoxBuildingsRentTime.Controls.Add(this.label13);
-            this.TextBoxBuildingsRentTime.Controls.Add(this.label12);
-            this.TextBoxBuildingsRentTime.Controls.Add(this.TextBoxBuildingCity);
-            this.TextBoxBuildingsRentTime.Controls.Add(this.TextBoxBuildingZipCode);
-            this.TextBoxBuildingsRentTime.Controls.Add(this.TextBoxBuildingNo_apartament);
-            this.TextBoxBuildingsRentTime.Controls.Add(this.TextBoxBuildingNo_building);
-            this.TextBoxBuildingsRentTime.Controls.Add(this.TextBoxBuildingStreet);
-            this.TextBoxBuildingsRentTime.Controls.Add(this.TextBoxBuildingSize);
-            this.TextBoxBuildingsRentTime.Controls.Add(this.ListBoxBuildingBasement);
-            this.TextBoxBuildingsRentTime.Controls.Add(this.ListBoxBuildingTransaction);
-            this.TextBoxBuildingsRentTime.Controls.Add(this.ListBoxBuildingType);
-            this.TextBoxBuildingsRentTime.Controls.Add(this.ConfirmAddBuildingBtn);
-            this.TextBoxBuildingsRentTime.Location = new System.Drawing.Point(175, 3);
-            this.TextBoxBuildingsRentTime.Name = "TextBoxBuildingsRentTime";
-            this.TextBoxBuildingsRentTime.Size = new System.Drawing.Size(1084, 665);
-            this.TextBoxBuildingsRentTime.TabIndex = 129;
+            this.addBuildingPanel.BackColor = System.Drawing.Color.SlateBlue;
+            this.addBuildingPanel.Controls.Add(this.label23);
+            this.addBuildingPanel.Controls.Add(this.label22);
+            this.addBuildingPanel.Controls.Add(this.TextBoxBuildingSizeLand);
+            this.addBuildingPanel.Controls.Add(this.label21);
+            this.addBuildingPanel.Controls.Add(this.Najem);
+            this.addBuildingPanel.Controls.Add(this.Cena);
+            this.addBuildingPanel.Controls.Add(this.TextBoxBuildingsTimeRent);
+            this.addBuildingPanel.Controls.Add(this.TextBoxBuildingsRentPrice);
+            this.addBuildingPanel.Controls.Add(this.TextBoxBuildingsSellPrice);
+            this.addBuildingPanel.Controls.Add(this.label20);
+            this.addBuildingPanel.Controls.Add(this.label19);
+            this.addBuildingPanel.Controls.Add(this.label18);
+            this.addBuildingPanel.Controls.Add(this.label17);
+            this.addBuildingPanel.Controls.Add(this.label16);
+            this.addBuildingPanel.Controls.Add(this.label15);
+            this.addBuildingPanel.Controls.Add(this.label14);
+            this.addBuildingPanel.Controls.Add(this.label13);
+            this.addBuildingPanel.Controls.Add(this.label12);
+            this.addBuildingPanel.Controls.Add(this.TextBoxBuildingCity);
+            this.addBuildingPanel.Controls.Add(this.TextBoxBuildingZipCode);
+            this.addBuildingPanel.Controls.Add(this.TextBoxBuildingNo_apartament);
+            this.addBuildingPanel.Controls.Add(this.TextBoxBuildingNo_building);
+            this.addBuildingPanel.Controls.Add(this.TextBoxBuildingStreet);
+            this.addBuildingPanel.Controls.Add(this.TextBoxBuildingSize);
+            this.addBuildingPanel.Controls.Add(this.ListBoxBuildingBasement);
+            this.addBuildingPanel.Controls.Add(this.ListBoxBuildingTransaction);
+            this.addBuildingPanel.Controls.Add(this.ListBoxBuildingType);
+            this.addBuildingPanel.Controls.Add(this.ConfirmAddBuildingBtn);
+            this.addBuildingPanel.Location = new System.Drawing.Point(175, 3);
+            this.addBuildingPanel.Name = "addBuildingPanel";
+            this.addBuildingPanel.Size = new System.Drawing.Size(1084, 665);
+            this.addBuildingPanel.TabIndex = 129;
             // 
             // label26
             // 
@@ -1190,6 +1243,7 @@
             this.ConfirmAddMeetingBtn.TabIndex = 50;
             this.ConfirmAddMeetingBtn.Text = "Dodaj spotkanie";
             this.ConfirmAddMeetingBtn.UseVisualStyleBackColor = true;
+            this.ConfirmAddMeetingBtn.Click += new System.EventHandler(this.ConfirmAddMeetingBtn_Click);
             // 
             // label5
             // 
@@ -1257,8 +1311,6 @@
             this.editMeetingPanel.Controls.Add(this.label10);
             this.editMeetingPanel.Controls.Add(this.label6);
             this.editMeetingPanel.Controls.Add(this.label7);
-            this.editMeetingPanel.Controls.Add(this.label8);
-            this.editMeetingPanel.Controls.Add(this.listBoxEditMeetingsAgent);
             this.editMeetingPanel.Controls.Add(this.listBoxEditMeetingsStatus);
             this.editMeetingPanel.Location = new System.Drawing.Point(175, 3);
             this.editMeetingPanel.Name = "editMeetingPanel";
@@ -1295,55 +1347,6 @@
             this.listBoxMeetingsUser.Size = new System.Drawing.Size(521, 24);
             this.listBoxMeetingsUser.TabIndex = 50;
             // 
-            // LogOutBtn
-            // 
-            this.LogOutBtn.FlatAppearance.BorderSize = 0;
-            this.LogOutBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.LogOutBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.LogOutBtn.Location = new System.Drawing.Point(40, 440);
-            this.LogOutBtn.Name = "LogOutBtn";
-            this.LogOutBtn.Size = new System.Drawing.Size(150, 50);
-            this.LogOutBtn.TabIndex = 128;
-            this.LogOutBtn.Text = "Wyloguj";
-            this.LogOutBtn.UseVisualStyleBackColor = true;
-            // 
-            // editBuildingBtn
-            // 
-            this.editBuildingBtn.FlatAppearance.BorderSize = 0;
-            this.editBuildingBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.editBuildingBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.editBuildingBtn.Location = new System.Drawing.Point(40, 360);
-            this.editBuildingBtn.Name = "editBuildingBtn";
-            this.editBuildingBtn.Size = new System.Drawing.Size(150, 50);
-            this.editBuildingBtn.TabIndex = 127;
-            this.editBuildingBtn.Text = "Edytuj budynek";
-            this.editBuildingBtn.UseVisualStyleBackColor = true;
-            // 
-            // addBuildingBtn
-            // 
-            this.addBuildingBtn.FlatAppearance.BorderSize = 0;
-            this.addBuildingBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addBuildingBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.addBuildingBtn.Location = new System.Drawing.Point(40, 280);
-            this.addBuildingBtn.Name = "addBuildingBtn";
-            this.addBuildingBtn.Size = new System.Drawing.Size(150, 50);
-            this.addBuildingBtn.TabIndex = 126;
-            this.addBuildingBtn.Text = "Dodaj budynek";
-            this.addBuildingBtn.UseVisualStyleBackColor = true;
-            // 
-            // editMeetingBtn
-            // 
-            this.editMeetingBtn.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.editMeetingBtn.FlatAppearance.BorderSize = 0;
-            this.editMeetingBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.editMeetingBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.editMeetingBtn.Location = new System.Drawing.Point(40, 200);
-            this.editMeetingBtn.Name = "editMeetingBtn";
-            this.editMeetingBtn.Size = new System.Drawing.Size(150, 50);
-            this.editMeetingBtn.TabIndex = 125;
-            this.editMeetingBtn.Text = "Edytuj Spotkanie";
-            this.editMeetingBtn.UseVisualStyleBackColor = true;
-            // 
             // addMeetingPanel
             // 
             this.addMeetingPanel.BackColor = System.Drawing.Color.SlateBlue;
@@ -1362,19 +1365,6 @@
             this.addMeetingPanel.Size = new System.Drawing.Size(1084, 665);
             this.addMeetingPanel.TabIndex = 130;
             // 
-            // addMeetingBtn
-            // 
-            this.addMeetingBtn.BackColor = System.Drawing.Color.DarkSlateBlue;
-            this.addMeetingBtn.FlatAppearance.BorderSize = 0;
-            this.addMeetingBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addMeetingBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.addMeetingBtn.Location = new System.Drawing.Point(40, 120);
-            this.addMeetingBtn.Name = "addMeetingBtn";
-            this.addMeetingBtn.Size = new System.Drawing.Size(150, 50);
-            this.addMeetingBtn.TabIndex = 124;
-            this.addMeetingBtn.Text = "Dodaj Spotkanie";
-            this.addMeetingBtn.UseVisualStyleBackColor = false;
-            // 
             // AgentPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1382,11 +1372,11 @@
             this.BackColor = System.Drawing.Color.SlateBlue;
             this.ClientSize = new System.Drawing.Size(1264, 681);
             this.Controls.Add(this.panelBtn);
+            this.Controls.Add(this.editBuildingPanel);
             this.Controls.Add(this.editProfilePanel);
-            this.Controls.Add(this.TextBoxBuildingsRentTime);
+            this.Controls.Add(this.addBuildingPanel);
             this.Controls.Add(this.editMeetingPanel);
             this.Controls.Add(this.addMeetingPanel);
-            this.Controls.Add(this.editBuildingPanel);
             this.Name = "AgentPanel";
             this.Text = "AgentPanel";
             this.panelBtn.ResumeLayout(false);
@@ -1394,8 +1384,8 @@
             this.editBuildingPanel.PerformLayout();
             this.editProfilePanel.ResumeLayout(false);
             this.editProfilePanel.PerformLayout();
-            this.TextBoxBuildingsRentTime.ResumeLayout(false);
-            this.TextBoxBuildingsRentTime.PerformLayout();
+            this.addBuildingPanel.ResumeLayout(false);
+            this.addBuildingPanel.PerformLayout();
             this.editMeetingPanel.ResumeLayout(false);
             this.editMeetingPanel.PerformLayout();
             this.addMeetingPanel.ResumeLayout(false);
@@ -1438,8 +1428,6 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ComboBox listBoxEditMeetingsAgent;
         private System.Windows.Forms.ComboBox ListBoxBuildingType;
         private System.Windows.Forms.Panel panelBtn;
         private System.Windows.Forms.ListBox LbSelectBuildingEdit;
@@ -1507,7 +1495,7 @@
         private System.Windows.Forms.TextBox TextBoxBuildingSizeLand;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label Najem;
-        private System.Windows.Forms.Panel TextBoxBuildingsRentTime;
+        private System.Windows.Forms.Panel addBuildingPanel;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Button ConfirmAddMeetingBtn;
         private System.Windows.Forms.Label label5;

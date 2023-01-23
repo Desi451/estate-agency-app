@@ -328,9 +328,9 @@ namespace ProjektBD.sidebar_classes
                 MySqlConnection con = new MySqlConnection();
                 con.ConnectionString = DataBase.Connstring;
                 con.Open();
-                string query = "SELECT _type, type_of FROM projektbd.type_buildings tp " +
+                string query = "SELECT typeB, type_of FROM projektbd.type_buildings tp " +
                 "LEFT JOIN projektbd.transaction_type t ON tp.id = t.id UNION SELECT " +
-                "_type, type_of FROM projektbd.type_buildings tp " +
+                "typeB, type_of FROM projektbd.type_buildings tp " +
                 "RIGHT JOIN projektbd.transaction_type t ON tp.id = t.id";
                 MySqlCommand sda = new MySqlCommand(query, con);
                 MySqlDataReader reader = sda.ExecuteReader();
@@ -652,7 +652,6 @@ namespace ProjektBD.sidebar_classes
             con.Close();
         }
 
-
         // wczytuje spotkania dla uzytkownika 
         public static void LoadAllMeetings(ListBox cb)
         {
@@ -690,6 +689,26 @@ namespace ProjektBD.sidebar_classes
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        // wczytanie klientow dla agenta
+        public static void LoadAddMeetingsPanelUsers(ComboBox cbU)
+        {
+            cbU.Items.Clear();
+            MySqlConnection con = new MySqlConnection();
+            con.ConnectionString = DataBase.Connstring;
+            con.Open();
+            string query = "SELECT id_rank,id,first_name,last_name,email FROM projektbd.users WHERE id_rank = 1;";
+            MySqlCommand sda = new MySqlCommand(query, con);
+            MySqlDataReader reader = sda.ExecuteReader();
+
+            while (reader.Read())
+            {
+                if (reader.GetInt32(0) == 1)
+                    cbU.Items.Add("id: " + reader.GetInt32(1) + ". Imie i nazwisko:" +
+                reader.GetString(2) + " " + reader.GetString(3) + " mail: " + reader.GetString(4));
+            }
+            con.Close();
         }
     }
 }

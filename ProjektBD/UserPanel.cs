@@ -81,6 +81,7 @@ namespace ProjektBD
             this.Close();
         }
 
+        // walidacja edycji profilu
         private void first_nameBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             Tools.allowLettersOnly(first_nameBox, e);
@@ -106,6 +107,6 @@ namespace ProjektBD
             Tools.allowLettersOnly(cityBox, e);
         }
 
-        // walidacja edycji profilu
+        
     }
 }
