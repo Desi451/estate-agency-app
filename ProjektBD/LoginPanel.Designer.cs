@@ -113,6 +113,7 @@
             this.Controls.Add(this.textBoxPasswd);
             this.Controls.Add(this.textBoxLogin);
             this.Controls.Add(this.registerBtn);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "LoginPanel";
             this.Text = "Logowanie";
             this.ResumeLayout(false);

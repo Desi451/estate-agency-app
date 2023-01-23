@@ -585,6 +585,7 @@
             this.ConfrimDelBuildingBtn.TabIndex = 117;
             this.ConfrimDelBuildingBtn.Text = "Usuń";
             this.ConfrimDelBuildingBtn.UseVisualStyleBackColor = true;
+            this.ConfrimDelBuildingBtn.Click += new System.EventHandler(this.ConfrimDelBuildingBtn_Click);
             // 
             // label27
             // 
@@ -887,6 +888,7 @@
             this.ConfirmEditBuildingBtn.TabIndex = 89;
             this.ConfirmEditBuildingBtn.Text = "Edytuj";
             this.ConfirmEditBuildingBtn.UseVisualStyleBackColor = true;
+            this.ConfirmEditBuildingBtn.Click += new System.EventHandler(this.ConfirmEditBuildingBtn_Click);
             // 
             // listBoxEditMeetingsStatus
             // 
@@ -1377,6 +1379,7 @@
             this.Controls.Add(this.addBuildingPanel);
             this.Controls.Add(this.editMeetingPanel);
             this.Controls.Add(this.addMeetingPanel);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "AgentPanel";
             this.Text = "AgentPanel";
             this.panelBtn.ResumeLayout(false);

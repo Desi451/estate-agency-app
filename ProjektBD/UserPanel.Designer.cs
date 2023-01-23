@@ -954,6 +954,7 @@
             this.Controls.Add(this.editMeetingPanel);
             this.Controls.Add(this.MeetingPanel);
             this.Controls.Add(this.BuildingsPanel);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "UserPanel";
             this.Text = "UserPanel";
             this.panelBtn.ResumeLayout(false);

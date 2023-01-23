@@ -1480,6 +1480,7 @@
             this.Controls.Add(this.editMeetingPanel);
             this.Controls.Add(this.addMeetingPanel);
             this.Controls.Add(this.TextBoxBuildingsRentTime);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "AdminPanel";
             this.Text = "Panel Administratora";
             this.editProfilePanel.ResumeLayout(false);

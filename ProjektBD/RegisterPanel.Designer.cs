@@ -223,6 +223,7 @@
             // zip_codeBox
             // 
             this.zip_codeBox.Location = new System.Drawing.Point(125, 417);
+            this.zip_codeBox.MaxLength = 6;
             this.zip_codeBox.Name = "zip_codeBox";
             this.zip_codeBox.Size = new System.Drawing.Size(168, 20);
             this.zip_codeBox.TabIndex = 20;
@@ -283,6 +284,7 @@
             this.Controls.Add(this.last_nameTxt);
             this.Controls.Add(this.first_nameTxt);
             this.Controls.Add(this.registerTxt);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "RegisterPanel";
             this.Text = "Rejestracja";
             this.ResumeLayout(false);

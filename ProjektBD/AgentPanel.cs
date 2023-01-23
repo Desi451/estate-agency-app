@@ -80,16 +80,19 @@ namespace ProjektBD
 
         private void ConfirmAddMeetingBtn_Click(object sender, EventArgs e)
         {
-            DialogResult wynik = MessageBox.Show("Czy na pewno chcesz dodac to spotkanie" +
-            "?", "Dodawanie Spotkań", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            
 
             int status = Tools.ReadMeetingId(listBoxMeetingsStatus.Text);
             int user = Tools.ReadComboId(listBoxMeetingsUser.Text);
             int agent = User.LoggedUserId;
             int building = idBuildings[listBoxBuildings.SelectedIndex];
 
+            DialogResult wynik = MessageBox.Show("Czy na pewno chcesz dodac to spotkanie" +
+            "?", "Dodawanie Spotkań", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
             if (wynik == DialogResult.Yes && Tools.ValidateMeeting(building, status) == true)
             {
+
                 try
                 {
                     string query = "INSERT INTO projektbd.meetings(status_id,agent_id,user_id,date,buildings_id)" +
@@ -386,10 +389,20 @@ namespace ProjektBD
             }
         }
 
+        private void ConfirmEditBuildingBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
         //logout
         private void LogOutBtn_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void ConfrimDelBuildingBtn_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

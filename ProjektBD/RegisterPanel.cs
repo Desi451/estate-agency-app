@@ -92,6 +92,7 @@ namespace ProjektBD
                 MessageBox.Show("Wpisz poprawnie adres mailowy", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
+            Tools.ZipCodeValidate(zip_codeBox.Text);
             CheckLogin();
             CheckEmail();
             return true;
@@ -99,17 +100,17 @@ namespace ProjektBD
 
         private void InsertUser()
         {
-            if (rankBox.Text == "Klient")
-            {
-                id_rank = 1;
-            }
-            else if (rankBox.Text == "Agent Nieruchomości")
-            {
-                id_rank = 2;
-            }
-
             try
             {
+                if (rankBox.Text == "Klient")
+                {
+                    id_rank = 1;
+                }
+                else if (rankBox.Text == "Agent Nieruchomości")
+                {
+                    id_rank = 2;
+                }
+
                 string query = "INSERT INTO projektbd.users(first_name,last_name,login,password,email,id_rank,street,no_building,no_apartament,zip_code,city) " +
                 "VALUES('" + first_nameBox.Text + "','" + last_nameBox.Text + "','" + loginBox.Text + "','" + passwordBox.Text + "','" + emailBox.Text + "','" +
                 id_rank + "','" + streetBox.Text + "','" + no_buildingBox.Text + "','" + no_apartamentBox.Text + "','" + int.Parse(zip_codeBox.Text) + "','" + cityBox.Text + "');";
@@ -121,6 +122,7 @@ namespace ProjektBD
                 cmd.ExecuteReader();
                 con.Close();
                 MessageBox.Show("Pomyślnie Zarejestrowano!", "Rejestracja", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
             }
             catch(Exception ex)
             {
@@ -129,9 +131,16 @@ namespace ProjektBD
         }
 
         private void registerBtn_Click(object sender, EventArgs e){
-            if (VerifyData()) {
-                InsertUser();
-                this.Close();
+            try
+            {
+                if (VerifyData())
+                {
+                    InsertUser();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
     }
