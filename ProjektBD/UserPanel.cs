@@ -79,6 +79,7 @@ namespace ProjektBD
         private void UserLogout_Click(object sender, EventArgs e)
         {
             this.Close();
+            Tools.ResetParameters();
         }
 
         // walidacja edycji profilu

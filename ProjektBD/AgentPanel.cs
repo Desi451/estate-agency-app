@@ -391,18 +391,109 @@ namespace ProjektBD
 
         private void ConfirmEditBuildingBtn_Click(object sender, EventArgs e)
         {
+            MySqlConnection con = new MySqlConnection();
+            con.ConnectionString = DataBase.Connstring;
+            con.Open();
+            using (MySqlTransaction trans = con.BeginTransaction())
+            {
+                try
+                {
+                    using (MySqlCommand cmd = new MySqlCommand())
+                    {
+                        cmd.Connection = con;
+                        cmd.Transaction = trans;
 
+                        int buildingId = idBuildings[LbSelectBuildingEdit.SelectedIndex];
+                        int type = (ListBoxTypeBuildingEdit.SelectedIndex + 1);
+                        string size = TBeditBuildigsSize.Text;
+                        int basement = ListBoxBasementEdit.SelectedIndex;
+                        string landSize = TBeditBuildigsLandSize.Text;
+                        string street = TextBoxEditBuildingStreet.Text;
+                        string noBuilding = TextBoxEditBuildingNoB.Text;
+                        string noApartament = TextBoxEditBuildingNoA.Text;
+                        string zip = Tools.ZipCodeValidate(TextBoxEditBuildingZipCode.Text);
+                        string city = TextBoxEditBuildingCity.Text;
+                        int tran = (ListBoxTypeTransactionEdit.SelectedIndex + 1);
+
+                        cmd.CommandText = "UPDATE projektbd.buildings SET type_id = @type, size = @size, basement = @basement, " +
+                            "plot_of_land_size = @plot_of_land_size, street = @street, no_building = @no_building, " +
+                            "no_apartament = @no_apartament, zip_code = @zip_code, city = @city, " +
+                            "transaction_id = @transaction_id WHERE id = @b_id";
+                        cmd.Parameters.AddWithValue("@type", type);
+                        cmd.Parameters.AddWithValue("@size", size);
+                        cmd.Parameters.AddWithValue("@basement", basement);
+                        cmd.Parameters.AddWithValue("@plot_of_land_size", landSize);
+                        cmd.Parameters.AddWithValue("@street", street);
+                        cmd.Parameters.AddWithValue("@no_building", noBuilding);
+                        cmd.Parameters.AddWithValue("@no_apartament", noApartament);
+                        cmd.Parameters.AddWithValue("@zip_code", zip);
+                        cmd.Parameters.AddWithValue("@city", city);
+                        cmd.Parameters.AddWithValue("@transaction_id", tran);
+                        cmd.Parameters.AddWithValue("@b_id", idBuildings[LbSelectBuildingEdit.SelectedIndex]);
+                        cmd.ExecuteNonQuery();
+
+                        string price = Tools.CheckIfNull(TextBoxSellEdit.Text);
+                        string rentPrice = Tools.CheckIfNull(TextBoxRentEdit.Text);
+                        string rentTime = Tools.CheckIfNull(TextBoxRentTimeEdit.Text);
+
+                        cmd.Parameters.AddWithValue("@bid", buildingId);
+                        cmd.Parameters.AddWithValue("@rent", rentPrice);
+                        cmd.Parameters.AddWithValue("@time", rentTime);
+                        cmd.Parameters.AddWithValue("@price", price);
+                        string[] qry = new string[2];
+
+                        qry = Tools.SelectQueryTransaction(buildingTransactions[LbSelectBuildingEdit.SelectedIndex], ListBoxTypeTransactionEdit.SelectedIndex + 1);
+                        cmd.CommandText = qry[0];
+                        cmd.ExecuteNonQuery();
+
+                        if (qry[1] != string.Empty)
+                        {
+                            cmd.CommandText = qry[1];
+                            cmd.ExecuteNonQuery();
+                        }
+                        trans.Commit();
+                        MessageBox.Show("Zaaktualizowano dane!", "Budynki", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    }
+                }
+                catch (MySqlException)
+                {
+                    trans.Rollback();
+                    throw;
+                }
+            }
+            con.Close();
+        }
+
+        private void ConfrimDelBuildingBtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                MySqlConnection con = new MySqlConnection();
+                con.ConnectionString = DataBase.Connstring;
+                con.Open();
+
+                string query = "DELETE b,s,r FROM projektbd.buildings AS b " +
+                    "LEFT JOIN projektbd.rent_details AS r ON b.id = r.id_buildings " +
+                    "LEFT JOIN projektbd.sell_details AS s ON b.id = s.id_buildings " +
+                    "WHERE b.id = '" + idBuildings[LbSelectBuildingEdit.SelectedIndex] + "';";
+
+                MySqlCommand cmd = new MySqlCommand(query, con);
+                cmd.ExecuteReader();
+                con.Close();
+                MessageBox.Show("Pomyślnie usunięto budynek!", "Budynki", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         //logout
         private void LogOutBtn_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void ConfrimDelBuildingBtn_Click(object sender, EventArgs e)
-        {
-
+            Tools.ResetParameters();
         }
     }
 }

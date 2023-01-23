@@ -600,6 +600,7 @@ namespace ProjektBD
         private void LogOutBtn_Click(object sender, EventArgs e)
         {
             this.Close();
+            Tools.ResetParameters();
         }
 
         private void ListBoxTypeTransactionEdit_SelectedIndexChanged(object sender, EventArgs e)

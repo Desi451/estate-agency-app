@@ -29,6 +29,7 @@ namespace ProjektBD
 
         private void loginBtn_Click(object sender, EventArgs e)
         {
+            Tools.ResetParameters();
             MySqlConnection con = new MySqlConnection();
             con.ConnectionString = DataBase.Connstring;
             con.Open();

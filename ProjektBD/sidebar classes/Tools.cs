@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using Google.Protobuf.WellKnownTypes;
+using MySql.Data.MySqlClient;
 using Org.BouncyCastle.Utilities.Collections;
 using System;
 using System.Collections.Generic;
@@ -710,5 +711,23 @@ namespace ProjektBD.sidebar_classes
             }
             con.Close();
         }
+
+        // resetowanie parametrów
+        public static void ResetParameters()
+        {
+            User.LoggedUserId = 0;
+            User.Id = 0;
+            User.FirstName = null;
+            User.LastName = null;
+            User.Login = null;
+            User.Password = null;
+            User.Email = null;
+            User.Id_rank = 0;
+            User.Street = null;
+            User.No_Building = null;
+            User.No_apartament = null;
+            User.ZipCode = 0;
+            User.City = null;
+    }
     }
 }
