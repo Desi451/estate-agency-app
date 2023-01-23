@@ -432,7 +432,7 @@ namespace ProjektBD
 
 
                             if ((tran == 1 || tran == 3) &&
-                            TextBoxBuildingsSellPrice.Text != string.Empty)
+                            TextBoxBuildingsRentPrice.Text != string.Empty && TextBoxBuildingsTimeRent.Text != string.Empty)
                             {
                                 rentPrice = Tools.CheckIfNull(TextBoxBuildingsRentPrice.Text);
                                 rentTime = Tools.CheckIfNull(TextBoxBuildingsTimeRent.Text);
