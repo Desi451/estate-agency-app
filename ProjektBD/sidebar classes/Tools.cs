@@ -125,21 +125,38 @@ namespace ProjektBD.sidebar_classes
         // metoda do czytania id po ":" do "." ze stringa
         public static int ReadComboId(string text)
         {
-            int start = text.IndexOf(':');
-            int end = text.IndexOf(".");
-            text = text.Substring(start + 1, end - 3);
-            end = Int32.Parse(text);
-            return end;
+            try
+            {
+                int start = text.IndexOf(':');
+                int end = text.IndexOf(".");
+                text = text.Substring(start + 1, end - 3);
+                end = Int32.Parse(text);
+                return end;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return 0;
         }
 
         // metoda do czytania id statusu spotkania "." ze stringa
         public static int ReadMeetingId(string text)
         {
-            int start = 0;
-            int end = text.IndexOf(".");
-            text = text.Substring(start, end);
-            end = Int32.Parse(text);
-            return end;
+            try
+            {
+                int start = 0;
+                int end = text.IndexOf(".");
+                text = text.Substring(start, end);
+                end = Int32.Parse(text);
+                return end;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return 0;
+            
         }
 
         // metoda sprawdzajaca czy nie ustawiono statusu sprzedazy dla nieruchomosci ktora jest tylko na wynajem itp
@@ -557,7 +574,6 @@ namespace ProjektBD.sidebar_classes
 
                     int selectedId = User.LoggedUserId;
                     string zipCode = Tools.ZipCodeValidate(zip_code.Text);
-                    int x = 1;
                     string query = "UPDATE projektbd.users SET first_name= '" + first_name.Text + "', last_name= '" + last_name.Text +
                     "', login= '" + login.Text + "', password= '" + password.Text + "', email= '" + email.Text + "',  street= '" + street.Text
                     + "', no_building= '" + no_building.Text + "', no_apartament= '" + no_apartament.Text +

@@ -1374,11 +1374,11 @@
             this.BackColor = System.Drawing.Color.SlateBlue;
             this.ClientSize = new System.Drawing.Size(1264, 681);
             this.Controls.Add(this.panelBtn);
+            this.Controls.Add(this.addMeetingPanel);
             this.Controls.Add(this.editBuildingPanel);
             this.Controls.Add(this.editProfilePanel);
             this.Controls.Add(this.addBuildingPanel);
             this.Controls.Add(this.editMeetingPanel);
-            this.Controls.Add(this.addMeetingPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "AgentPanel";
             this.Text = "AgentPanel";

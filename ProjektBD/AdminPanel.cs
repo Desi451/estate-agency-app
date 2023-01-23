@@ -580,10 +580,11 @@ namespace ProjektBD
                 con.Open();
 
 
-                string query = "DELETE b,s,r FROM projektbd.buildings AS b " +
+                string query = "DELETE b,s,r,m FROM projektbd.buildings AS b " +
                     "LEFT JOIN projektbd.rent_details AS r ON b.id = r.id_buildings " +
                     "LEFT JOIN projektbd.sell_details AS s ON b.id = s.id_buildings " +
-                    "WHERE b.id = '"+ idBuildings[LbSelectBuildingEdit.SelectedIndex] +"';";
+                    "LEFT JOIN projektbd.meetings AS m ON b.id = m.buildings_id " +
+                    "WHERE b.id = '" + idBuildings[LbSelectBuildingEdit.SelectedIndex] + "';";
 
                 MySqlCommand cmd = new MySqlCommand(query, con);
                 cmd.ExecuteReader();

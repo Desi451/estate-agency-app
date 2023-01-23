@@ -80,11 +80,13 @@ namespace ProjektBD
 
         private void ConfirmAddMeetingBtn_Click(object sender, EventArgs e)
         {
-            
-
             int status = Tools.ReadMeetingId(listBoxMeetingsStatus.Text);
             int user = Tools.ReadComboId(listBoxMeetingsUser.Text);
             int agent = User.LoggedUserId;
+            if (listBoxBuildings.SelectedIndex == -1)
+            {
+                return;
+            }
             int building = idBuildings[listBoxBuildings.SelectedIndex];
 
             DialogResult wynik = MessageBox.Show("Czy na pewno chcesz dodac to spotkanie" +
@@ -203,8 +205,16 @@ namespace ProjektBD
 
         private void ConfirmEditMeetingsBtn_Click(object sender, EventArgs e)
         {
+            if (listBoxBuildingsEditMeetings.SelectedIndex == -1)
+            {
+                return;
+            }
             int status = (listBoxEditMeetingsStatus.SelectedIndex + 1);
             int user = Tools.ReadComboId(listBoxEditMeetingsUser.Text);
+            if (listBoxBuildingsEditMeetings.SelectedIndex == -1)
+            {
+                return;
+            }
             int building = idBuildings[listBoxBuildingsEditMeetings.SelectedIndex];
             string date = dateTimeEditMeeting.Text;
             int id = Tools.ReadComboId(editMeetingsList.Text);
@@ -234,6 +244,10 @@ namespace ProjektBD
 
         private void ConfirmDelMeetingsBtn_Click(object sender, EventArgs e)
         {
+            if (listBoxBuildingsEditMeetings.SelectedIndex == -1)
+            {
+                return;
+            }
             int temp = idMeetings[editMeetingsList.SelectedIndex];
             DialogResult wynik = MessageBox.Show("Czy na pewno chcesz usunac wiersz o indeksie: " + temp + "?", "Usuwanie", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (wynik == DialogResult.Yes)
@@ -256,7 +270,6 @@ namespace ProjektBD
                 }
             }
         }
-
 
         // dodawanie budnykow
         private void addBuildingBtn_Click(object sender, EventArgs e)
@@ -391,6 +404,7 @@ namespace ProjektBD
 
         private void ConfirmEditBuildingBtn_Click(object sender, EventArgs e)
         {
+            int buildingId = 0;
             MySqlConnection con = new MySqlConnection();
             con.ConnectionString = DataBase.Connstring;
             con.Open();
@@ -398,12 +412,16 @@ namespace ProjektBD
             {
                 try
                 {
+                    
                     using (MySqlCommand cmd = new MySqlCommand())
                     {
                         cmd.Connection = con;
                         cmd.Transaction = trans;
-
-                        int buildingId = idBuildings[LbSelectBuildingEdit.SelectedIndex];
+                        if (LbSelectBuildingEdit.SelectedIndex == -1)
+                        {
+                            return;
+                        }
+                        buildingId = idBuildings[LbSelectBuildingEdit.SelectedIndex];
                         int type = (ListBoxTypeBuildingEdit.SelectedIndex + 1);
                         string size = TBeditBuildigsSize.Text;
                         int basement = ListBoxBasementEdit.SelectedIndex;
@@ -446,7 +464,7 @@ namespace ProjektBD
                         cmd.CommandText = qry[0];
                         cmd.ExecuteNonQuery();
 
-                        if (qry[1] != string.Empty)
+                        if (qry[1] != null)
                         {
                             cmd.CommandText = qry[1];
                             cmd.ExecuteNonQuery();
@@ -473,9 +491,10 @@ namespace ProjektBD
                 con.ConnectionString = DataBase.Connstring;
                 con.Open();
 
-                string query = "DELETE b,s,r FROM projektbd.buildings AS b " +
+                string query = "DELETE b,s,r,m FROM projektbd.buildings AS b " +
                     "LEFT JOIN projektbd.rent_details AS r ON b.id = r.id_buildings " +
                     "LEFT JOIN projektbd.sell_details AS s ON b.id = s.id_buildings " +
+                    "LEFT JOIN projektbd.meetings AS m ON b.id = m.buildings_id " +
                     "WHERE b.id = '" + idBuildings[LbSelectBuildingEdit.SelectedIndex] + "';";
 
                 MySqlCommand cmd = new MySqlCommand(query, con);

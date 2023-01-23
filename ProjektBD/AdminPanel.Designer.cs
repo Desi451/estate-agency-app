@@ -285,6 +285,7 @@
             // no_buildingBox
             // 
             this.no_buildingBox.Location = new System.Drawing.Point(446, 340);
+            this.no_buildingBox.MaxLength = 4;
             this.no_buildingBox.Name = "no_buildingBox";
             this.no_buildingBox.Size = new System.Drawing.Size(168, 20);
             this.no_buildingBox.TabIndex = 41;
@@ -1056,6 +1057,7 @@
             // TextBoxBuildingNo_apartament
             // 
             this.TextBoxBuildingNo_apartament.Location = new System.Drawing.Point(814, 163);
+            this.TextBoxBuildingNo_apartament.MaxLength = 3;
             this.TextBoxBuildingNo_apartament.Name = "TextBoxBuildingNo_apartament";
             this.TextBoxBuildingNo_apartament.Size = new System.Drawing.Size(44, 20);
             this.TextBoxBuildingNo_apartament.TabIndex = 68;
@@ -1064,6 +1066,7 @@
             // TextBoxBuildingNo_building
             // 
             this.TextBoxBuildingNo_building.Location = new System.Drawing.Point(669, 163);
+            this.TextBoxBuildingNo_building.MaxLength = 3;
             this.TextBoxBuildingNo_building.Name = "TextBoxBuildingNo_building";
             this.TextBoxBuildingNo_building.Size = new System.Drawing.Size(58, 20);
             this.TextBoxBuildingNo_building.TabIndex = 67;
@@ -1386,6 +1389,7 @@
             // TextBoxEditBuildingNoA
             // 
             this.TextBoxEditBuildingNoA.Location = new System.Drawing.Point(858, 302);
+            this.TextBoxEditBuildingNoA.MaxLength = 3;
             this.TextBoxEditBuildingNoA.Name = "TextBoxEditBuildingNoA";
             this.TextBoxEditBuildingNoA.Size = new System.Drawing.Size(44, 20);
             this.TextBoxEditBuildingNoA.TabIndex = 96;
@@ -1394,6 +1398,7 @@
             // TextBoxEditBuildingNoB
             // 
             this.TextBoxEditBuildingNoB.Location = new System.Drawing.Point(713, 302);
+            this.TextBoxEditBuildingNoB.MaxLength = 3;
             this.TextBoxEditBuildingNoB.Name = "TextBoxEditBuildingNoB";
             this.TextBoxEditBuildingNoB.Size = new System.Drawing.Size(58, 20);
             this.TextBoxEditBuildingNoB.TabIndex = 95;
